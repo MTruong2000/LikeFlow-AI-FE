@@ -12,8 +12,6 @@ export default function AILoginPopup({
   isOpen,
   onClose,
 }: FormLoginRegisterProps) {
-  if (!isOpen) return null;
-
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -24,6 +22,8 @@ export default function AILoginPopup({
     passwordVerification: "",
   });
   const router = useRouter();
+
+  if (!isOpen) return null;
 
   const handleInputChange = (e: any) => {
     setFormData({
