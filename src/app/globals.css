@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #7327fb;
+  --bg-section: #f6f2fb;
+  --color-title: black;
+  --color-text: #342a45;
+}
+
+body {
+  font-family: "Open Sans";
+  background: var(--bg-section);
+  line-height: 1;
+}
+
+.bg-primary {
+  background-image: linear-gradient(to bottom right, #111827, #1e3a8a, #581c87);
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+/* Button primary */
+.primary-button-custom {
+  position: relative;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  overflow: hidden;
+  text-align: center;
+}
+
+.primary-button-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+  background: linear-gradient(135deg, #9333ea, #a855f7, #c084fc);
+}
+
+.primary-button-custom:hover::before {
+  left: 100%;
+}
+
+@media screen and (min-width: 300px) and (max-width: 574px) {
+}
+
+@media screen and (min-width: 575px) and (max-width: 767) {
+}
+
+@media screen and (min-width: 768) and (max-width: 959) {
+}
+
+@media screen and (min-width: 960) and (max-width: 1023) {
+}
+
+@media screen and (min-width: 1024) and (max-width: 1367) {
+}
+
+@media screen and (min-width: 1368) and (max-width: 1920) {
+}
+
+@media screen and (min-width: 1921) and (max-width: 4096) {
+}
