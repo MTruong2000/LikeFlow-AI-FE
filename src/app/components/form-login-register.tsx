@@ -25,7 +25,7 @@ export default function AILoginPopup({
 
   if (!isOpen) return null;
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,

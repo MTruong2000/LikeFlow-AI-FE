@@ -183,7 +183,7 @@ export default function WhyChoose() {
             </h2>
           </div>
           <div>
-            <h3 className="text-xl sm:text-2xl">What's Your Next Idea?</h3>
+            <h3 className="text-xl sm:text-2xl">What&apos;s Your Next Idea?</h3>
             <ButtonAnimation />
           </div>
         </div>

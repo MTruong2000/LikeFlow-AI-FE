@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
     }
   ];
 
-  const renderStars = (rating:any) => {
+  const renderStars = (rating:number) => {
     return [...Array(5)].map((_, index) => (
       <Star
         key={index}
@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
               {/* Quote Text */}
               <div className="text-center mb-8">
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  "{testimonial.quote}"
+                  {testimonial.quote}
                 </p>
               </div>
 

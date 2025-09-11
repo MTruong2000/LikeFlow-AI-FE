@@ -70,7 +70,7 @@ export default function SmartAgent() {
             </h2>
           </div>
           <div className="flex-1 text-right">
-            <h3 className="text-2xl">What's Your Next Idea?</h3>
+            <h3 className="text-2xl">What&apos;s Your Next Idea?</h3>
             <ButtonAnimation />
           </div>
         </div>
