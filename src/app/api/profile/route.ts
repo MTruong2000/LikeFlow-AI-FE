@@ -13,7 +13,7 @@ export async function GET() {
       );
     }
 
-    const res = await fetch("http://192.168.1.25:8080/v1/users/profile", {
+    const res = await fetch(`${process.env.BASE_URL_BE}v1/users/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
