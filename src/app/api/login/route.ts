@@ -4,7 +4,7 @@ export async function POST(req: Request) {
   const body = await req.json();
 
   try {
-    const res = await fetch("http://192.168.1.25:8080/v1/users/login", {
+    const res = await fetch(`${process.env.BASE_URL_BE}v1/users/login`, {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
