@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import ButtonShowForm from "@/app/components/component-childs/button-show-form";
 
@@ -10,95 +10,23 @@ interface PlanData {
   free: {
     price: string;
     period: string;
+    planId?: string;
   };
   starter: {
     price: string;
     originalPrice?: string;
     period: string;
     discount?: string;
+    planId?: string;
   };
   grow: {
     price: string;
     originalPrice?: string;
     period: string;
     discount?: string;
+    planId?: string;
   };
 }
-
-const planData: Record<PlanType, PlanData> = {
-  "1month": {
-    duration: "1 Month Plan",
-    free: {
-      price: "0",
-      period: "/Month",
-    },
-    starter: {
-      price: "340.000",
-      period: "/Month",
-    },
-    grow: {
-      price: "680.000",
-      period: "/Month",
-    },
-  },
-  "3months": {
-    duration: "3 Month Plan",
-    free: {
-      price: "0",
-      period: "/3 Months",
-    },
-    starter: {
-      price: "898.000",
-      originalPrice: "1.020.000",
-      period: "/3 Months",
-      discount: "Save 5%",
-    },
-    grow: {
-      price: "1.998.000",
-      originalPrice: "2.040.000",
-      period: "/3 Months",
-      discount: "Save 5%",
-    },
-  },
-  "6months": {
-    duration: "6 Month Plan",
-    free: {
-      price: "0",
-      period: "/6 Months",
-    },
-    starter: {
-      price: "1.870.000",
-      originalPrice: "2.040.000",
-      period: "/6 Months",
-      discount: "Save 10%",
-    },
-    grow: {
-      price: "3.740.000",
-      originalPrice: "4.080.000",
-      period: "/6 Months",
-      discount: "Save 10%",
-    },
-  },
-  yearly: {
-    duration: "Yearly Plan",
-    free: {
-      price: "0",
-      period: "/Year",
-    },
-    starter: {
-      price: "3.400.000",
-      originalPrice: "4.080.000",
-      period: "/Year",
-      discount: "Save 20%",
-    },
-    grow: {
-      price: "6.800.000",
-      originalPrice: "8.160.000",
-      period: "/Year",
-      discount: "Save 20%",
-    },
-  },
-};
 
 const aiModels = [
   {
@@ -123,8 +51,103 @@ const aiModels = [
   },
 ];
 
-function Pricing({ checkLogin }: { checkLogin: boolean }) {
+export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
   const [selectedPlan, setSelectedPlan] = useState<PlanType>("1month");
+  const [planData, setPlanData] = useState<Record<PlanType, PlanData> | null>(
+    null
+  );
+
+  useEffect(() => {
+    const fetchPlans = async () => {
+      try {
+        const res = await fetch("/api/plans"); // ✅ gọi API Next.js
+        const result = await res.json();
+
+        if (result.status !== "success") return;
+
+        const apiPlans = result.data as any[];
+
+        // Map API → planData
+        const mapped: Record<PlanType, PlanData> = {
+          "1month": {
+            duration: "1 Month Plan",
+            free: { price: "0", period: "/Month" },
+            starter: { price: "-", period: "/Month" },
+            grow: { price: "-", period: "/Month" },
+          },
+          "3months": {
+            duration: "3 Month Plan",
+            free: { price: "0", period: "/3 Months" },
+            starter: { price: "-", period: "/3 Months" },
+            grow: { price: "-", period: "/3 Months" },
+          },
+          "6months": {
+            duration: "6 Month Plan",
+            free: { price: "0", period: "/6 Months" },
+            starter: { price: "-", period: "/6 Months" },
+            grow: { price: "-", period: "/6 Months" },
+          },
+          yearly: {
+            duration: "Yearly Plan",
+            free: { price: "0", period: "/Year" },
+            starter: { price: "-", period: "/Year" },
+            grow: { price: "-", period: "/Year" },
+          },
+        };
+
+        apiPlans.forEach((plan) => {
+          let key: PlanType | null = null;
+          if (plan.interval === "month" && plan.intervalCount === 1)
+            key = "1month";
+          if (plan.interval === "month" && plan.intervalCount === 3)
+            key = "3months";
+          if (plan.interval === "month" && plan.intervalCount === 6)
+            key = "6months";
+          if (plan.interval === "year" && plan.intervalCount === 1)
+            key = "yearly";
+
+          if (!key) return;
+
+          const price = plan.discountedAmountUSD.toFixed(2);
+          const original =
+            plan.discount > 0 ? plan.amountUsd.toFixed(2) : undefined;
+          const discount =
+            plan.discount > 0 ? `Save ${plan.discount}%` : undefined;
+          const period =
+            key === "1month"
+              ? "/Month"
+              : key === "3months"
+              ? "/3 Months"
+              : key === "6months"
+              ? "/6 Months"
+              : "/Year";
+
+          const detail = {
+            price,
+            originalPrice: original,
+            period,
+            discount,
+            planId: plan.id,
+          };
+
+          if (plan.plan === "starter") {
+            mapped[key].starter = detail;
+          } else if (plan.plan === "grow") {
+            mapped[key].grow = detail;
+          }
+        });
+
+        setPlanData(mapped);
+      } catch (err) {
+        console.error("Fetch plans error", err);
+      }
+    };
+
+    fetchPlans();
+  }, []);
+
+  if (!planData) return <div>Loading...</div>;
+
   const currentData = planData[selectedPlan];
 
   const planTabs = [
@@ -133,6 +156,30 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
     { key: "6months" as PlanType, label: "6 Month Plan" },
     { key: "yearly" as PlanType, label: "Yearly Plan" },
   ];
+
+  const handleCheckout = async (planId?: string) => {
+    try {
+      const res = await fetch("/api/checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          planId,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.status === 200 && data.code === 200) {
+        window.location.href = data.data.sessionUrl;
+      } else {
+        console.log("❌ Lỗi:", data.message);
+      }
+    } catch (err) {
+      console.error("❌ Fetch error:", err);
+    }
+  };
 
   return (
     <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
@@ -146,7 +193,7 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </p>
       </div>
 
-      <div className="mx-auto p-6 bg-gray-50">
+      <div className="mx-auto p-6 bg-gray-50 rounded-2xl">
         {/* Plan Selection Tabs */}
         <div className="flex justify-center mb-8">
           <div className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto">
@@ -177,14 +224,19 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   {currentData.free.price}
                 </span>
                 <span className="text-gray-600 ml-2">
-                  VND{currentData.free.period}
+                  ${currentData.free.period}
                 </span>
               </div>
             </div>
 
             <hr className="my-6 border-gray-200" />
             {checkLogin ? (
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors">
+              <button
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                onClick={() => {
+                  window.location.href = "https://affitfy.lovinbot.ai/overview";
+                }}
+              >
                 Buy Now
               </button>
             ) : (
@@ -321,13 +373,13 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   {currentData.starter.price}
                 </span>
                 <span className="text-gray-600 ml-2">
-                  VND{currentData.starter.period}
+                  ${currentData.starter.period}
                 </span>
               </div>
               {currentData.starter.originalPrice && (
                 <div className="flex items-center justify-center mt-2 space-x-2">
                   <span className="text-gray-400 line-through text-sm">
-                    {currentData.starter.originalPrice} VND
+                    {currentData.starter.originalPrice} $
                   </span>
                   {currentData.starter.discount && (
                     <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
@@ -341,7 +393,12 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
             <hr className="my-6 border-gray-200" />
 
             {checkLogin ? (
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors">
+              <button
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                onClick={() => {
+                  handleCheckout(currentData.starter.planId);
+                }}
+              >
                 Buy Now
               </button>
             ) : (
@@ -525,13 +582,13 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   {currentData.grow.price}
                 </span>
                 <span className="text-gray-600 ml-2">
-                  VND{currentData.grow.period}
+                  ${currentData.grow.period}
                 </span>
               </div>
               {currentData.grow.originalPrice && (
                 <div className="flex items-center justify-center mt-2 space-x-2">
                   <span className="text-gray-400 line-through text-sm">
-                    {currentData.grow.originalPrice} VND
+                    {currentData.grow.originalPrice} $
                   </span>
                   {currentData.grow.discount && (
                     <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">
@@ -545,7 +602,10 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
             <hr className="my-6 border-gray-200" />
 
             {checkLogin ? (
-              <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors">
+              <button
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                onClick={() => handleCheckout(currentData.grow.planId)}
+              >
                 Buy Now
               </button>
             ) : (
@@ -706,5 +766,3 @@ function Pricing({ checkLogin }: { checkLogin: boolean }) {
     </div>
   );
 }
-
-export default Pricing;
