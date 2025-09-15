@@ -65,7 +65,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
         if (result.status !== "success") return;
 
-        const apiPlans = result.data as any[];
+        const apiPlans: any[] = Array.isArray(result?.data) ? result.data : [];
 
         // Map API → planData
         const mapped: Record<PlanType, PlanData> = {
