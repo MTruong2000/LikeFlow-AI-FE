@@ -4,6 +4,16 @@ import Image from "next/image";
 import ButtonShowForm from "@/app/components/component-childs/button-show-form";
 
 type PlanType = "1month" | "3months" | "6months" | "yearly";
+interface ApiPlan {
+  id: string;
+  plan: string;
+  interval: string;
+  intervalCount: number;
+  discountedAmountUSD: number;
+  amountUsd: number;
+  discount: number;
+  stripePriceId?: string;
+}
 
 interface PlanData {
   duration: string;
@@ -65,7 +75,8 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
         if (result.status !== "success") return;
 
-        const apiPlans: any[] = Array.isArray(result?.data) ? result.data : [];
+        // const apiPlans: any[] = Array.isArray(result?.data) ? result.data : [];
+        const apiPlans: ApiPlan[] = Array.isArray(result?.data) ? (result.data as ApiPlan[]) : [];
 
         // Map API → planData
         const mapped: Record<PlanType, PlanData> = {
