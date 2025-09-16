@@ -96,9 +96,6 @@ export default function AILoginPopup({
   };
 
   const handleVerifySubmit = async () => {
-    console.log("Verification code:", verifyCode);
-    console.log("Email:", formData.email);
-  
     const res = await fetch("/api/verify-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -109,14 +106,11 @@ export default function AILoginPopup({
     });
   
     const data = await res.json();
-    console.log(data);
   
     if (data.status === "success") {
-      // ✅ Quay lại bước login
       setStep("form");
       setIsLogin(true);
   
-      // ✅ Giữ lại email để user không cần nhập lại
       setFormData((prev) => ({
         ...prev,
         email: formData.email,
