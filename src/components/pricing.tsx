@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ButtonShowForm from "@/app/components/component-childs/button-show-form";
+import ButtonShowForm from "@/components/component-childs/button-show-form";
 
 type PlanType = "1month" | "3months" | "6months" | "yearly";
 interface ApiPlan {

@@ -1,5 +1,5 @@
 "use client";
-import scrollToSection from "@/app/components/funcs/scrolltosection";
+import scrollToSection from "@/funcs/scrolltosection";
 
 export default function ButtonAnimation() {
   return (
@@ -8,7 +8,7 @@ export default function ButtonAnimation() {
         className="primary-button-custom"
         onClick={() => scrollToSection("pricing")}
       >
-        Start Free Trial
+        Try for Free
       </div>
     </>
   );

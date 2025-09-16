@@ -10,7 +10,7 @@ import {
   MousePointer,
 } from "lucide-react";
 import ImageNext from "next/image";
-import ButtonAnimation from "@/app/components/component-childs/button-animation";
+import ButtonAnimation from "@/components/component-childs/button-animation";
 
 export default function ToolOverview() {
   const tools = [

@@ -99,8 +99,8 @@ const HeaderProfile = () => {
   const menuItems = [
     {
       icon: User,
-      label: "Profile",
-      action: () => console.log("Profile clicked"),
+      label: "Orders",
+      action: () => router.push("/order-page"),
     },
     {
       icon: Settings,

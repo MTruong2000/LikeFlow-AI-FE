@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import FormLoginRegister from "@/app/components/form-login-register";
+import FormLoginRegister from "@/components/form-login-register";
 
 export default function ButtonShowForm() {
   const [isOpen, setIsOpen] = useState(false);
