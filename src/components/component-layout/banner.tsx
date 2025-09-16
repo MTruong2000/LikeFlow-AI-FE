@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ButtonAnimation from "@/app/components/component-childs/button-animation";
+import ButtonAnimation from "@/components/component-childs/button-animation";
 
 export default function Banner() {
   return (

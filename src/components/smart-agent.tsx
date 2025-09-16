@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import ButtonAnimation from "@/app/components/component-childs/button-animation";
+import ButtonAnimation from "@/components/component-childs/button-animation";
 
 interface FeatureItem {
   id: string;

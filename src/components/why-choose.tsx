@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronsLeft, ChevronsRight } from "lucide-react";
-import ButtonAnimation from "@/app/components/component-childs/button-animation";
+import ButtonAnimation from "@/components/component-childs/button-animation";
 
 interface AccordionItem {
   id: string;

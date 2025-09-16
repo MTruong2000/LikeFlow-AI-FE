@@ -1,15 +1,15 @@
 import Image from "next/image";
-import Banner from "@/app/components/banner";
-import MultiTab from "@/app/components/multi-tab";
-import WhoIsUser from "@/app/components/who-is-using";
-import WhyChoose from "@/app/components/why-choose";
-import SmartAgent from "@/app/components/smart-agent";
-import ToolOverview from "@/app/components/tools-overview";
-import Trusted from "@/app/components/trusted";
+import Banner from "@/components/component-layout/banner";
+import MultiTab from "@/components/multi-tab";
+import WhoIsUser from "@/components/who-is-using";
+import WhyChoose from "@/components/why-choose";
+import SmartAgent from "@/components/smart-agent";
+import ToolOverview from "@/components/tools-overview";
+import Trusted from "@/components/trusted";
 // import MultipleAdvanced from "@/app/components/multiple-advanced";
-import TestimonialsSection from "@/app/components/testimonials-section";
-import Pricing from "@/app/components/pricing";
-import isLoggedIn from "@/app/components/funcs/isLonggedIn";
+import TestimonialsSection from "@/components/testimonials-section";
+import Pricing from "@/components/pricing";
+import isLoggedIn from "@/funcs/isLonggedIn";
 
 export default async function Home() {
   const checkLogin = await isLoggedIn();
