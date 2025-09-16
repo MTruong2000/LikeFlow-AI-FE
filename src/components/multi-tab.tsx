@@ -9,107 +9,96 @@ export default function MultiTab() {
     {
       id: "chat-pro",
       name: "Chat Pro",
-      title: "CHAT PRO - ALL LEADING AIS IN ONE UNIFIED PLATFORM",
+      title: "Chat Pro – One Platform, Every Leading AI at Your ",
       description:
-        "Chat Pro lets you talk to the world's top AI models — including ChatGPT, Gemini, Claude, Grok, and more — all seamlessly integrated into one powerful platform.",
+        "FingertipsWith Chat Pro, you can connect with the world’s most advanced AI models — including ChatGPT, Gemini, Claude, Grok, and more — all brought together in a single powerful hub.",
       features: [
-        "Access multiple powerful AIs in one place",
-        "Diverse perspectives to match every need",
-        "Save costs — no need to subscribe to multiple tools",
-        "Easy-to-use interface with lightning-fast responses",
+        "Gain diverse perspectives tailored to your needs",
+        "Enjoy seamless access to multiple AIs without juggling separate subscriptions",
+        "Experience a sleek interface designed for speed, simplicity, and efficiency",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/chat-pro.png",
     },
     {
       id: "ai-agents",
       name: "AI Agents",
-      title: "AI AGENTS - CUSTOM AI ASSISTANTS FOR TASK-BASED AUTOMATION",
+      title: "AI Agents – Personalized AI Assistants for Task",
       description:
-        "Users can upload private data, create custom prompts, and enable memory for smarter, more personalized conversations over time. These are AI assistants that truly understand you — learning continuously to support your work more effectively.",
+        "AutomationUsers can securely upload private data, design custom prompts, and activate memory for deeper, more tailored interactions over time. These assistants don’t just respond — they evolve, learning from every exchange to support your work with greater precision.",
       features: [
-        "Build AI assistants tailored to your specific needs",
-        "Upload training documents instantly; supports diverse plugins like DALL-E, Wikipedia, Google, Serper, and more",
-        "Learns from past conversations for increasingly accurate responses",
-        "Automates repetitive tasks with smart workflows",
+        "Create AI assistants crafted for your unique needs",
+        "Continuously improve through past conversations for sharper accuracy",
+        "Streamline repetitive tasks with intelligent, automated workflows",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-agents.png",
     },
     {
       id: "ai-search",
       name: "AI Search",
-      title: "AI SEARCH - REAL-TIME INFORMATION DISCOVERY WITH AI",
+      title: "AI Search – Real-Time Information Discovery with AI",
       description:
-        "AI Search helps you find the latest information from the internet in real time. Just ask a question, and the system will find the most recent data with accurate, up-to-date, and credible answers.",
+        "Search keeps you connected to the world’s latest updates in real time. Simply ask a question, and it instantly pulls the most recent, accurate, and reliable information from across the web.",
       features: [
-        "Real-time search for the latest information",
-        "Stay updated with trends and breaking news",
-        "Powered by AI and advanced web browsing",
-        "Saves time by skipping the noise and surfacing only relevant insights",
+        "Real-time access to the newest insights",
+        "Powered by AI with advanced browsing capabilities",
+        "Stay ahead of trends and breaking news",
+        "Save time with precise, relevant results—without the clutter",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-search.png",
     },
     {
       id: "ai-photos",
       name: "AI Photos",
-      title: "AI PHOTOS - ADVANCED IMAGE GENERATION",
+      title: "All-in-One AI Workspace – Creative Media & Smart",
       description:
-        "Create stunning images with AI-powered image generation tools. Transform your ideas into beautiful visuals with cutting-edge AI technology.",
+        "EditingPowered by leading-edge models such as ChatGPT Image, Ideogram, Gemini, Veo, Kling AI, and more, AI Creative brings seamless image and video generation to your fingertips. Effortlessly transform ideas into visuals, whether it’s outfit swaps, color adjustments, background changes, cinematic storytelling, or precise object removal.",
       features: [
-        "Generate high-quality images from text descriptions",
-        "Multiple art styles and formats available",
-        "Advanced editing and enhancement tools",
-        "Professional-grade output for commercial use",
+        "Multi-AI Image & Video Creation. Bring your imagination to life with simple prompts.",
+        "Advanced AI Editing & Retouching Tools. Streamline your workflow and eliminate the need for complicated design or editing software.",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-photos.png",
     },
     {
       id: "ai-voice",
       name: "AI Voice",
-      title: "AI VOICE - NATURAL VOICE SYNTHESIS",
+      title: "AI Voice – Natural Voice Generation & Audio Creation",
       description:
-        "Convert text to natural-sounding speech with advanced AI voice technology. Create professional voiceovers and audio content effortlessly.",
+        "AI Voice turns text into lifelike, expressive speech with remarkable diversity. From voice cloning and podcast production to AI-generated music, it makes audio creation effortless.",
       features: [
-        "Natural-sounding voice synthesis",
-        "Multiple languages and accents",
-        "Customizable voice parameters",
-        "High-quality audio output",
+        "Streamline your content workflow",
+        "Deliver immersive user experiences with authentic sound",
+        "Reduce production expenses with advanced AI voice tools",
+        "Customize every project with a wide range of voice styles",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-voice.png",
     },
     {
       id: "ai-automation",
       name: "AI Automation",
-      title: "AI AUTOMATION - INTELLIGENT WORKFLOW AUTOMATION",
+      title: "AI Automation – Simplify Your Work with Intelligent Workflows",
       description:
-        "Automate your workflows with intelligent AI-powered automation tools. Streamline repetitive tasks and boost productivity.",
+        "Harness the power of AI to streamline every task — from content creation, email outreach, and reporting to customer support. Blend advanced language intelligence with flexible workflow logic.",
       features: [
-        "Smart workflow automation",
-        "Integration with popular tools",
-        "Customizable automation rules",
-        "Real-time monitoring and analytics",
+        "No coding required - build with simple drag-and-drop tools.",
+        "Effortlessly connects with Chat Pro, AI Agents, Voice, Photo, and more.",
+        "Fully customizable to fit any business process.",
+        "An all-in-one solution designed to cut development costs and boost efficiency.",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-automation.png",
     },
     {
       id: "ai-chatbot",
       name: "AI Chatbot",
-      title: "AI CHATBOT - INTELLIGENT CONVERSATIONAL AI",
+      title: "AI Chatbot empowers you to save time and maximize productivity",
       description:
-        "Build and deploy intelligent chatbots for your business needs. Create engaging customer experiences with advanced AI.",
+        "Effortlessly integrate it into your website and customize it with your own data. AI CHATBOT – Train & Deploy with Your Expertise.",
       features: [
-        "Advanced natural language processing",
-        "Multi-channel deployment",
-        "Custom training and fine-tuning",
-        "Analytics and performance tracking",
+        "Seamlessly embed on your website or landing page",
+        "Unlock powerful plugins like DALL·E, Wikipedia, Google, Serper...",
+        "Easily upload and manage your professional documents",
+        "Train the AI with your unique knowledge base for smarter results",
       ],
-      image:
-        "https://w.ladicdn.com/s1050x700/66e18ea9521baa00137153a3/20250726-150934-20250726080959-ehbbj.png",
+      image: "/images/ai-chatbot.png",
     },
   ];
 
@@ -117,31 +106,30 @@ export default function MultiTab() {
 
   return (
     <>
-      <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4">
-        <h1 className="text-2xl sm:text-4xl font-bold uppercase">
+      <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[54px]">
+        <h1 className="text-2xl sm:text-4xl font-bold uppercase mb-[54px]">
           All-in-One AI Workspace for Business Operations
         </h1>
 
-        <div className="py-8">
+        <div className="">
           {/* Main Content Area */}
-          <div className="mb-12">
-            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200">
+          <div className="mb-[54px]">
+            <div className="rounded-2xl p-5 border border-[var(--color-border)]">
               {currentTab && (
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
-                  {/* Left Side - Text Content */}
-                  <div className="flex-1 lg:pr-8">
-                    <h1 className="text-2xl sm:text-4xl font-bold text-[var(--color-primary)] mb-6 leading-tight">
+                  <div className="flex-1">
+                    <h1 className="text-2xl sm:text-4xl font-bold text-start bg-gradient-primary bg-clip-text text-transparent mb-6 leading-tight">
                       {currentTab.title}
                     </h1>
 
-                    <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+                    <p className="text-gray-700 text-lg mb-8 leading-relaxed text-start">
                       {currentTab.description}
                     </p>
 
                     <div className="space-y-4">
                       {currentTab.features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-3">
-                          <div className="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg
                               className="w-4 h-4 text-white"
                               fill="currentColor"
@@ -154,7 +142,7 @@ export default function MultiTab() {
                               />
                             </svg>
                           </div>
-                          <span className="text-gray-700 text-lg leading-relaxed">
+                          <span className="text-gray-700 text-lg text-start">
                             {feature}
                           </span>
                         </div>
@@ -162,15 +150,14 @@ export default function MultiTab() {
                     </div>
                   </div>
 
-                  {/* Right Side - Image */}
-                  <div className="w-full lg:w-96 flex-shrink-0">
-                    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <div className="w-full flex-1">
+                    <div className="w-fit ">
                       <Image
                         src={currentTab.image}
                         alt={currentTab.title}
-                        width={400}
-                        height={600}
-                        className="w-full h-auto object-cover"
+                        width={552}
+                        height={463}
+                        className="w-[552px] h-[463px] rounded-[33px] object-cover"
                         priority
                         onError={(e) => {
                           // Fallback nếu image không load được
@@ -201,7 +188,7 @@ export default function MultiTab() {
           </div>
 
           {/* Navigation Tabs - Bottom */}
-          <div className=" bg-white rounded-xl shadow-lg p-2 overflow-x-auto scrollbar-hide">
+          <div className="rounded-xl py-5 overflow-x-auto scrollbar-hide">
             <div className="flex  flex-nowrap justify-start lg:justify-center">
               {tabs.map((tab) => (
                 <button
@@ -209,8 +196,8 @@ export default function MultiTab() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-3 rounded-lg font-medium whitespace-nowrap transition-all duration-300 transform hover:scale-105 ${
                     activeTab === tab.id
-                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
-                      : "text-gray-600 hover:text-purple-600 hover:bg-purple-50"
+                      ? "bg-gradient-primary text-white shadow-lg"
+                      : "text-gray-600 hover:text-[var(--color-primary)] hover:bg-purple-50"
                   }`}
                 >
                   {tab.name}

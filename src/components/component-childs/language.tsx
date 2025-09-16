@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
 interface Language {
   code: string;
@@ -9,33 +9,38 @@ interface Language {
 
 const languages: Language[] = [
   {
-    code: 'en',
-    flag: 'https://w.ladicdn.com/s400x350/66e18ea9521baa00137153a3/co-01-20250730034604-rikvm.png',
-    name: 'English'
+    code: "en",
+    flag: "https://w.ladicdn.com/s400x350/66e18ea9521baa00137153a3/co-01-20250730034604-rikvm.png",
+    name: "English",
   },
   {
-    code: 'vi',
-    flag: 'https://w.ladicdn.com/s400x350/66e18ea9521baa00137153a3/co-02-20250730034604-lddcc.png',
-    name: 'Tiếng Việt'
-  }
+    code: "vi",
+    flag: "https://w.ladicdn.com/s400x350/66e18ea9521baa00137153a3/co-02-20250730034604-lddcc.png",
+    name: "Tiếng Việt",
+  },
 ];
 
 const LanguageSelector: React.FC = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>(
+    languages[0]
+  );
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Đóng dropdown khi click bên ngoài
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -49,7 +54,7 @@ const LanguageSelector: React.FC = () => {
       {/* hiển thị ngôn ngữ hiện tại */}
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 bg-transparent border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        className="flex items-center space-x-2 px-3 py-2 bg-transparent border border-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer"
       >
         <img
           src={selectedLanguage.flag}
@@ -58,13 +63,18 @@ const LanguageSelector: React.FC = () => {
         />
         <svg
           className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
 
@@ -76,7 +86,9 @@ const LanguageSelector: React.FC = () => {
               key={language.code}
               onClick={() => handleLanguageSelect(language)}
               className={`flex items-center space-x-3 w-full px-4 py-3 text-left hover:bg-gray-800 transition-colors duration-150 ${
-                selectedLanguage.code === language.code ? 'bg-gray-800 text-purple-400' : 'text-gray-300'
+                selectedLanguage.code === language.code
+                  ? "bg-gray-800 text-purple-400"
+                  : "text-gray-300"
               }`}
             >
               <img

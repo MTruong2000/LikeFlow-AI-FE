@@ -8,7 +8,7 @@ export default function ButtonShowForm() {
   return (
     <>
       <div
-        className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors text-center"
+        className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors text-center"
         onClick={() => setIsOpen(true)}
       >
         Sign Up Now

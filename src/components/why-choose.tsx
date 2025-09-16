@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronsLeft, ChevronsRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Play, ArrowUpRight } from "lucide-react";
 import ButtonAnimation from "@/components/component-childs/button-animation";
 
 interface AccordionItem {
@@ -171,20 +171,25 @@ export default function WhyChoose() {
     <>
       <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
         <div className="flex justify-between">
-          <div>
-            <h3 className="text-[var(--color-primary)] text-xl sm:text-2xl font-bold">
+          <div className="uppercase flex-1">
+            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-xl sm:text-2xl font-bold">
               Why
-            </h3>
+            </h2>
             <h2 className="text-2xl sm:text-4xl font-bold">
               should online entrepreneurs use
             </h2>
-            <h2 className="text-[var(--color-primary)] text-2xl sm:text-4xl font-bold">
+            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-2xl sm:text-4xl font-bold">
               bothive.ai
             </h2>
           </div>
-          <div>
-            <h3 className="text-xl sm:text-2xl">What&apos;s Your Next Idea?</h3>
-            <ButtonAnimation />
+          <div className="flex-1 flex flex-col justify-center items-end">
+            <h3 className="text-xl sm:text-2xl bg-gradient-primary bg-clip-text text-transparent">
+              What&apos;s Your Next Idea?
+            </h3>
+            <div className="flex gap">
+              <ButtonAnimation />
+              <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
+            </div>
           </div>
         </div>
 
@@ -248,43 +253,28 @@ export default function WhyChoose() {
             <div className="flex items-center justify-between mt-8">
               <button
                 onClick={nextSlide}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl"
+                className="bg-gradient-primary text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
-                Next →
+                Next
+                <ArrowUpRight className="h-5 w-5" />
               </button>
 
               <div className="flex gap-3">
                 <button
                   aria-label="Prev"
                   onClick={prevSlide}
-                  className="px-6 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
+                  className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
                 >
-                  <ChevronsLeft />
+                  <ArrowLeft />
                 </button>
                 <button
                   aria-label="Next"
                   onClick={nextSlide}
-                  className="px-6 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
+                  className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
                 >
-                  <ChevronsRight />
+                  <ArrowRight />
                 </button>
               </div>
-            </div>
-
-            {/* Slide indicators */}
-            <div className="flex justify-center mt-6 gap-2">
-              {slidesData.map((_, index) => (
-                <button
-                  aria-label="Go to slide"
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    currentSlide === index
-                      ? "bg-purple-600 scale-110"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                />
-              ))}
             </div>
           </div>
         </div>

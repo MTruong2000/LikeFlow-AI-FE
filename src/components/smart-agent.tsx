@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Play } from "lucide-react";
 import ButtonAnimation from "@/components/component-childs/button-animation";
 
 interface FeatureItem {
@@ -65,13 +66,18 @@ export default function SmartAgent() {
       <div className="w-full mb-12 bg-primary text-white pt-8">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               Build Smart AI Agents – Tailored for Your Workflow
             </h2>
           </div>
-          <div className="flex-1 text-right">
-            <h3 className="text-2xl">What&apos;s Your Next Idea?</h3>
-            <ButtonAnimation />
+          <div className="flex-1 flex flex-col justify-center items-end">
+            <h3 className="text-2xl bg-gradient-primary bg-clip-text text-transparent">
+              What&apos;s Your Next Idea?
+            </h3>
+            <div className="flex gap">
+              <ButtonAnimation />
+              <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
+            </div>
           </div>
         </div>
 
@@ -79,24 +85,19 @@ export default function SmartAgent() {
           <div className="container mx-auto py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Left Image */}
-              <div className="flex flex-col items-center space-y-6">
-                <div className="relative">
+              <div className="flex flex-col items-center  bg-gradient-primary rounded-[25px]">
+                <div className="relative p-[25px]">
                   <img
                     src="https://w.ladicdn.com/s600x600/66e18ea9521baa00137153a3/97e8ddb09a792b66c7853a9fa8c92806-20250728062457-wb7fs.jpg"
                     alt="AI Technology"
                     className="w-full max-w-sm rounded-xl shadow-2xl border border-blue-500/20"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl"></div>
                 </div>
 
-                <div className="text-center space-y-4">
-                  <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Automate
-                  </h1>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white">
-                    manual tasks
-                  </h2>
-                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold text-white pb-[25px]">
+                  Automate <br />
+                  manual tasks
+                </h2>
               </div>
 
               {/* Center - Expandable List */}
@@ -110,7 +111,7 @@ export default function SmartAgent() {
                       onClick={() => toggleExpand(feature.id)}
                       className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-400/50"
                     >
-                      <h3 className="text-lg font-semibold text-white pr-4">
+                      <h3 className="text-lg font-semibold pr-4 text-black">
                         {feature.title}
                       </h3>
                       {expandedItems.has(feature.id) ? (
@@ -133,7 +134,7 @@ export default function SmartAgent() {
                     >
                       <div className="px-6 pb-4">
                         <div className="h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent mb-4"></div>
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-800 leading-relaxed">
                           {feature.description}
                         </p>
                       </div>
@@ -152,10 +153,6 @@ export default function SmartAgent() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent rounded-xl"></div>
                 </div>
-
-                <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Next →
-                </button>
               </div>
             </div>
           </div>
