@@ -579,7 +579,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           {/* Grow Plan */}
           <div className="bg-white rounded-2xl border-2 border-pink-300 p-6 relative">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
+              <span className="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
                 <span>Most Popular</span>
               </span>
             </div>

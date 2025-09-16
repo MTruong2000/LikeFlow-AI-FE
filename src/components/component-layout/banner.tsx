@@ -1,51 +1,43 @@
 import Image from "next/image";
-import ButtonAnimation from "@/components/component-childs/button-animation";
+import { Play } from "lucide-react";
+import ButtonBaner from "@/components/component-childs/button-banner";
+
+const textBanner = {
+  title: "Smarter AI, Faster Growth",
+  description:
+    "A user-friendly AI platform that’s easy to deploy, helping SMEs automate processes, boost efficiency, and connect with customers naturally.",
+};
 
 export default function Banner() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-[1148px] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(180deg,#0F535D_0%,rgba(0,0,0,0)_82%)] mb-[110px]">
       <Image
-        src="https://w.ladicdn.com/s1440x733/66e18ea9521baa00137153a3/image-1-20250721023632-fad7g.png"
+        src="/images/banner.png"
         alt="Background"
-        fill
-        className="object-cover"
+        width={1440}
+        height={1148}
+        className="object-cover w-full h-full"
         priority
       />
-      <div className="absolute top-4 left-20 ">
-        <Image
-          src="https://w.ladicdn.com/s550x450/66e18ea9521baa00137153a3/feature-card-20250804083102-sd1z0.png"
-          alt="Background"
-          width={240}
-          height={120}
-          className="object-cover"
-        />
-      </div>
 
-      <div className="xl:w-[1200] w-full xl:px-0 sm:px-12 px-4 absolute top-[10%] left-1/2 translate-x-[-50%] translate-y-[50%] flex items-center justify-center text-center flex-col gap-8">
-        <h1 className="text-white text-4xl sm:text-6xl font-bold">
-          AI Workplace for Business Growth
-        </h1>
-        <p className="lg:w-[768] text-white text-xl sm:text-2xl font-bold">
-          A comprehensive platform that empowers individuals and online
-          businesses to create, automate operations, and grow smarter with AI.
-        </p>
+      <div className="w-full xl:w-[1200] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:px-0 sm:px-12 px-4">
+        <div className="w-[728px]">
+          <h1 className="text-white text-[69px] font-extrabold">
+            {textBanner.title}
+          </h1>
+          <p className="text-white text-[21px] font-medium mt-[27px]">
+            {textBanner.description}
+          </p>
+          <div className="mt-[50px] flex gap-[20px] items-center">
+            <ButtonBaner />
+            <div className="w-fit px-[15px] py-[13px] rounded-[52px] bg-[#50A6B3]/[0.28] border border-white">
+              <div className="w-fit flex gap-[13px] text-[26px] text-[#0F535D] font-semibold px-[13px] py-[13px] bg-white rounded-[50%]">
+                <Play />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="hidden sm:block xl:w-[1200] w-full xl:px-0 sm:px-12 px-4 absolute md:bottom-[40%] bottom-[32%] left-1/2 translate-x-[-50%] translate-y-[50%] text-center">
-        <ButtonAnimation />
-      </div>
-
-      <div className="hidden lg:block absolute bottom-[40%] right-0 translate-x-[-50%] translate-y-[50%]">
-        <Image
-          src="https://w.ladicdn.com/s550x500/66e18ea9521baa00137153a3/metric-container-20250721015829-e2ifr.png"
-          alt="Background"
-          width={250}
-          height={150}
-          className="object-cover"
-        />
-      </div>
-      <div className="w-full h-[376] bottom-[-20] absolute bg-[url('https://w.ladicdn.com/s2850x700/66e18ea9521baa00137153a3/ellipse-1-20250721012756-wbagq.png')]"></div>
-      <div className="w-full h-[260] bottom-[-20] absolute bg-[url('https://w.ladicdn.com/s2850x600/66e18ea9521baa00137153a3/ellipse-2-20250721012756--ibfj.png')]"></div>
     </div>
   );
 }

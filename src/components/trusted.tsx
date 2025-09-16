@@ -56,7 +56,7 @@ export default function Trusted() {
             TRUSTED BY BUSINESSES NATIONWIDE
           </h2>
           <p className="text-xl mt-2">
-            Automate manual tasks, save time, and reduce effort with Bothive AI
+            Automate manual tasks, save time, and reduce effort with LikeFlow
           </p>
         </div>
 

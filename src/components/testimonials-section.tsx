@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -45,8 +45,8 @@ const TestimonialsSection = () => {
   return (
     <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
       <div className='text-center mb-12'>
-        <h2 className='text-2xl sm:text-4xl font-bold pb-4'>HOW <span className='text-[var(--color-primary)]'>BOTHIVE AI</span> BOOSTS BUSINESS PERFORMANCE</h2>
-        <p className='text-xl'>BotHive AI empowers businesses to improve sales, streamline operations, and boost team collaboration</p>
+        <h2 className='text-2xl sm:text-4xl font-bold pb-4'>HOW <span className='text-[var(--color-primary)]'>LIKEFLOW</span> BOOSTS BUSINESS PERFORMANCE</h2>
+        <p className='text-xl'>LikeFlow empowers businesses to improve sales, streamline operations, and boost team collaboration</p>
       </div>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -64,11 +64,6 @@ const TestimonialsSection = () => {
                       alt={testimonial.name}
                       className="w-full h-full rounded-full object-cover"
                     />
-                  </div>
-                  
-                  {/* Icon tin nhắn nhỏ */}
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                    <MessageSquare className="w-4 h-4 text-white" />
                   </div>
                 </div>
               </div>

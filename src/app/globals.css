@@ -1,34 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #7327fb;
+  --color-primary: #1CF8C8;
   --bg-section: #f6f2fb;
   --color-title: black;
   --color-text: #342a45;
+
+  --color-border: #1CF8C8;
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: "Be Vietnam Pro", "sans-serif";
   background: var(--bg-section);
   line-height: 1;
 }
 
-.bg-primary {
-  background-image: linear-gradient(to bottom right, #111827, #1e3a8a, #581c87);
+.bg-gradient-primary {
+  background-image: linear-gradient(-215deg, #1cf8c8 0%, #117892 100%);
 }
 
-.bg-gradient-primary {
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9)
-  );
+.bg-gradient-who-use::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg, #1CF8C8 0%, #117892 100%);
+  opacity: 0.6;
+  z-index: -1;
+  border-radius: inherit;
 }
 
 /* Button primary */
 .primary-button-custom {
   position: relative;
-  background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc);
+  background: linear-gradient(-215deg, #1cf8c8 0%, #117892 100%);
   border: none;
   border-radius: 50px;
   padding: 10px 28px;
@@ -49,7 +53,6 @@ body {
 .primary-button-custom:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
-  background: linear-gradient(135deg, #9333ea, #a855f7, #c084fc);
 }
 
 .primary-button-custom:hover::before {
