@@ -159,26 +159,6 @@ export default function MultiTab() {
                         height={463}
                         className="w-[552px] h-[463px] rounded-[33px] object-cover"
                         priority
-                        onError={(e) => {
-                          // Fallback nếu image không load được
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = "none";
-                          target.parentElement!.innerHTML = `
-                            <div class="w-full h-96 bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center">
-                              <div class="text-center p-8">
-                                <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <span class="text-white text-2xl font-bold">${currentTab.name.charAt(
-                                    0
-                                  )}</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-800">${
-                                  currentTab.name
-                                }</h3>
-                                <p class="text-gray-600 mt-2">Preview Interface</p>
-                              </div>
-                            </div>
-                          `;
-                        }}
                       />
                     </div>
                   </div>
@@ -189,7 +169,7 @@ export default function MultiTab() {
 
           {/* Navigation Tabs - Bottom */}
           <div className="rounded-xl py-5 overflow-x-auto scrollbar-hide">
-            <div className="flex  flex-nowrap justify-start lg:justify-center">
+            <div className="flex flex-nowrap justify-start lg:justify-center">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}

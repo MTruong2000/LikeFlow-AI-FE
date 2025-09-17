@@ -68,7 +68,7 @@ export default function SmartAgent() {
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
             <h2 className="text-right md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Build Smart AI Agents <br/> – Tailored for Your Workflow
+              Build Smart AI Agents <br /> – Tailored for Your Workflow
             </h2>
           </div>
           <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
@@ -101,7 +101,7 @@ export default function SmartAgent() {
                 </h2>
               </div>
 
-              <div className="flex md:hidden flex-col items-center rounded-[25px]">
+              {/* <div className="flex md:hidden flex-col items-center rounded-[25px]">
                 <div className="p-[25px]">
                   <ImageNext
                     src="/images/smart-ai-agent.png"
@@ -110,7 +110,7 @@ export default function SmartAgent() {
                     height={300}
                   />
                 </div>
-              </div>
+              </div> */}
 
               {/* Center - Expandable List */}
               <div className="space-y-4">
@@ -156,14 +156,20 @@ export default function SmartAgent() {
               </div>
 
               {/* Right Image */}
-              <div className="hidden md:flex flex-col items-center space-y-6">
+              <div className="flex flex-col-reverse items-center space-y-6">
                 <div className="relative">
-                  <ImageNext
-                    src="/images/smart-ai-agent-compare.png"
-                    alt="AI Technology"
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="rounded-xl object-cover"
                     width={379}
                     height={560}
-                  />
+                  >
+                    <source src="/videos/life-flow.mp4" type="video/mp4" />
+                    Trình duyệt của bạn không hỗ trợ video.
+                  </video>
                 </div>
               </div>
             </div>

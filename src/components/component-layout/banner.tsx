@@ -11,13 +11,7 @@ const textBanner = {
 
 export default function Banner() {
   return (
-    <div
-      className="
-        relative w-full
-        min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-[1148px]
-        mb-[110px]
-      "
-    >
+    <div className="relative w-full min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-[1148px] mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
       {/* Background image */}
       <Image
         src="/images/banner.png"
@@ -25,7 +19,16 @@ export default function Banner() {
         fill
         priority
         sizes="100vw"
-        className="absolute inset-0 -z-10 object-cover"
+        className="absolute inset-0 -z-10 object-cover hidden md:block"
+      />
+
+      <Image
+        src="/images/banner-sp.png"
+        alt="Background"
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 -z-10 object-cover block md:hidden"
       />
 
       {/* Gradient overlay */}
@@ -33,7 +36,7 @@ export default function Banner() {
 
       {/* Content */}
       <div className="w-full xl:w-[1200px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:px-0 sm:px-12 px-4">
-        <div className="w-full md:w-[728px] sm:w-[90%] xs:w-full text-center md:text-left mx-auto md:mx-0">
+        <div className="w-full md:w-[728px] sm:w-[90%] xs:w-full text-center md:text-left mx-auto md:mx-0 mt-12">
           <h1 className="text-white text-[42px] md:text-[56px] lg:text-[69px] font-extrabold">
             {textBanner.title}
           </h1>
@@ -43,9 +46,9 @@ export default function Banner() {
 
           <div className="mt-10 md:mt-12 flex gap-[20px] items-center justify-center md:justify-start">
             <ButtonBaner />
-            <div className="w-fit px-[15px] py-[13px] rounded-[52px] bg-[#50A6B3]/[0.28] border border-white">
-              <div className="w-fit flex gap-[13px] text-[26px] text-[#0F535D] font-semibold px-[13px] py-[13px] bg-white rounded-[50%]">
-                <Play />
+            <div className="w-fit p-[2px] rounded-full bg-[#50A6B3]/30 border border-white">
+              <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full cursor-pointer">
+                <Play className="w-6 h-6 text-[#0F535D]" />
               </div>
             </div>
           </div>

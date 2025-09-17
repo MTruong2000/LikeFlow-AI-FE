@@ -12,7 +12,7 @@ export default function HeaderClient({
 }) {
   return (
     <div className="absolute text-white  z-10 w-full top-[52px] left-0 sm:px-12 px-4">
-      <div className="w-full xl:w-[1200] h-[80]  flex xl:gap-20 gap-0 justify-between mx-auto  px-[33px] bg-gradient-to-r from-[#FEF8FF]/[0.21] to-[#FEF8FF]/[0] rounded-[107px] backdrop-blur-2xl">
+      <div className="w-full xl:w-[1200] h-[80] flex xl:gap-20 gap-0 justify-between mx-auto px-4 md:px-[33px] bg-gradient-header">
         <div className="my-auto">
           <LogoLikeFlow />
         </div>
