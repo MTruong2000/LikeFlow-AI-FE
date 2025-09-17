@@ -82,6 +82,10 @@ export default function HeaderClient({
         className={`fixed top-0 right-0 z-30 w-40 h-auto transition-all duration-500 ease-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{
+          borderBottomLeftRadius: "40px",
+          overflow: "auto",
+        }}
       >
         {/* Glass Background */}
         <div className="absolute inset-0 bg-gradient-menu border-l border-white/20"></div>

@@ -107,7 +107,7 @@ export default function MultiTab() {
   return (
     <>
       <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[54px]">
-        <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold uppercase mb-[54px]">
+        <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold uppercase mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
           All-in-One AI Hub for Business Operations
         </h1>
 
@@ -168,7 +168,7 @@ export default function MultiTab() {
           </div>
 
           {/* Navigation Tabs - Bottom */}
-          <div className="rounded-xl py-5 overflow-x-auto scrollbar-hide mb-[20px] md:mb-0">
+          <div className="rounded-xl overflow-x-auto scrollbar-hide mb-[var(--inline-sp)] md:mb-0">
             <div className="flex flex-nowrap justify-start lg:justify-center">
               {tabs.map((tab) => (
                 <button

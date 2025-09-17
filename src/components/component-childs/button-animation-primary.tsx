@@ -20,7 +20,7 @@ export default function ButtonAnimationPrimary({
         onClick={onClick}
         disabled={disabled}
         className={`
-          flex h-fit gap-4 items-center px-5 py-2.5 text-white border border-white rounded-[38px] cursor-pointer bg-gradient-primary
+          h-auto gap-4 items-center px-5 py-2.5 text-white border border-white rounded-[38px] cursor-pointer bg-gradient-primary
           ${className}
         `}
         style={{
