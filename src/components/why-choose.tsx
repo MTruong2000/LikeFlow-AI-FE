@@ -23,8 +23,7 @@ export default function WhyChoose() {
 
   const slidesData: SlideData[] = [
     {
-      videoUrl:
-        "https://s.ladicdn.com/66e18ea9521baa00137153a3/pinterestdownloadercom-1753414473038108-20250725070700-xn7e8.mp4",
+      videoUrl: "/images/should-businesses.png",
       defaultExpanded: "scattered-tools",
       accordionData: [
         {
@@ -60,8 +59,7 @@ export default function WhyChoose() {
       ],
     },
     {
-      videoUrl:
-        "https://s.ladicdn.com/66e18ea9521baa00137153a3/st3-20250725075349-ro_9v.mp4",
+      videoUrl: "/images/should-online-entrepreneurs.png",
       defaultExpanded: "dont-know-start",
       accordionData: [
         {
@@ -97,8 +95,7 @@ export default function WhyChoose() {
       ],
     },
     {
-      videoUrl:
-        "https://s.ladicdn.com/66e18ea9521baa00137153a3/pinterestdownloadercom-1753329224843363-20250724035509-dyu29.mp4",
+      videoUrl: "/images/should-AI-beginners.png",
       defaultExpanded: "high-marketing-costs",
       accordionData: [
         {
@@ -172,21 +169,21 @@ export default function WhyChoose() {
       <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
         <div className="flex justify-between">
           <div className="uppercase flex-1">
-            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-xl sm:text-2xl font-bold">
+            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               Why
             </h2>
-            <h2 className="text-2xl sm:text-4xl font-bold">
+            <h2 className=" text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               should online entrepreneurs use
             </h2>
-            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-2xl sm:text-4xl font-bold">
+            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               bothive.ai
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end">
-            <h3 className="text-xl sm:text-2xl bg-gradient-primary bg-clip-text text-transparent">
+          <div className="flex-1 flex flex-col justify-center items-end gap-4">
+            <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>
-            <div className="flex gap">
+            <div className="flex">
               <ButtonAnimation />
               <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
             </div>
@@ -195,7 +192,7 @@ export default function WhyChoose() {
 
         <div className="md:flex mt-12 gap-12 ">
           {/* Left side - Video */}
-          <div className="flex justify-center mb-12 md:mb-0">
+          {/* <div className="flex justify-center mb-12 md:mb-0">
             <div className="w-[384px]">
               <video
                 key={currentSlide} // Force video reload when slide changes
@@ -209,6 +206,17 @@ export default function WhyChoose() {
                 <source src={currentSlideData.videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+            </div>
+          </div> */}
+
+          <div className="flex justify-center mb-12 md:mb-0">
+            <div className="w-[384px]">
+              <img
+                key={currentSlide}
+                src={currentSlideData.videoUrl}
+                alt="Slide Image"
+                className="w-full rounded-xl shadow-2xl"
+              />
             </div>
           </div>
 
@@ -225,7 +233,7 @@ export default function WhyChoose() {
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
                   >
-                    <span className="text-lg font-semibold text-gray-800">
+                    <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
                       {item.title}
                     </span>
                     {expandedItems.has(item.id) ? <p>-</p> : <p>+</p>}
@@ -240,7 +248,7 @@ export default function WhyChoose() {
                     }`}
                   >
                     <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
                         {item.content}
                       </p>
                     </div>

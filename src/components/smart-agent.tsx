@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Play } from "lucide-react";
+import ImageNext from "next/image";
 import ButtonAnimation from "@/components/component-childs/button-animation";
 
 interface FeatureItem {
@@ -66,12 +67,12 @@ export default function SmartAgent() {
       <div className="w-full mb-12 bg-primary text-white pt-8">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
               Build Smart AI Agents – Tailored for Your Workflow
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end">
-            <h3 className="text-2xl bg-gradient-primary bg-clip-text text-transparent">
+          <div className="flex-1 flex flex-col justify-center items-end gap-4">
+            <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>
             <div className="flex gap">
@@ -85,18 +86,18 @@ export default function SmartAgent() {
           <div className="container mx-auto py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Left Image */}
-              <div className="flex flex-col items-center  bg-gradient-primary rounded-[25px]">
-                <div className="relative p-[25px]">
-                  <img
-                    src="https://w.ladicdn.com/s600x600/66e18ea9521baa00137153a3/97e8ddb09a792b66c7853a9fa8c92806-20250728062457-wb7fs.jpg"
+              <div className="flex flex-col items-center bg-gradient-primary rounded-[25px]">
+                <div className="p-[25px]">
+                  <ImageNext
+                    src="/images/smart-ai-agent.png"
                     alt="AI Technology"
-                    className="w-full max-w-sm rounded-xl shadow-2xl border border-blue-500/20"
+                    width={300}
+                    height={300}
                   />
                 </div>
 
-                <h2 className="text-2xl lg:text-3xl font-bold text-white pb-[25px]">
-                  Automate <br />
-                  manual tasks
+                <h2 className="text-center text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-white pb-[25px]">
+                  Automate <br /> manual tasks
                 </h2>
               </div>
 
@@ -111,7 +112,7 @@ export default function SmartAgent() {
                       onClick={() => toggleExpand(feature.id)}
                       className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-400/50"
                     >
-                      <h3 className="text-lg font-semibold pr-4 text-black">
+                      <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold pr-4 text-black">
                         {feature.title}
                       </h3>
                       {expandedItems.has(feature.id) ? (
@@ -134,7 +135,7 @@ export default function SmartAgent() {
                     >
                       <div className="px-6 pb-4">
                         <div className="h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent mb-4"></div>
-                        <p className="text-gray-800 leading-relaxed">
+                        <p className="text-gray-800 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
                           {feature.description}
                         </p>
                       </div>
@@ -146,12 +147,12 @@ export default function SmartAgent() {
               {/* Right Image */}
               <div className="flex flex-col items-center space-y-6">
                 <div className="relative">
-                  <img
-                    src="https://w.ladicdn.com/s650x850/66e18ea9521baa00137153a3/b33f4ced03729ba3296f722ffa8b1e28-20250725080033-ugoga.jpg"
-                    alt="AI Future Technology"
-                    className="w-full max-w-sm rounded-xl shadow-2xl border border-purple-500/20"
+                  <ImageNext
+                    src="/images/smart-ai-agent-compare.png"
+                    alt="AI Technology"
+                    width={379}
+                    height={560}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent rounded-xl"></div>
                 </div>
               </div>
             </div>

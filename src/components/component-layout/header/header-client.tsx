@@ -17,7 +17,7 @@ export default function HeaderClient({
           <LogoLikeFlow />
         </div>
 
-        <div className="hidden lg:flex xl:gap-15 justify-between items-center uppercase font-bold">
+        <div className="hidden lg:flex xl:gap-15 gap-12 justify-between items-center uppercase font-bold">
           <Navigation />
         </div>
 
