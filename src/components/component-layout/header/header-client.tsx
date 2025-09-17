@@ -26,7 +26,7 @@ export default function HeaderClient({
             <HeaderProfile />
           ) : (
             <div
-              className="h-fit flex gap-4 items-center px-5 py-2.5 border border-white rounded-[38px] cursor-pointer"
+              className="h-fit hidden md:flex gap-4 items-center px-5 py-2.5 border border-white rounded-[38px] cursor-pointer"
               onClick={() => scrollToSection("pricing")}
             >
               <p className="text-lg">Get Started Free</p>

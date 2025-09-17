@@ -1,5 +1,5 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import React from "react";
+import { Star } from "lucide-react";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -7,36 +7,40 @@ const TestimonialsSection = () => {
       id: 1,
       name: "MR. ALEX TRAN",
       title: "CEO Ecomstone",
-      avatar: "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
-      quote: "We've tried many AI tools, but Bothive's Vietnamese LLM capabilities are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
-      rating: 5
+      avatar:
+        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+      quote:
+        "We've tried many AI tools, but Bothive's Vietnamese LLM capabilities are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
+      rating: 5,
     },
     {
       id: 2,
       name: "MS. HA ANH",
       title: "Entrepreneur",
-      avatar: "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
-      quote: "It runs smoothly. The Vietnamese content quality is top-notch. We rate it 10/10 – reduced cost, better output.",
-      rating: 4
+      avatar:
+        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+      quote:
+        "It runs smoothly. The Vietnamese content quality is top-notch. We rate it 10/10 – reduced cost, better output.",
+      rating: 4,
     },
     {
       id: 3,
       name: "MR. TUAN KAYO",
       title: "Amazon Seller",
-      avatar: "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
-      quote: "Bothive lets content creators focus on quality without needing deep marketing knowledge. Fast, easy, and professional.",
-      rating: 5
-    }
+      avatar:
+        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+      quote:
+        "Bothive lets content creators focus on quality without needing deep marketing knowledge. Fast, easy, and professional.",
+      rating: 5,
+    },
   ];
 
-  const renderStars = (rating:number) => {
+  const renderStars = (rating: number) => {
     return [...Array(5)].map((_, index) => (
       <Star
         key={index}
         className={`w-4 h-4 ${
-          index < rating 
-            ? 'text-yellow-400 fill-yellow-400' 
-            : 'text-gray-300'
+          index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
         }`}
       />
     ));
@@ -44,31 +48,39 @@ const TestimonialsSection = () => {
 
   return (
     <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-      <div className='text-center mb-12'>
-        <h2 className='text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4'>HOW <span className='bg-gradient-primary bg-clip-text text-transparent'>LIKEFLOW</span> BOOSTS BUSINESS PERFORMANCE</h2>
-        <p className='text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]'>LikeFlow empowers businesses to improve sales, streamline operations, and boost team collaboration</p>
+      <div className="text-center mb-12">
+        <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4">
+          HOW{" "}
+          <span className="bg-gradient-primary bg-clip-text text-transparent">
+            LIKEFLOW
+          </span>{" "}
+          BOOSTS BUSINESS PERFORMANCE
+        </h2>
+        <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+          LikeFlow empowers businesses to improve sales, streamline operations,
+          and boost team collaboration
+        </p>
       </div>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile: scroll ngang | Desktop: grid */}
+        <div className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-x-0 md:overflow-visible">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 relative border border-gray-100"
+              className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 relative border border-gray-100 min-w-[80%] sm:min-w-[60%] md:min-w-0 snap-center"
             >
-              {/* Avatar với khung tròn vàng */}
+              {/* Avatar */}
               <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <div className="w-20 h-20 rounded-full p-1">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
+                <div className="w-20 h-20 rounded-full overflow-hidden">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
-              {/* Quote Text */}
+              {/* Quote */}
               <div className="text-center mb-8">
                 <p className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] leading-relaxed font-medium">
                   {testimonial.quote}
@@ -85,7 +97,7 @@ const TestimonialsSection = () => {
                 </p>
               </div>
 
-              {/* Rating Stars */}
+              {/* Stars */}
               <div className="flex justify-center space-x-1">
                 {renderStars(testimonial.rating)}
               </div>

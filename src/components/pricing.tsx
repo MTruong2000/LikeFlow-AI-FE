@@ -227,9 +227,9 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 pb-4">
           {/* Free Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
                 Free
@@ -378,7 +378,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Starter Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
                 Starter
@@ -409,7 +409,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
             {checkLogin ? (
               <button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
                 onClick={() => {
                   handleCheckout(currentData.starter.planId);
                 }}
@@ -581,7 +581,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Grow Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <span className="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
                 <span>Most Popular</span>
@@ -618,7 +618,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
             {checkLogin ? (
               <button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
                 onClick={() => handleCheckout(currentData.grow.planId)}
               >
                 Buy Now

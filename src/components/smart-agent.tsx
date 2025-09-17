@@ -67,11 +67,11 @@ export default function SmartAgent() {
       <div className="w-full mb-12 bg-primary text-white pt-8">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Build Smart AI Agents – Tailored for Your Workflow
+            <h2 className="text-right md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
+              Build Smart AI Agents <br/> – Tailored for Your Workflow
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end gap-4">
+          <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
             <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>
@@ -86,7 +86,7 @@ export default function SmartAgent() {
           <div className="container mx-auto py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Left Image */}
-              <div className="flex flex-col items-center bg-gradient-primary rounded-[25px]">
+              <div className="hidden md:flex flex-col items-center bg-gradient-primary rounded-[25px]">
                 <div className="p-[25px]">
                   <ImageNext
                     src="/images/smart-ai-agent.png"
@@ -99,6 +99,17 @@ export default function SmartAgent() {
                 <h2 className="text-center text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-white pb-[25px]">
                   Automate <br /> manual tasks
                 </h2>
+              </div>
+
+              <div className="flex md:hidden flex-col items-center rounded-[25px]">
+                <div className="p-[25px]">
+                  <ImageNext
+                    src="/images/smart-ai-agent.png"
+                    alt="AI Technology"
+                    width={400}
+                    height={300}
+                  />
+                </div>
               </div>
 
               {/* Center - Expandable List */}
@@ -145,7 +156,7 @@ export default function SmartAgent() {
               </div>
 
               {/* Right Image */}
-              <div className="flex flex-col items-center space-y-6">
+              <div className="hidden md:flex flex-col items-center space-y-6">
                 <div className="relative">
                   <ImageNext
                     src="/images/smart-ai-agent-compare.png"
