@@ -107,7 +107,7 @@ export default function ToolOverview() {
                 />
                 <div className="w-full h-full absolute top-0 left-0 p-4 flex items-center justify-center">
                   <div className="bg-white w-full h-full rounded-xl shadow-lg p-2 flex flex-col justify-between">
-                    <div className="w-full flex justify-center mb-4">
+                    <div className="w-full flex justify-center mt-4">
                       <ImageNext
                         src={tool.icon}
                         alt="icon"
@@ -116,7 +116,7 @@ export default function ToolOverview() {
                         className="w-14 h-14"
                       />
                     </div>
-                    <div className="text-center">
+                    <div className="text-center mb-2">
                       <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-bold">
                         {tool.title}
                       </h3>
@@ -146,7 +146,7 @@ export default function ToolOverview() {
                 />
                 <div className="w-full h-full absolute top-0 left-0 p-4 flex items-center justify-center">
                   <div className="bg-white w-full h-full rounded-xl shadow-lg p-2 flex flex-col justify-between">
-                    <div className="w-full flex justify-center mb-4">
+                    <div className="w-full flex justify-center mt-4">
                       <ImageNext
                         src={tool.icon}
                         alt="icon"
@@ -155,7 +155,7 @@ export default function ToolOverview() {
                         className="w-14 h-14"
                       />
                     </div>
-                    <div className="text-center">
+                    <div className="text-center mb-2">
                       <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-bold">
                         {tool.title}
                       </h3>
