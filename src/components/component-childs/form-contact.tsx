@@ -40,15 +40,15 @@ export default function FormContact() {
   return (
     <div className="w-full lg:w-[1200px] flex gap-8 flex-col mx-auto mb-[54px]">
       <div className="text-center">
-        <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold text-gray-900 mb-2">
+        <h1 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-gray-900 mb-2">
           START YOUR AI JOURNEY
         </h1>
-        <p className="text-gray-600 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)]">
+        <p className="text-gray-600 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
           Trusted by 20,000+ customers worldwide
         </p>
       </div>
 
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-8 items-center mx-4 md:mx-0">
         {/* Left side - Form */}
         <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-md mx-auto w-full flex-1">
           <div className="space-y-4">

@@ -38,6 +38,12 @@ body {
   backdrop-filter: blur(40px);  
 }
 
+.bg-gradient-menu {
+  background-image: linear-gradient(to right, #FEF8FF36, #FEF8FF00);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);  
+}
+
 /* Button primary */
 .primary-button-custom {
   position: relative;

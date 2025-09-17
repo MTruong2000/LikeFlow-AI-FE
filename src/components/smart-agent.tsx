@@ -36,7 +36,7 @@ export default function SmartAgent() {
       id: "plugin-integration",
       title: "Seamless Plugin Integration for Connectivity",
       description:
-        "Expand your Agents’ capabilities with intelligent plugins — from syncing schedules on Google Calendar to integrating directly with your internal systems.",
+        "Expand your Agents capabilities with intelligent plugins — from syncing schedules on Google Calendar to integrating directly with your internal systems.",
     },
     {
       id: "assign-model",

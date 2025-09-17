@@ -108,7 +108,7 @@ export default function MultiTab() {
     <>
       <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[54px]">
         <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold uppercase mb-[54px]">
-          All-in-One AI Workspace for Business Operations
+          All-in-One AI Hub for Business Operations
         </h1>
 
         <div className="flex flex-col-reverse md:flex-col">
