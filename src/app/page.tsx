@@ -8,6 +8,7 @@ import ToolOverview from "@/components/tools-overview";
 import MultipleAdvanced from "@/components/multiple-advanced";
 import TestimonialsSection from "@/components/testimonials-section";
 import Pricing from "@/components/pricing";
+import FormContact from "@/components/component-childs/form-contact";
 import isLoggedIn from "@/funcs/isLonggedIn";
 
 export default async function Home() {
@@ -33,6 +34,7 @@ export default async function Home() {
       <div id="pricing">
         <Pricing checkLogin={checkLogin} />
       </div>
+      <FormContact />
     </div>
   );
 }

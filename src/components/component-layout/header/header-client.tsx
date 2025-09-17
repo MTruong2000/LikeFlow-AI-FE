@@ -1,5 +1,5 @@
 "use client";
-import Language from "@/components/component-childs/language";
+// import Language from "@/components/component-childs/language";
 import HeaderProfile from "@/components/component-layout/header/header-profile";
 import Navigation from "@/components/component-childs/navigation";
 import LogoLikeFlow from "@/components/component-childs/logo-likeflow";
@@ -26,13 +26,13 @@ export default function HeaderClient({
             <HeaderProfile />
           ) : (
             <div
-              className="h-fit hidden md:flex gap-4 items-center px-5 py-2.5 border border-white rounded-[38px] cursor-pointer"
+              className="h-fit flex gap-4 items-center px-5 py-2.5 border border-white rounded-[38px] cursor-pointer bg-gradient-primary"
               onClick={() => scrollToSection("pricing")}
             >
-              <p className="text-lg">Get Started Free</p>
+              <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">Get Started Free</p>
             </div>
           )}
-          <Language />
+          {/* <Language /> */}
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const TestimonialsSection = () => {
       avatar:
         "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
       quote:
-        "We've tried many AI tools, but Bothive's Vietnamese LLM capabilities are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
+        "We’ve tried multiple AI tools, but Likeflow’s capabilities for local language content are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
       rating: 5,
     },
     {
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
       avatar:
         "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
       quote:
-        "It runs smoothly. The Vietnamese content quality is top-notch. We rate it 10/10 – reduced cost, better output.",
+        "The platform runs seamlessly, delivering high-quality content in multiple languages. We rate it 10/10 — reduced costs, improved results.",
       rating: 4,
     },
     {
@@ -30,7 +30,7 @@ const TestimonialsSection = () => {
       avatar:
         "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
       quote:
-        "Bothive lets content creators focus on quality without needing deep marketing knowledge. Fast, easy, and professional.",
+        "Likeflow empowers content creators to focus on quality without deep marketing expertise. It’s fast, intuitive, and professional.",
       rating: 5,
     },
   ];
@@ -54,11 +54,12 @@ const TestimonialsSection = () => {
           <span className="bg-gradient-primary bg-clip-text text-transparent">
             LIKEFLOW
           </span>{" "}
-          BOOSTS BUSINESS PERFORMANCE
+          AI DRIVES BUSINESS GROWTH
         </h2>
         <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-          LikeFlow empowers businesses to improve sales, streamline operations,
-          and boost team collaboration
+          Likeflow AI helps businesses increase sales, optimize operations, and
+          enhance team collaboration. Discover real stories and insights
+          directly from our customers.
         </p>
       </div>
       <div className="max-w-7xl mx-auto">

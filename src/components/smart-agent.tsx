@@ -16,39 +16,39 @@ export default function SmartAgent() {
   const features: FeatureItem[] = [
     {
       id: "specialized-agents",
-      title: "50+ Specialized AI Agents Ready to Go",
+      title: "50+ Ready-to-Use Specialized AI Agents",
       description:
-        "Experience powerful, task-specific AI Agents pre-trained and ready to use — complete with essential plugins like Amazon KDP assistant, English tutor, competitor ad analyzer, and more. Or create your own custom Agents to fit your exact needs.",
+        "Supercharge your AI Agents with vector embeddings. Effortlessly pull data from Google Drive or upload widely used file types such as PDF, DOCX, and more for smarter, context-aware performance.",
     },
     {
       id: "external-data",
       title: "Train with External Data Sources",
       description:
-        "Train your AI Agents using vector embeddings. Seamlessly connect data from Google Drive or upload common file types like PDF, DOCX, and more.",
+        "Integrate external data sources to give your AI Agents deeper context. Upload files or link cloud storage for seamless training.",
     },
     {
       id: "real-time-api",
-      title: "Real-Time Data Access via API",
+      title: "Real-Time Access Through Dynamic APIs",
       description:
-        "Allow AI Agents to access your live business data using dynamic context APIs — enabling real-time responses and smarter decisions.",
+        "Give your Agents instant access to live business data via dynamic APIs — enabling real-time analysis, faster answers, and smarter decision-making.",
     },
     {
       id: "plugin-integration",
-      title: "Plugin Integration for System Connectivity",
+      title: "Seamless Plugin Integration for Connectivity",
       description:
-        "Extend your Agents with intelligent plugins — from syncing with Google Calendar to interacting with your internal business systems.",
+        "Expand your Agents’ capabilities with intelligent plugins — from syncing schedules on Google Calendar to integrating directly with your internal systems.",
     },
     {
       id: "assign-model",
-      title: "Assign Any AI Model to Each Agent",
+      title: "Assign Any AI Model to Any Agent",
       description:
-        "Match each Agent with a specific AI model, complete with custom instructions and prompts — ensuring highly specialized task handling.",
+        "Choose the most suitable AI model for each Agent and fine-tune it with custom prompts and instructions — ensuring specialized accuracy for every task.",
     },
     {
       id: "prompt-chaining",
-      title: "Prompt Chaining for Multi-Step Automation",
+      title: "Multi-Step Automation with Prompt Chaining",
       description:
-        "Connect multiple AI Agents in a dynamic workflow using multi-step prompt chains. Each Agent can run on a different model, with unique parameters, dynamic context, system prompts, and plugins — perfect for automating complex or repetitive tasks.",
+        "Orchestrate complex workflows by linking multiple Agents with prompt chaining. Each Agent can operate with its own model, parameters, dynamic context, and system prompts — automating even the most complicated processes.",
     },
   ];
 
@@ -68,7 +68,7 @@ export default function SmartAgent() {
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
             <h2 className="text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Build Smart AI Agents <br /> – Tailored for Your Workflow
+              Smart AI Agents – Built to Match Your Unique Workflow
             </h2>
           </div>
           <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
@@ -105,35 +105,39 @@ export default function SmartAgent() {
               <div className="space-y-4">
                 {features.map((feature) => (
                   <div
-                  key={feature.id}
-                  className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
-                >
-                  {/* Header Button */}
-                  <button
-                    onClick={() => toggleExpand(feature.id)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                    key={feature.id}
+                    className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
                   >
-                    <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
-                      {feature.title}
-                    </span>
-                    {expandedItems.has(feature.id) ? <p className="text-black">-</p> : <p className="text-black">+</p>}
-                  </button>
+                    {/* Header Button */}
+                    <button
+                      onClick={() => toggleExpand(feature.id)}
+                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                    >
+                      <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
+                        {feature.title}
+                      </span>
+                      {expandedItems.has(feature.id) ? (
+                        <p className="text-black">-</p>
+                      ) : (
+                        <p className="text-black">+</p>
+                      )}
+                    </button>
 
-                  {/* Expandable Content */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      expandedItems.has(feature.id)
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
-                      <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-                        {feature.description}
-                      </p>
+                    {/* Expandable Content */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        expandedItems.has(feature.id)
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
+                        <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
                   // <div
                   //   key={feature.id}
                   //   className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden transition-all duration-300 hover:bg-white/15"

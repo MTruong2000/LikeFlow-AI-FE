@@ -111,9 +111,9 @@ export default function MultiTab() {
           All-in-One AI Workspace for Business Operations
         </h1>
 
-        <div className="">
+        <div className="flex flex-col-reverse md:flex-col">
           {/* Main Content Area */}
-          <div className="mb-[54px]">
+          <div className="mb-0 md:mb-[54px]">
             <div className="rounded-2xl p-5 border border-[var(--color-border)]">
               {currentTab && (
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -168,7 +168,7 @@ export default function MultiTab() {
           </div>
 
           {/* Navigation Tabs - Bottom */}
-          <div className="rounded-xl py-5 overflow-x-auto scrollbar-hide">
+          <div className="rounded-xl py-5 overflow-x-auto scrollbar-hide mb-[20px] md:mb-0">
             <div className="flex flex-nowrap justify-start lg:justify-center">
               {tabs.map((tab) => (
                 <button
@@ -177,7 +177,7 @@ export default function MultiTab() {
                   className={`px-6 py-3 rounded-lg font-medium whitespace-nowrap transition-all duration-300 transform hover:scale-105 ${
                     activeTab === tab.id
                       ? "bg-gradient-primary text-white shadow-lg"
-                      : "text-gray-600 hover:text-[var(--color-primary)] hover:bg-purple-50 "
+                      : "text-gray-600 hover:text-[var(--color-primary)]"
                   }`}
                 >
                   {tab.name}

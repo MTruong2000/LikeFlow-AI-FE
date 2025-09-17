@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ButtonShowForm from "@/components/component-childs/button-show-form";
 
@@ -62,10 +62,22 @@ const aiModels = [
 ];
 
 export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
+  const tabListRef = useRef<HTMLDivElement>(null);
   const [selectedPlan, setSelectedPlan] = useState<PlanType>("1month");
   const [planData, setPlanData] = useState<Record<PlanType, PlanData> | null>(
     null
   );
+
+  const handleSelectTab =
+    (key: PlanType) => (e: React.MouseEvent<HTMLButtonElement>) => {
+      setSelectedPlan(key);
+      // để mượt, và không nhảy lung tung
+      e.currentTarget.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    };
 
   useEffect(() => {
     const fetchPlans = async () => {
@@ -209,12 +221,16 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
       <div className="mx-auto rounded-2xl">
         {/* Plan Selection Tabs */}
         <div className="flex justify-center mb-8">
-          <div className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto">
+          <div
+            ref={tabListRef}
+            className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto 
+             scroll-smooth snap-x snap-mandatory overscroll-x-contain"
+          >
             {planTabs.map((tab) => (
               <button
                 key={tab.key}
-                onClick={() => setSelectedPlan(tab.key)}
-                className={`w-[150px] px-6 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
+                onClick={handleSelectTab(tab.key)}
+                className={`snap-center w-[150px] px-6 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
                   selectedPlan === tab.key
                     ? "bg-gradient-primary text-white"
                     : "text-gray-600 hover:text-gray-900"
@@ -227,13 +243,14 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </div>
 
         {/* Pricing Cards */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 py-4">
+        <div className="flex items-stretch md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 py-4 md:items-stretch">
           {/* Free Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
-            <div className="text-center mb-6">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto flex flex-col h-full min-h-[850px] md:min-h-0">
+            <div className="text-center mb-0">
               <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
                 Free
               </h3>
+
               <div className="flex items-baseline justify-center">
                 <span className="text-4xl font-bold">
                   {currentData.free.price}
@@ -242,22 +259,37 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   ${currentData.free.period}
                 </span>
               </div>
+
+              {/* Hàng cố định 24px cho original + badge (placeholder ẩn) */}
+              <div className="h-6 mt-2 flex items-center justify-center space-x-2">
+                <span className="text-gray-400 line-through text-sm opacity-0">
+                  0.00 $
+                </span>
+                <span className="px-2 py-1 rounded-full text-xs font-medium opacity-0">
+                  placeholder
+                </span>
+              </div>
             </div>
 
-            <hr className="my-6 border-gray-200" />
-            {checkLogin ? (
-              <button
-                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
-                onClick={() => {
-                  window.location.href = "https://affitfy.lovinbot.ai/overview";
-                }}
-              >
-                Buy Now
-              </button>
-            ) : (
-              <ButtonShowForm />
-            )}
+            <hr className="my-3 border-gray-200" />
 
+            <div className="">
+              {checkLogin ? (
+                <button
+                  className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                  onClick={() => {
+                    window.location.href =
+                      "https://affitfy.lovinbot.ai/overview";
+                  }}
+                >
+                  Buy Now
+                </button>
+              ) : (
+                <ButtonShowForm />
+              )}
+            </div>
+
+            {/* Nội dung features */}
             <div className="space-y-4">
               <p className="font-semibold text-gray-900">Free plan includes:</p>
 
@@ -378,11 +410,12 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Starter Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
-            <div className="text-center mb-6">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto flex flex-col h-full min-h-[850px] md:min-h-0">
+            <div className="text-center mb-0">
               <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
                 Starter
               </h3>
+
               <div className="flex items-baseline justify-center">
                 <span className="text-4xl font-bold">
                   {currentData.starter.price}
@@ -391,35 +424,56 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   ${currentData.starter.period}
                 </span>
               </div>
-              {currentData.starter.originalPrice && (
-                <div className="flex items-center justify-center mt-2 space-x-2">
-                  <span className="text-gray-400 line-through text-sm">
-                    {currentData.starter.originalPrice} $
-                  </span>
-                  {currentData.starter.discount && (
-                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
-                      {currentData.starter.discount}
+
+              {/* Hàng cố định 24px cho original + badge */}
+              <div className="h-6 mt-2 flex items-center justify-center space-x-2">
+                {currentData.starter.originalPrice ? (
+                  <>
+                    <span className="text-gray-400 line-through text-sm">
+                      {currentData.starter.originalPrice} $
                     </span>
-                  )}
-                </div>
+                    {currentData.starter.discount ? (
+                      <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
+                        {currentData.starter.discount}
+                      </span>
+                    ) : (
+                      <span className="px-2 py-1 rounded-full text-xs font-medium opacity-0">
+                        placeholder
+                      </span>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <span className="text-gray-400 line-through text-sm opacity-0">
+                      0.00 $
+                    </span>
+                    <span className="px-2 py-1 rounded-full text-xs font-medium opacity-0">
+                      placeholder
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <hr className="my-3 border-gray-200" />
+
+            {/* Nút */}
+            <div className="mb-6">
+              {checkLogin ? (
+                <button
+                  className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                  onClick={() => {
+                    handleCheckout(currentData.starter.planId);
+                  }}
+                >
+                  Buy Now
+                </button>
+              ) : (
+                <ButtonShowForm />
               )}
             </div>
 
-            <hr className="my-6 border-gray-200" />
-
-            {checkLogin ? (
-              <button
-                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
-                onClick={() => {
-                  handleCheckout(currentData.starter.planId);
-                }}
-              >
-                Buy Now
-              </button>
-            ) : (
-              <ButtonShowForm />
-            )}
-
+            {/* Features (chiếm phần còn lại) */}
             <div className="space-y-4">
               <p className="font-semibold text-gray-900">
                 Includes everything in Free, plus:
@@ -485,28 +539,9 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   />
                 </svg>
                 <span className="text-sm text-gray-700">
-                  Create up to 50 Bot AI
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-5 h-5 text-[var(--color-sub-primary)]"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-sm text-gray-700">
-                  {selectedPlan === "3months"
-                    ? "Generate 3 voice clones"
-                    : selectedPlan === "6months"
-                    ? "Generate 3 voice clones"
-                    : selectedPlan === "yearly"
+                  {selectedPlan === "3months" ||
+                  selectedPlan === "6months" ||
+                  selectedPlan === "yearly"
                     ? "Generate 3 voice clones"
                     : "Generate 1 voice clone"}
                 </span>
@@ -581,17 +616,18 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Grow Plan */}
-          <div className="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 relative w-[320px] shrink-0 md:w-auto flex flex-col h-full min-h-[850px] md:min-h-0">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <span className="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
                 <span>Most Popular</span>
               </span>
             </div>
 
-            <div className="text-center mb-6 mt-4">
+            <div className="text-center mb-0">
               <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-2">
                 Grow
               </h3>
+
               <div className="flex items-baseline justify-center">
                 <span className="text-4xl font-bold">
                   {currentData.grow.price}
@@ -600,33 +636,54 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                   ${currentData.grow.period}
                 </span>
               </div>
-              {currentData.grow.originalPrice && (
-                <div className="flex items-center justify-center mt-2 space-x-2">
-                  <span className="text-gray-400 line-through text-sm">
-                    {currentData.grow.originalPrice} $
-                  </span>
-                  {currentData.grow.discount && (
-                    <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">
-                      {currentData.grow.discount}
+
+              {/* Hàng cố định 24px cho original + badge */}
+              <div className="h-6 mt-2 flex items-center justify-center space-x-2">
+                {currentData.grow.originalPrice ? (
+                  <>
+                    <span className="text-gray-400 line-through text-sm">
+                      {currentData.grow.originalPrice} $
                     </span>
-                  )}
-                </div>
+                    {currentData.grow.discount ? (
+                      <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">
+                        {currentData.grow.discount}
+                      </span>
+                    ) : (
+                      <span className="px-2 py-1 rounded-full text-xs font-medium opacity-0">
+                        placeholder
+                      </span>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <span className="text-gray-400 line-through text-sm opacity-0">
+                      0.00 $
+                    </span>
+                    <span className="px-2 py-1 rounded-full text-xs font-medium opacity-0">
+                      placeholder
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <hr className="my-3 border-gray-200" />
+
+            {/* Nút */}
+            <div className="mb-6">
+              {checkLogin ? (
+                <button
+                  className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                  onClick={() => handleCheckout(currentData.grow.planId)}
+                >
+                  Buy Now
+                </button>
+              ) : (
+                <ButtonShowForm />
               )}
             </div>
 
-            <hr className="my-6 border-gray-200" />
-
-            {checkLogin ? (
-              <button
-                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
-                onClick={() => handleCheckout(currentData.grow.planId)}
-              >
-                Buy Now
-              </button>
-            ) : (
-              <ButtonShowForm />
-            )}
-
+            {/* Features */}
             <div className="space-y-4">
               <p className="font-semibold text-gray-900">
                 Includes everything in Starter, plus:
@@ -704,7 +761,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -721,7 +778,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -738,7 +795,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z"
                     clipRule="evenodd"
                   />
                 </svg>
