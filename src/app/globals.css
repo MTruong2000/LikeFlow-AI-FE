@@ -44,36 +44,6 @@ body {
   backdrop-filter: blur(40px);  
 }
 
-/* Button primary */
-.primary-button-custom {
-  position: relative;
-  background: linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%);
-  border: none;
-  border-radius: 50px;
-  padding: 10px 28px;
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-  overflow: hidden;
-  text-align: center;
-}
-
-.primary-button-custom:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
-}
-
-.primary-button-custom:hover::before {
-  left: 100%;
-}
-
 @media screen and (min-width: 300px) and (max-width: 574px) {
 }
 
