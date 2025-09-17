@@ -67,7 +67,7 @@ export default function SmartAgent() {
       <div className="w-full mb-12 bg-primary text-white pt-8">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-right md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
               Build Smart AI Agents <br /> – Tailored for Your Workflow
             </h2>
           </div>
@@ -101,57 +101,76 @@ export default function SmartAgent() {
                 </h2>
               </div>
 
-              {/* <div className="flex md:hidden flex-col items-center rounded-[25px]">
-                <div className="p-[25px]">
-                  <ImageNext
-                    src="/images/smart-ai-agent.png"
-                    alt="AI Technology"
-                    width={400}
-                    height={300}
-                  />
-                </div>
-              </div> */}
-
               {/* Center - Expandable List */}
               <div className="space-y-4">
                 {features.map((feature) => (
                   <div
-                    key={feature.id}
-                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden transition-all duration-300 hover:bg-white/15"
+                  key={feature.id}
+                  className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
+                >
+                  {/* Header Button */}
+                  <button
+                    onClick={() => toggleExpand(feature.id)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
                   >
-                    <button
-                      onClick={() => toggleExpand(feature.id)}
-                      className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-400/50"
-                    >
-                      <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold pr-4 text-black">
-                        {feature.title}
-                      </h3>
-                      {expandedItems.has(feature.id) ? (
-                        <span className="text-blue-400 text-2xl font-bold">
-                          −
-                        </span>
-                      ) : (
-                        <span className="text-blue-400 text-2xl font-bold">
-                          +
-                        </span>
-                      )}
-                    </button>
+                    <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
+                      {feature.title}
+                    </span>
+                    {expandedItems.has(feature.id) ? <p className="text-black">-</p> : <p className="text-black">+</p>}
+                  </button>
 
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        expandedItems.has(feature.id)
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="px-6 pb-4">
-                        <div className="h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent mb-4"></div>
-                        <p className="text-gray-800 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-                          {feature.description}
-                        </p>
-                      </div>
+                  {/* Expandable Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      expandedItems.has(feature.id)
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
+                      <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
+                </div>
+                  // <div
+                  //   key={feature.id}
+                  //   className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden transition-all duration-300 hover:bg-white/15"
+                  // >
+                  //   <button
+                  //     onClick={() => toggleExpand(feature.id)}
+                  //     className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-400/50"
+                  //   >
+                  //     <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold pr-4 text-black">
+                  //       {feature.title}
+                  //     </h3>
+                  //     {expandedItems.has(feature.id) ? (
+                  //       <span className="text-blue-400 text-2xl font-bold">
+                  //         −
+                  //       </span>
+                  //     ) : (
+                  //       <span className="text-blue-400 text-2xl font-bold">
+                  //         +
+                  //       </span>
+                  //     )}
+                  //   </button>
+
+                  //   <div
+                  //     className={`overflow-hidden transition-all duration-300 ${
+                  //       expandedItems.has(feature.id)
+                  //         ? "max-h-96 opacity-100"
+                  //         : "max-h-0 opacity-0"
+                  //     }`}
+                  //   >
+                  //     <div className="px-6 pb-4">
+                  //       <div className="h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent mb-4"></div>
+                  //       <p className="text-gray-800 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+                  //         {feature.description}
+                  //       </p>
+                  //     </div>
+                  //   </div>
+                  // </div>
                 ))}
               </div>
 

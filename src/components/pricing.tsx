@@ -206,7 +206,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </p>
       </div>
 
-      <div className="mx-auto p-6 rounded-2xl">
+      <div className="mx-auto rounded-2xl">
         {/* Plan Selection Tabs */}
         <div className="flex justify-center mb-8">
           <div className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto">
@@ -227,7 +227,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </div>
 
         {/* Pricing Cards */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 pb-4">
+        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 py-4">
           {/* Free Plan */}
           <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto">
             <div className="text-center mb-6">

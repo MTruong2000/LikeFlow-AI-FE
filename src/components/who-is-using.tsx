@@ -18,7 +18,7 @@ export default function WhoIsUsing() {
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
               <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">Online Entrepreneurs</h2>
-              <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+              <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">
                 Grow your business smarter likeflow helps you save time, cut
                 costs, and stay ahead — from affiliate marketing and eCommerce
                 to content creation.
@@ -35,7 +35,7 @@ export default function WhoIsUsing() {
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
               <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">Business Owners</h2>
-              <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+              <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">
                 Accelerate with personalized AI assistants. Streamline
                 marketing, operations, and customer care while making faster,
                 smarter decisions.
@@ -52,7 +52,7 @@ export default function WhoIsUsing() {
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
               <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">AI Beginners</h2>
-              <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+              <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">
                 No code, no complexity. Write, design, generate voices, or ask
                 anything — all in just a few clicks.
               </p>

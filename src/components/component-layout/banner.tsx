@@ -35,14 +35,16 @@ export default function Banner() {
       <div className="absolute inset-0 -z-0 bg-gradient-to-b from-[#0F535D] via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="w-full xl:w-[1200px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:px-0 sm:px-12 px-4">
-        <div className="w-full md:w-[728px] sm:w-[90%] xs:w-full text-center md:text-left mx-auto md:mx-0 mt-12">
-          <h1 className="text-white text-[42px] md:text-[56px] lg:text-[69px] font-extrabold">
-            {textBanner.title}
-          </h1>
-          <p className="text-white text-[18px] md:text-[21px] font-medium mt-6">
-            {textBanner.description}
-          </p>
+      <div className="w-full xl:w-[1200px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:px-0 sm:px-12 px-4 mt-12">
+        <div className="w-full md:w-[728px] sm:w-[90%] xs:w-full text-center md:text-left">
+          <div className="">
+            <h1 className="text-white text-[42px] md:text-[56px] lg:text-[69px] font-extrabold">
+              {textBanner.title}
+            </h1>
+            <p className="text-white text-[18px] md:text-[21px] font-medium mt-6">
+              {textBanner.description}
+            </p>
+          </div>
 
           <div className="mt-10 md:mt-12 flex gap-[20px] items-center justify-center md:justify-start">
             <ButtonBaner />
