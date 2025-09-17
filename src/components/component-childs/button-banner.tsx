@@ -4,16 +4,14 @@ import scrollToSection from "@/funcs/scrolltosection";
 
 export default function ButtonBaner() {
   return (
-    <>
-      <div className="w-fit px-[15px] py-[13px] rounded-[52px] bg-[#50A6B3]/[0.28] border border-white">
-        <div
-          className="w-fit flex gap-[13px] text-[26px] text-[#0F535D] font-semibold px-[26px] py-[13px] bg-white rounded-[31px] cursor-pointer"
-          onClick={() => scrollToSection("pricing")}
-        >
-          Get Started
-          <ArrowUpRight className="h-[26px] w-[26px]" />
-        </div>
+    <div className="w-fit px-3 py-2 rounded-full bg-[#50A6B3]/30 border border-white sm:px-4 sm:py-3">
+      <div
+        className="flex items-center gap-2 sm:gap-3 text-base sm:text-xl text-[#0F535D] font-semibold px-4 sm:px-6 py-2 sm:py-3 bg-white rounded-full cursor-pointer"
+        onClick={() => scrollToSection("pricing")}
+      >
+        Get Started
+        <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6" />
       </div>
-    </>
+    </div>
   );
 }

@@ -172,7 +172,7 @@ export default function WhyChoose() {
             <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               Why
             </h2>
-            <h2 className="w-[50%] md:w-full text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+            <h2 className="w-full text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               should online entrepreneurs use
             </h2>
             <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">

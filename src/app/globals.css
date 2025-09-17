@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1CF8C8;
+  --color-primary: #1cf8c8;
   --color-sub-primary: #117892;
   --bg-section: #f6f2fb;
   --color-title: black;
@@ -12,14 +12,14 @@
   --text-body-text-pc: 20px;
   --outline-pc: 54px;
   --inline-pc: 45px;
-  
-  --text-header-sp: 22px;
-  --text-title-sp: 16px;
-  --text-body-text-sp: 12px;
+
+  --text-header-sp: 32px;
+  --text-title-sp: 26px;
+  --text-body-text-sp: 20px;
   --outline-sp: 28px;
   --inline-sp: 23px;
 
-  --color-border: #1CF8C8;
+  --color-border: #1cf8c8;
 }
 
 body {
@@ -30,6 +30,13 @@ body {
 
 .bg-gradient-primary {
   background-image: linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%);
+}
+
+.bg-gradient-header {
+  background-image: linear-gradient(to right, #FEF8FF36, #FEF8FF00);
+  border-radius: 107px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);  
 }
 
 /* Button primary */
