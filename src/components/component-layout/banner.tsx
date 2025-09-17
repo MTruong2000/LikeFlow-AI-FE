@@ -48,9 +48,9 @@ export default function Banner() {
 
           <div className="mt-10 md:mt-12 flex gap-[20px] items-center justify-center md:justify-start">
             <ButtonBaner />
-            <div className="w-fit p-[2px] rounded-full bg-[#50A6B3]/30 border border-white">
-              <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full cursor-pointer">
-                <Play className="w-6 h-6 text-[#0F535D]" />
+            <div className="w-fit p-[2px] rounded-full bg-[#50A6B3]/30 border-[2px] border-white">
+              <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-primary rounded-full cursor-pointer">
+                <Play className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>
