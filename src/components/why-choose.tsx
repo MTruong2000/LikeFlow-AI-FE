@@ -172,14 +172,14 @@ export default function WhyChoose() {
             <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               Why
             </h2>
-            <h2 className=" text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+            <h2 className="w-[50%] md:w-full text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               should online entrepreneurs use
             </h2>
             <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
               bothive.ai
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end gap-4">
+          <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
             <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>

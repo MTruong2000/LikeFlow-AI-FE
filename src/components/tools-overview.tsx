@@ -83,11 +83,11 @@ export default function ToolOverview() {
       <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-center md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
               50+ SUPPORTED CUSTOMER APP X10 PERFORMANCE
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end gap-4">
+          <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
             <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>

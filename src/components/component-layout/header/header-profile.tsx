@@ -154,7 +154,9 @@ const HeaderProfile = () => {
                 {initials}
               </div>
               <div>
-                <p className="text-sm font-medium text-white">{userProfile.name}</p>
+                <p className="text-sm font-medium text-white">
+                  {userProfile.name}
+                </p>
                 <p className="text-xs text-slate-400">{userProfile.email}</p>
               </div>
             </div>
