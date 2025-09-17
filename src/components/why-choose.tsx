@@ -1,7 +1,7 @@
 "use client";
 import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Play, ArrowUpRight } from "lucide-react";
-import ButtonAnimation from "@/components/component-childs/button-animation";
+import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
 
 interface AccordionItem {
   id: string;
@@ -217,7 +217,16 @@ export default function WhyChoose() {
             What&apos;s Your Next Idea?
           </h3>
           <div className="flex">
-            <ButtonAnimation />
+            <ButtonAnimationPrimary
+              onClick={() => {
+                const pricingSection = document.getElementById("pricing");
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              Try for Free
+            </ButtonAnimationPrimary>
             <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
           </div>
         </div>

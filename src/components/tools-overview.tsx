@@ -1,7 +1,7 @@
 "use client";
 import { Play } from "lucide-react";
 import ImageNext from "next/image";
-import ButtonAnimation from "@/components/component-childs/button-animation";
+import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
 
 export default function ToolOverview() {
   const tools = [
@@ -16,61 +16,53 @@ export default function ToolOverview() {
     {
       id: 2,
       title: "AIDA Copy Formula",
-      description:
-        "Persuasive copy that attracts, interests, and converts.",
+      description: "Persuasive copy that attracts, interests, and converts.",
       icon: "/images/img-AIDA-Copy-Formula.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 3,
       title: "Video Intro Script",
-      description:
-        "Powerful intros with hooks, story, and clear CTAs.",
+      description: "Powerful intros with hooks, story, and clear CTAs.",
       icon: "/images/img-Video-Intro-Script.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 4,
       title: "SEO Title Generator",
-      description:
-        "10 SEO-friendly blog titles from your keywords.",
+      description: "10 SEO-friendly blog titles from your keywords.",
       icon: "/images/img-SEO-Title-Generator.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 5,
       title: "Marketing Strategy Templates",
-      description:
-        "Ready-made strategies aligned with business goals.",
+      description: "Ready-made strategies aligned with business goals.",
       icon: "/images/img-Marketing-Strategy-Templates.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 6,
       title: "Ideogram Image Prompt Generator",
-      description:
-        "Visual prompts created from your keywords.",
+      description: "Visual prompts created from your keywords.",
       icon: "/images/img-Ideogram-Prompt-Generator.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 7,
       title: "Content Calendar",
-      description:
-        "Plan and organize content with ease.",
+      description: "Plan and organize content with ease.",
       icon: "/images/img-Content-Calendar.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 8,
       title: "PAS Ad Writing",
-      description:
-        "Problem–Agitate–Solve ads that resonate and convert.",
+      description: "Problem–Agitate–Solve ads that resonate and convert.",
       icon: "/images/img-PAS-Ad-Writing.png",
       bgImage: "/images/img-bg-tool.png",
     },
   ];
-  
 
   return (
     <>
@@ -86,7 +78,16 @@ export default function ToolOverview() {
               What&apos;s Your Next Idea?
             </h3>
             <div className="flex gap">
-              <ButtonAnimation />
+              <ButtonAnimationPrimary
+                onClick={() => {
+                  const pricingSection = document.getElementById("pricing");
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Try for Free
+              </ButtonAnimationPrimary>
               <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
             </div>
           </div>

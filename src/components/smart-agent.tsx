@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 import ImageNext from "next/image";
-import ButtonAnimation from "@/components/component-childs/button-animation";
+import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
 
 interface FeatureItem {
   id: string;
@@ -76,7 +76,16 @@ export default function SmartAgent() {
               What&apos;s Your Next Idea?
             </h3>
             <div className="flex gap">
-              <ButtonAnimation />
+              <ButtonAnimationPrimary
+                onClick={() => {
+                  const pricingSection = document.getElementById("pricing");
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Try for Free
+              </ButtonAnimationPrimary>
               <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
             </div>
           </div>
