@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Play, ArrowUpRight } from "lucide-react";
 import ButtonAnimation from "@/components/component-childs/button-animation";
 
@@ -12,281 +12,306 @@ interface AccordionItem {
 interface SlideData {
   videoUrl: string;
   accordionData: AccordionItem[];
-  defaultExpanded: string;
 }
 
 export default function WhyChoose() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(
-    new Set(["scattered-tools"])
-  );
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [isChanging, setIsChanging] = useState(false); // thêm state để điều khiển fade
 
   const slidesData: SlideData[] = [
     {
       videoUrl: "/images/should-businesses.png",
-      defaultExpanded: "scattered-tools",
       accordionData: [
         {
-          id: "scattered-tools",
-          title: "Too many scattered tools",
+          id: "cut-marketing-costs",
+          title: "Cut marketing costs, boost results",
           content:
-            "All-in-one platform: write with Chat Pro, edit with AI Photo, create voice with AI Voice... One login, one credit system.",
+            "LikeFlow's Chat Pro integrates leading AI models (ChatGPT, Gemini, Claude...) to generate content, plan campaigns, and analyze performance — helping you reduce outsourcing costs and make faster, smarter decisions.",
         },
         {
-          id: "creativity-blocks",
-          title: "Creativity blocks, lack of ideas",
+          id: "automate-creative",
+          title: "Automate creative work, save 70–90% of time",
           content:
-            "Chat Pro integrates multiple AI brains (Claude, ChatGPT, Gemini...) — switch between AIs for diverse perspectives. No more being stuck with one style.",
+            "No need to rely solely on human teams. With tools like AI Photo, AI Voice, and Chat AI, you can create copy, images, and audio effortlessly — drastically reducing workload while keeping quality high.",
         },
         {
-          id: "disorganized-data",
-          title: "Disorganized data, hard to find info",
+          id: "unify-customer-data",
+          title: "Unify customer data, personalize at scale",
           content:
-            "Train AI Agents with your documents — ask questions, analyze, extract info like having a personal assistant.",
+            "Stop struggling with scattered data. LikeFlow's AI Agents remember customer history, analyze behaviors, and recommend personalized engagement programs — all managed seamlessly in one place.",
         },
         {
-          id: "repetitive-tasks",
-          title: "Wasting time on repetitive tasks",
+          id: "automate-workflows",
+          title: "Automate workflows, scale without extra staff",
           content:
-            "Use AI Workflow to automate tasks: input → process → output → email. Similar to Make.com, but easier to integrate with AI.",
+            "With AI Workflow, automate repetitive tasks such as sending emails, post-sale care, and report generation — allowing your business to scale without inflating headcount.",
         },
         {
-          id: "generic-ai",
-          title: "Generic AI can't handle specific expertise",
+          id: "faster-onboarding",
+          title: "Faster onboarding, consistent training",
           content:
-            "Create domain-specific AI Agents — upload your industry docs, fine-tune context, and make AI deeply understand your field.",
+            "Build internal AI Assistants to store SOPs, onboarding guides, and training flows — speeding up new hire integration while ensuring process consistency across the team.",
         },
       ],
     },
     {
       videoUrl: "/images/should-online-entrepreneurs.png",
-      defaultExpanded: "dont-know-start",
       accordionData: [
         {
-          id: "dont-know-start",
-          title: "Don't know where to start",
+          id: "one-unified-platform",
+          title: "One Unified Platform",
           content:
-            "Simple UI with step-by-step guides, use-case prompts, and examples. No experience needed — start right away.",
+            "Write with Chat Pro, design with AI Photo, generate voices with AI Voice — all under one login, one credit system. No more juggling multiple apps.",
         },
         {
-          id: "too-many-tools",
-          title: "Too many AI tools, unsure what fits",
+          id: "endless-inspiration",
+          title: "Endless Inspiration",
           content:
-            "Bothive bundles popular AI tools into one: writing, image, voice, research... One platform is enough.",
+            "Chat Pro connects with top AI models (Claude, ChatGPT, Gemini...) so you can switch perspectives instantly. Break free from one-dimensional thinking and spark fresh ideas.",
         },
         {
-          id: "afraid-complex",
-          title: "Afraid of complex tech",
+          id: "smart-knowledge-hub",
+          title: "Smart Knowledge Hub",
           content:
-            "Pre-made templates by use case (FB post, CV, image, news reader...). Just fill in the blanks — AI does the rest.",
+            "Train AI Agents with your own documents. Ask questions, extract insights, or run analysis — like having a personal research assistant at your fingertips.",
         },
         {
-          id: "no-time-learn",
-          title: "No time to learn each tool",
+          id: "full-workflow-automation",
+          title: "Full Workflow Automation",
           content:
-            "Unified interface across all tools (chat, image, voice, workflow). Learn once — use all.",
+            "Build flows with AI Workflow to handle tasks from input → processing → output → email. Built with AI at its core and far simpler to integrate.",
         },
         {
-          id: "worried-costs",
-          title: "Worried about costs",
+          id: "tailored-expertise",
+          title: "Tailored Expertise",
           content:
-            "One credit system for all tools. Easy to track spending, no surprise bills. Affordable and transparent.",
+            "Create domain-specific AI Agents by uploading your industry materials. Fine-tune context so AI understands your field — delivering precise, expert-level outputs.",
         },
       ],
     },
     {
       videoUrl: "/images/should-AI-beginners.png",
-      defaultExpanded: "high-marketing-costs",
       accordionData: [
         {
-          id: "high-marketing-costs",
-          title: "High marketing costs, low effectiveness",
+          id: "guided-simplicity",
+          title: "Guided Simplicity",
           content:
-            "Bothive integrates top AI models (ChatGPT, Gemini, Claude...) in Chat Pro to help you generate content, plan campaigns, and analyze performance — reducing outsourcing costs and accelerating decision-making.",
+            "A clean UI with step-by-step tutorials, prompts, and ready examples. No experience needed — just start.",
         },
         {
-          id: "lack-creative-staff",
-          title: "Lack of creative staff & over-reliance on humans",
+          id: "all-in-one",
+          title: "All in One, everything you need",
           content:
-            "Tools like AI Photo, AI Voice, and Chat AI automate writing, image creation, and audio generation — cutting 70-90% of creative workload while maintaining quality.",
+            "Writing, images, voice, research… Likeflow bundles the best AI tools into a single platform. One login, one solution.",
         },
         {
-          id: "fragmented-customer-data",
-          title: "Fragmented customer data, hard to track & care for",
+          id: "plug-and-go",
+          title: "Plug in and go, no editing needed",
           content:
-            "AI Agents remember customer data, analyze behavior, and suggest personalized care programs — all data managed centrally and seamlessly.",
+            "A unified interface across chat, image, voice, and workflow. Master it once, use it everywhere.",
         },
         {
-          id: "no-process-automation",
-          title: "No process automation system",
+          id: "transparent-pricing",
+          title: "Clear, Transparent Pricing",
           content:
-            "AI Workflow lets you build automated workflows (like Make.com): send emails, post-sale care, generate reports, etc. Scale up without increasing manpower.",
-        },
-        {
-          id: "slow-onboarding",
-          title: "Slow onboarding, inconsistent processes",
-          content:
-            "Create internal AI Assistants to store SOPs, onboarding docs, and training flows — train new hires faster and ensure consistency.",
+            "One credit system covers all tools. Easy tracking, no hidden fees, always affordable.",
         },
       ],
     },
   ];
 
+  const rightColRef = useRef<HTMLDivElement | null>(null);
+  const [rightColHeight, setRightColHeight] = useState<string | number>("auto");
+  const animatingHeightRef = useRef(false);
+
   const currentSlideData = slidesData[currentSlide];
 
   const toggleAccordion = (itemId: string) => {
     const newExpandedItems = new Set(expandedItems);
-    if (newExpandedItems.has(itemId)) {
-      newExpandedItems.delete(itemId);
-    } else {
-      newExpandedItems.add(itemId);
-    }
+    newExpandedItems.has(itemId)
+      ? newExpandedItems.delete(itemId)
+      : newExpandedItems.add(itemId);
     setExpandedItems(newExpandedItems);
   };
-
-  const nextSlide = () => {
-    const newSlide = (currentSlide + 1) % slidesData.length;
-    setCurrentSlide(newSlide);
-    // Reset expanded items to default for new slide
-    setExpandedItems(new Set([slidesData[newSlide].defaultExpanded]));
+  // Helper: đo chiều cao thực của nội dung (auto height)
+  const measureContentHeight = () => {
+    const el = rightColRef.current;
+    if (!el) return 0;
+    // Tạm set auto để lấy chiều cao thật
+    const prev = el.style.height;
+    el.style.height = "auto";
+    const h = el.getBoundingClientRect().height;
+    el.style.height = prev;
+    return h;
   };
 
-  const prevSlide = () => {
-    const newSlide =
-      currentSlide === 0 ? slidesData.length - 1 : currentSlide - 1;
-    setCurrentSlide(newSlide);
-    // Reset expanded items to default for new slide
-    setExpandedItems(new Set([slidesData[newSlide].defaultExpanded]));
+  // Animate khi slide/fold thay đổi (accordion mở/đóng)
+  useLayoutEffect(() => {
+    const el = rightColRef.current;
+    if (!el) return;
+
+    // Nếu đang trong quá trình đổi height, bỏ qua để tránh chồng animation
+    if (animatingHeightRef.current) return;
+
+    // 1) set current height (fixed)
+    const fromH = el.getBoundingClientRect().height;
+    setRightColHeight(fromH);
+
+    // 2) ở frame tiếp theo đo chiều cao mới và animate tới đó
+    requestAnimationFrame(() => {
+      const toH = measureContentHeight();
+      animatingHeightRef.current = true;
+      setRightColHeight(toH);
+
+      const onEnd = () => {
+        animatingHeightRef.current = false;
+        setRightColHeight("auto"); // trả về auto sau khi animate xong
+        el.removeEventListener("transitionend", onEnd);
+      };
+      el.addEventListener("transitionend", onEnd);
+    });
+  }, [currentSlide, expandedItems]);
+
+  const handleSlideChange = (newSlide: number) => {
+    // Fade/scale out ảnh & nội dung
+    setIsChanging(true);
+
+    // Đồng thời animate height dựa trên nội dung mới:
+    // Bước 1: khoá chiều cao hiện tại để tránh jump
+    const el = rightColRef.current;
+    if (el) setRightColHeight(el.getBoundingClientRect().height);
+
+    setTimeout(() => {
+      setCurrentSlide(newSlide);
+      setExpandedItems(new Set()); // đóng hết khi sang slide mới
+      setIsChanging(false);
+      // useLayoutEffect phía trên sẽ lo animate height sang chiều cao mới
+    }, 300);
   };
 
-  const goToSlide = (slideIndex: number) => {
-    setCurrentSlide(slideIndex);
-    setExpandedItems(new Set([slidesData[slideIndex].defaultExpanded]));
-  };
+  const nextSlide = () =>
+    handleSlideChange((currentSlide + 1) % slidesData.length);
+  const prevSlide = () =>
+    handleSlideChange(
+      currentSlide === 0 ? slidesData.length - 1 : currentSlide - 1
+    );
 
   return (
-    <>
-      <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-        <div className="flex justify-between">
-          <div className="uppercase flex-1">
-            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
-              Why
-            </h2>
-            <h2 className="w-full text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
-              should online entrepreneurs use
-            </h2>
-            <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
-              bothive.ai
-            </h2>
+    <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
+      <div className="flex justify-between">
+        <div className="uppercase flex-1">
+          <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+            Why
+          </h2>
+          <h2 className="w-full text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+            should online entrepreneurs use
+            {/* Bug */}
+          </h2>
+          <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+            LikeFlow
+          </h2>
+        </div>
+        <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
+          <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
+            What&apos;s Your Next Idea?
+          </h3>
+          <div className="flex">
+            <ButtonAnimation />
+            <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
           </div>
-          <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
-            <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
-              What&apos;s Your Next Idea?
-            </h3>
-            <div className="flex">
-              <ButtonAnimation />
-              <Play className="bg-gradient-primary rounded-[50%] text-white h-12 w-12 p-3 ml-8" />
-            </div>
+        </div>
+      </div>
+      <div className="md:flex mt-12 gap-12">
+        {/* Left: Image với fade/scale & min-h để ổn định khung */}
+        <div className="flex justify-center mb-12 md:mb-0">
+          <div className="w-[384px] min-h-[220px]">
+            <img
+              key={currentSlide}
+              src={currentSlideData.videoUrl}
+              alt="Slide Image"
+              className={`w-full rounded-xl shadow-2xl transition-all duration-300 transform ${
+                isChanging ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              }`}
+            />
           </div>
         </div>
 
-        <div className="md:flex mt-12 gap-12 ">
-          {/* Left side - Video */}
-          {/* <div className="flex justify-center mb-12 md:mb-0">
-            <div className="w-[384px]">
-              <video
-                key={currentSlide} // Force video reload when slide changes
-                className="w-full rounded-xl shadow-2xl"
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
+        {/* Right: Accordion wrapper animate height */}
+        <div
+          ref={rightColRef}
+          style={{
+            height: rightColHeight,
+            transition: "height 300ms ease",
+          }}
+          className={`flex-1`}
+        >
+          <div
+            className={`space-y-0 transition-all duration-300 transform ${
+              isChanging ? "opacity-0 scale-95" : "opacity-100 scale-100"
+            }`}
+          >
+            {currentSlideData.accordionData.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
               >
-                <source src={currentSlideData.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div> */}
-
-          <div className="flex justify-center mb-12 md:mb-0">
-            <div className="w-[384px]">
-              <img
-                key={currentSlide}
-                src={currentSlideData.videoUrl}
-                alt="Slide Image"
-                className="w-full rounded-xl shadow-2xl"
-              />
-            </div>
-          </div>
-
-          {/* Right side - Accordion */}
-          <div className="flex-1">
-            <div className="space-y-0">
-              {currentSlideData.accordionData.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
+                <button
+                  onClick={() => toggleAccordion(item.id)}
+                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
                 >
-                  {/* Header Button */}
-                  <button
-                    onClick={() => toggleAccordion(item.id)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
-                  >
-                    <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
-                      {item.title}
-                    </span>
-                    {expandedItems.has(item.id) ? <p>-</p> : <p>+</p>}
-                  </button>
+                  <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
+                    {item.title}
+                  </span>
+                  {expandedItems.has(item.id) ? <p>-</p> : <p>+</p>}
+                </button>
 
-                  {/* Expandable Content */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      expandedItems.has(item.id)
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
-                      <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-                        {item.content}
-                      </p>
-                    </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    expandedItems.has(item.id)
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
+                    <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+                      {item.content}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8">
-              <button
-                onClick={nextSlide}
-                className="bg-gradient-primary text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl"
-              >
-                Next
-                <ArrowUpRight className="h-5 w-5" />
-              </button>
-
-              <div className="flex gap-3">
-                <button
-                  aria-label="Prev"
-                  onClick={prevSlide}
-                  className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
-                >
-                  <ArrowLeft />
-                </button>
-                <button
-                  aria-label="Next"
-                  onClick={nextSlide}
-                  className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
-                >
-                  <ArrowRight />
-                </button>
               </div>
+            ))}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between mt-8">
+            <button
+              onClick={nextSlide}
+              className="bg-gradient-primary text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl"
+            >
+              Next
+              <ArrowUpRight className="h-5 w-5" />
+            </button>
+
+            <div className="flex gap-3">
+              <button
+                aria-label="Prev"
+                onClick={prevSlide}
+                className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
+              >
+                <ArrowLeft />
+              </button>
+              <button
+                aria-label="Next"
+                onClick={nextSlide}
+                className="p-2 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-medium transition-colors shadow border border-gray-200 flex items-center gap-1"
+              >
+                <ArrowRight />
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

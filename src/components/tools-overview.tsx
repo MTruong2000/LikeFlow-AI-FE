@@ -9,7 +9,7 @@ export default function ToolOverview() {
       id: 1,
       title: "Video Ad Script",
       description:
-        "Write engaging video ads — with storytelling, shot planning, CTAs, and pacing",
+        "Engaging ad scripts with storytelling, pacing, and strong CTAs.",
       icon: "/images/img-video.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -17,7 +17,7 @@ export default function ToolOverview() {
       id: 2,
       title: "AIDA Copy Formula",
       description:
-        "Create persuasive copy that attracts, interests, and converts",
+        "Persuasive copy that attracts, interests, and converts.",
       icon: "/images/img-AIDA-Copy-Formula.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -25,7 +25,7 @@ export default function ToolOverview() {
       id: 3,
       title: "Video Intro Script",
       description:
-        "Craft compelling intros with strong hooks, storytelling, and CTA",
+        "Powerful intros with hooks, story, and clear CTAs.",
       icon: "/images/img-Video-Intro-Script.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -33,7 +33,7 @@ export default function ToolOverview() {
       id: 4,
       title: "SEO Title Generator",
       description:
-        "Generate top 10 SEO-friendly blog titles based on your keywords",
+        "10 SEO-friendly blog titles from your keywords.",
       icon: "/images/img-SEO-Title-Generator.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -41,14 +41,15 @@ export default function ToolOverview() {
       id: 5,
       title: "Marketing Strategy Templates",
       description:
-        "Build effective marketing strategies based on business goals",
+        "Ready-made strategies aligned with business goals.",
       icon: "/images/img-Marketing-Strategy-Templates.png",
       bgImage: "/images/img-bg-tool.png",
     },
     {
       id: 6,
       title: "Ideogram Image Prompt Generator",
-      description: "Get visual prompts using keywords for ideogram-based tools",
+      description:
+        "Visual prompts created from your keywords.",
       icon: "/images/img-Ideogram-Prompt-Generator.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -56,7 +57,7 @@ export default function ToolOverview() {
       id: 7,
       title: "Content Calendar",
       description:
-        "Plan, organize, and manage your marketing content effectively",
+        "Plan and organize content with ease.",
       icon: "/images/img-Content-Calendar.png",
       bgImage: "/images/img-bg-tool.png",
     },
@@ -64,19 +65,20 @@ export default function ToolOverview() {
       id: 8,
       title: "PAS Ad Writing",
       description:
-        "Create ads with the PAS model: Problem, Agitate, Solve using keyword-based prompts",
+        "Problem–Agitate–Solve ads that resonate and convert.",
       icon: "/images/img-PAS-Ad-Writing.png",
       bgImage: "/images/img-bg-tool.png",
     },
   ];
+  
 
   return (
     <>
       <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
           <div className="flex-1">
-            <h2 className="text-center md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
-              50+ SUPPORTED CUSTOMER APP X10 PERFORMANCE
+            <h2 className="text-center md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent uppercase">
+              50+ Supported Customer App x10 Performance
             </h2>
           </div>
           <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
