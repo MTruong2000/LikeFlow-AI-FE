@@ -6,6 +6,7 @@ import HeaderProfile from "@/components/component-layout/header/header-profile";
 import Navigation from "@/components/component-childs/navigation";
 import LogoLikeFlow from "@/components/component-childs/logo-likeflow";
 import scrollToSection from "@/funcs/scrolltosection";
+import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
 
 export default function HeaderClient({
   isLonggedIn,
@@ -59,14 +60,9 @@ export default function HeaderClient({
           {isLonggedIn ? (
             <HeaderProfile />
           ) : (
-            <div
-              className="flex h-fit gap-4 items-center px-5 py-2.5 border border-white rounded-[38px] cursor-pointer bg-gradient-primary"
-              onClick={() => scrollToSection("pricing")}
-            >
-              <p className="text-sm md:text-[length:var(--text-body-text-pc)]">
-                Get Started
-              </p>
-            </div>
+            <ButtonAnimationPrimary onClick={() => scrollToSection("pricing")}>
+              Get Started
+            </ButtonAnimationPrimary>
           )}
         </div>
       </div>
