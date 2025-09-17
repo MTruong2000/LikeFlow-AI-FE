@@ -157,7 +157,7 @@ export default function MultiTab() {
                         alt={currentTab.title}
                         width={552}
                         height={463}
-                        className="w-[552px] h-[463px] rounded-[33px] object-cover"
+                        className="w-[552px] h-[320px] md:h-[463px] rounded-[33px] object-cover"
                         priority
                       />
                     </div>

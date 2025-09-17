@@ -12,7 +12,6 @@ export default function ToolOverview() {
         "Write engaging video ads — with storytelling, shot planning, CTAs, and pacing",
       icon: "/images/img-video.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-purple-300 to-purple-500",
     },
     {
       id: 2,
@@ -21,7 +20,6 @@ export default function ToolOverview() {
         "Create persuasive copy that attracts, interests, and converts",
       icon: "/images/img-AIDA-Copy-Formula.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-orange-300 to-orange-500",
     },
     {
       id: 3,
@@ -30,7 +28,6 @@ export default function ToolOverview() {
         "Craft compelling intros with strong hooks, storytelling, and CTA",
       icon: "/images/img-Video-Intro-Script.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-blue-300 to-blue-500",
     },
     {
       id: 4,
@@ -39,7 +36,6 @@ export default function ToolOverview() {
         "Generate top 10 SEO-friendly blog titles based on your keywords",
       icon: "/images/img-SEO-Title-Generator.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-pink-300 to-pink-500",
     },
     {
       id: 5,
@@ -48,7 +44,6 @@ export default function ToolOverview() {
         "Build effective marketing strategies based on business goals",
       icon: "/images/img-Marketing-Strategy-Templates.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-blue-200 to-blue-400",
     },
     {
       id: 6,
@@ -56,7 +51,6 @@ export default function ToolOverview() {
       description: "Get visual prompts using keywords for ideogram-based tools",
       icon: "/images/img-Ideogram-Prompt-Generator.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-indigo-300 to-purple-500",
     },
     {
       id: 7,
@@ -65,7 +59,6 @@ export default function ToolOverview() {
         "Plan, organize, and manage your marketing content effectively",
       icon: "/images/img-Content-Calendar.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-orange-200 to-orange-400",
     },
     {
       id: 8,
@@ -74,7 +67,6 @@ export default function ToolOverview() {
         "Create ads with the PAS model: Problem, Agitate, Solve using keyword-based prompts",
       icon: "/images/img-PAS-Ad-Writing.png",
       bgImage: "/images/img-bg-tool.png",
-      borderGradient: "from-purple-300 to-pink-500",
     },
   ];
 
@@ -98,45 +90,84 @@ export default function ToolOverview() {
           </div>
         </div>
 
-        <div className="mt-12 lg:grid lg:grid-cols-4 lg:gap-12 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-          {tools.map((tool) => (
-            <div
-              key={tool.id}
-              className="relative min-w-[250px] max-w-[280px] snap-center flex-shrink-0"
-            >
-              {/* Background image */}
-              <ImageNext
-                src={tool.bgImage}
-                alt={tool.title}
-                width={300}
-                height={300}
-                className="w-full rounded-xl shadow-2xl"
-              />
-
-              {/* Content on top of background */}
-              <div className="w-full h-full absolute top-0 left-0 p-6 flex items-center justify-center">
-                <div className="bg-white w-full h-full rounded-xl shadow-lg p-6 flex flex-col justify-between">
-                  <div className="w-full flex justify-center mb-4">
-                    <ImageNext
-                      src={tool.icon}
-                      alt="icon"
-                      width={56}
-                      height={56}
-                      className="w-14 h-14"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-bold">
-                      {tool.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-600">
-                      {tool.description}
-                    </p>
+        <div className="mt-12 space-y-6">
+          {/* Hàng 1 */}
+          <div className="lg:grid lg:grid-cols-4 lg:gap-12 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+            {tools.slice(0, 4).map((tool) => (
+              <div
+                key={tool.id}
+                className="relative min-w-[250px] max-w-[280px] snap-center flex-shrink-0"
+              >
+                <ImageNext
+                  src={tool.bgImage}
+                  alt={tool.title}
+                  width={400}
+                  height={400}
+                  className="w-full rounded-xl"
+                />
+                <div className="w-full h-full absolute top-0 left-0 p-4 flex items-center justify-center">
+                  <div className="bg-white w-full h-full rounded-xl shadow-lg p-2 flex flex-col justify-between">
+                    <div className="w-full flex justify-center mb-4">
+                      <ImageNext
+                        src={tool.icon}
+                        alt="icon"
+                        width={56}
+                        height={56}
+                        className="w-14 h-14"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-bold">
+                        {tool.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-600">
+                        {tool.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Hàng 2 */}
+          <div className="lg:grid lg:grid-cols-4 lg:gap-12 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+            {tools.slice(4, 8).map((tool) => (
+              <div
+                key={tool.id}
+                className="relative min-w-[250px] max-w-[280px] snap-center flex-shrink-0"
+              >
+                <ImageNext
+                  src={tool.bgImage}
+                  alt={tool.title}
+                  width={400}
+                  height={400}
+                  className="w-full rounded-xl"
+                />
+                <div className="w-full h-full absolute top-0 left-0 p-4 flex items-center justify-center">
+                  <div className="bg-white w-full h-full rounded-xl shadow-lg p-2 flex flex-col justify-between">
+                    <div className="w-full flex justify-center mb-4">
+                      <ImageNext
+                        src={tool.icon}
+                        alt="icon"
+                        width={56}
+                        height={56}
+                        className="w-14 h-14"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-bold">
+                        {tool.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-600">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

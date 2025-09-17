@@ -3,9 +3,7 @@
 :root {
   --color-primary: #1cf8c8;
   --color-sub-primary: #117892;
-  --bg-section: #f6f2fb;
-  --color-title: black;
-  --color-text: #342a45;
+  --color-text: #222222;
 
   --text-header-pc: 48px;
   --text-title-pc: 32px;
@@ -23,9 +21,10 @@
 }
 
 body {
-  font-family: "Be Vietnam Pro", "sans-serif";
+  font-family: "Be Vietnam Pro";
   background: #ffffff;
-  line-height: 1;
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
 .bg-gradient-primary {
