@@ -6,24 +6,23 @@ export default function MultipleAdvanced() {
   return (
     <>
       <div className="mb-12">
-        <div className="w-[768] m-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            BUILT WITH MULTIPLE ADVANCED AI MODELS
+        <div className="w-full md:w-[768] m-auto text-center px-8 md:px-0">
+          <h2 className="text-[length:var(--text-header-sp)]  md:text-[length:var(--text-header-pc)] font-bold mb-4">
+            ADVANCED AI, ALL IN ONE PLATFORM
           </h2>
-          <p className="text-xl">
-            We integrate the latest models like GPT-4, Gemini, Claude, and Grok
-            — so you don’t have to manually update. You can choose between
-            open-source models or your own private AI solutions
+          <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
+            Access leading models including GPT-4, Gemini, Claude, and Grok —
+            without the hassle of constant updates. Use open-source models or
+            deploy your own private AI.
           </p>
         </div>
-        <div className="relative w-full h-[300px] mt-8">
-          {/* <Image
-            src="/built-with-multiple-advanced-ai-models.webp"
+        <div className="relative w-full h-[250px] md:h-[500px] mt-8">
+          <Image
+            src="/images/advanced-ai.png"
             alt="Built with multiple advanced AI models"
             fill
             className="object-contain p-2"
-            sizes="(max-width: 768px) 20vw, (max-width: 1200px) 16vw, 12vw"
-          /> */}
+          />
         </div>
       </div>
     </>

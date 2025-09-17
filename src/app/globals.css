@@ -2,37 +2,40 @@
 
 :root {
   --color-primary: #1CF8C8;
+  --color-sub-primary: #117892;
   --bg-section: #f6f2fb;
   --color-title: black;
   --color-text: #342a45;
+
+  --text-header-pc: 48px;
+  --text-title-pc: 32px;
+  --text-body-text-pc: 20px;
+  --outline-pc: 54px;
+  --inline-pc: 45px;
+  
+  --text-header-sp: 22px;
+  --text-title-sp: 16px;
+  --text-body-text-sp: 12px;
+  --outline-sp: 28px;
+  --inline-sp: 23px;
 
   --color-border: #1CF8C8;
 }
 
 body {
   font-family: "Be Vietnam Pro", "sans-serif";
-  background: var(--bg-section);
+  background: #ffffff;
   line-height: 1;
 }
 
 .bg-gradient-primary {
-  background-image: linear-gradient(-215deg, #1cf8c8 0%, #117892 100%);
-}
-
-.bg-gradient-who-use::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(180deg, #1CF8C8 0%, #117892 100%);
-  opacity: 0.6;
-  z-index: -1;
-  border-radius: inherit;
+  background-image: linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%);
 }
 
 /* Button primary */
 .primary-button-custom {
   position: relative;
-  background: linear-gradient(-215deg, #1cf8c8 0%, #117892 100%);
+  background: linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%);
   border: none;
   border-radius: 50px;
   padding: 10px 28px;

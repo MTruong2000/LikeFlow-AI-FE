@@ -45,8 +45,8 @@ const TestimonialsSection = () => {
   return (
     <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
       <div className='text-center mb-12'>
-        <h2 className='text-2xl sm:text-4xl font-bold pb-4'>HOW <span className='text-[var(--color-primary)]'>LIKEFLOW</span> BOOSTS BUSINESS PERFORMANCE</h2>
-        <p className='text-xl'>LikeFlow empowers businesses to improve sales, streamline operations, and boost team collaboration</p>
+        <h2 className='text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4'>HOW <span className='bg-gradient-primary bg-clip-text text-transparent'>LIKEFLOW</span> BOOSTS BUSINESS PERFORMANCE</h2>
+        <p className='text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]'>LikeFlow empowers businesses to improve sales, streamline operations, and boost team collaboration</p>
       </div>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -70,14 +70,14 @@ const TestimonialsSection = () => {
 
               {/* Quote Text */}
               <div className="text-center mb-8">
-                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                <p className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] leading-relaxed font-medium">
                   {testimonial.quote}
                 </p>
               </div>
 
               {/* Customer Info */}
               <div className="text-center mb-4">
-                <h3 className="font-bold text-gray-900 text-sm tracking-wide mb-1">
+                <h3 className="font-bold text-gray-900 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] tracking-wide mb-1">
                   {testimonial.name}
                 </h3>
                 <p className="text-gray-500 text-xs font-medium">

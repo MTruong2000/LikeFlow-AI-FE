@@ -107,7 +107,7 @@ export default function MultiTab() {
   return (
     <>
       <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[54px]">
-        <h1 className="text-2xl sm:text-4xl font-bold uppercase mb-[54px]">
+        <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold uppercase mb-[54px]">
           All-in-One AI Workspace for Business Operations
         </h1>
 
@@ -118,11 +118,11 @@ export default function MultiTab() {
               {currentTab && (
                 <div className="flex flex-col lg:flex-row gap-8 items-center">
                   <div className="flex-1">
-                    <h1 className="text-2xl sm:text-4xl font-bold text-start bg-gradient-primary bg-clip-text text-transparent mb-6 leading-tight">
+                    <h1 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-start bg-gradient-primary bg-clip-text text-transparent mb-6 leading-tight">
                       {currentTab.title}
                     </h1>
 
-                    <p className="text-gray-700 text-lg mb-8 leading-relaxed text-start">
+                    <p className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] mb-8 leading-relaxed text-start">
                       {currentTab.description}
                     </p>
 
@@ -142,7 +142,7 @@ export default function MultiTab() {
                               />
                             </svg>
                           </div>
-                          <span className="text-gray-700 text-lg text-start">
+                          <span className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] text-start">
                             {feature}
                           </span>
                         </div>
@@ -197,7 +197,7 @@ export default function MultiTab() {
                   className={`px-6 py-3 rounded-lg font-medium whitespace-nowrap transition-all duration-300 transform hover:scale-105 ${
                     activeTab === tab.id
                       ? "bg-gradient-primary text-white shadow-lg"
-                      : "text-gray-600 hover:text-[var(--color-primary)] hover:bg-purple-50"
+                      : "text-gray-600 hover:text-[var(--color-primary)] hover:bg-purple-50 "
                   }`}
                 >
                   {tab.name}

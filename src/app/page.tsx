@@ -5,7 +5,7 @@ import WhyChoose from "@/components/why-choose";
 import SmartAgent from "@/components/smart-agent";
 import ToolOverview from "@/components/tools-overview";
 // import Trusted from "@/components/trusted";
-// import MultipleAdvanced from "@/app/components/multiple-advanced";
+import MultipleAdvanced from "@/components/multiple-advanced";
 import TestimonialsSection from "@/components/testimonials-section";
 import Pricing from "@/components/pricing";
 import isLoggedIn from "@/funcs/isLonggedIn";
@@ -28,7 +28,7 @@ export default async function Home() {
         <ToolOverview />
       </div>
       {/* <Trusted /> */}
-      {/* <MultipleAdvanced /> */}
+      <MultipleAdvanced />
       <TestimonialsSection />
       <div id="pricing">
         <Pricing checkLogin={checkLogin} />

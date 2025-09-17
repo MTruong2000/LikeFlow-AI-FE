@@ -76,7 +76,9 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         if (result.status !== "success") return;
 
         // const apiPlans: any[] = Array.isArray(result?.data) ? result.data : [];
-        const apiPlans: ApiPlan[] = Array.isArray(result?.data) ? (result.data as ApiPlan[]) : [];
+        const apiPlans: ApiPlan[] = Array.isArray(result?.data)
+          ? (result.data as ApiPlan[])
+          : [];
 
         // Map API → planData
         const mapped: Record<PlanType, PlanData> = {
@@ -195,16 +197,16 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
   return (
     <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
       <div className="text-center mb-12">
-        <h2 className="text-2xl sm:text-4xl font-bold pb-4">
+        <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4">
           START SMALL, SCALE BIG
         </h2>
-        <p className="text-xl">
+        <p className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
           Explore premium AI features and flexible packages to grow your
           business
         </p>
       </div>
 
-      <div className="mx-auto p-6 bg-gray-50 rounded-2xl">
+      <div className="mx-auto p-6 rounded-2xl">
         {/* Plan Selection Tabs */}
         <div className="flex justify-center mb-8">
           <div className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto">
@@ -214,7 +216,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 onClick={() => setSelectedPlan(tab.key)}
                 className={`w-[150px] px-6 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
                   selectedPlan === tab.key
-                    ? "bg-purple-100 text-purple-700"
+                    ? "bg-gradient-primary text-white"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -227,9 +229,11 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Free Plan */}
-          <div className="bg-white rounded-2xl border-2 border-purple-200 p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-purple-600 mb-2">Free</h3>
+              <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
+                Free
+              </h3>
               <div className="flex items-baseline justify-center">
                 <span className="text-4xl font-bold">
                   {currentData.free.price}
@@ -243,7 +247,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
             <hr className="my-6 border-gray-200" />
             {checkLogin ? (
               <button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full mb-6 transition-colors"
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full mb-6 transition-colors"
                 onClick={() => {
                   window.location.href = "https://affitfy.lovinbot.ai/overview";
                 }}
@@ -259,7 +263,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -289,7 +293,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -304,7 +308,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -321,7 +325,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -338,7 +342,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -355,7 +359,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -374,9 +378,9 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Starter Plan */}
-          <div className="bg-white rounded-2xl border-2 border-purple-300 p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-purple-600 mb-2">
+              <h3 className="text-2xl font-bold text-[var(--color-sub-primary)] mb-2">
                 Starter
               </h3>
               <div className="flex items-baseline justify-center">
@@ -423,7 +427,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -453,7 +457,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -470,7 +474,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -487,7 +491,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -510,7 +514,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -527,7 +531,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-sub-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -577,7 +581,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
           </div>
 
           {/* Grow Plan */}
-          <div className="bg-white rounded-2xl border-2 border-pink-300 p-6 relative">
+          <div className="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 relative">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <span className="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
                 <span>Most Popular</span>
@@ -585,7 +589,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
             </div>
 
             <div className="text-center mb-6 mt-4">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+              <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-2">
                 Grow
               </h3>
               <div className="flex items-baseline justify-center">
@@ -630,7 +634,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -660,7 +664,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -677,7 +681,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -694,7 +698,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -711,7 +715,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -728,7 +732,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
               <div className="flex items-center space-x-2">
                 <svg
-                  className="w-5 h-5 text-purple-600"
+                  className="w-5 h-5 text-[var(--color-primary)]"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
