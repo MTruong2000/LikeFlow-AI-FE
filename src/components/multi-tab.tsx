@@ -106,7 +106,7 @@ export default function MultiTab() {
 
   return (
     <>
-      <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[54px]">
+      <div className="xl:w-[1200] m-auto text-center xl:px-0 sm:px-12 px-4 mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
         <h1 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold uppercase mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
           All-in-One AI Hub for Business Operations
         </h1>

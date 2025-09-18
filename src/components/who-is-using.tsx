@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function WhoIsUsing() {
   return (
     <>
-      <div className="w-full xl:w-[1200] m-auto text-center mb-12 xl:px-0 sm:px-12 px-4">
-        <h1 className="mb-[54px] text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
+      <div className="w-full xl:w-[1200] m-auto text-center mb-[length:var(--outline-sp)] md:mb-[length:var(--outline-pc)] xl:px-0 sm:px-12 px-4">
+        <h1 className="mb-[var(--inline-sp)] md:mb-[var(--inline-pc)] text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
           WHO’S USING LIKEFLOW
         </h1>
         <div className="grid grid-cols-3 gap-6 lg:overflow-visible overflow-x-auto snap-x snap-mandatory">

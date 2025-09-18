@@ -117,6 +117,12 @@ export default function WhyChoose() {
           content:
             "One credit system covers all tools. Easy tracking, no hidden fees, always affordable.",
         },
+        {
+          id: "faster-onboarding",
+          title: "Faster onboarding, consistent training",
+          content:
+            "Build internal AI Assistants to store SOPs, onboarding guides, and training flows - speeding up new hire integration while ensuring process consistency across the team.",
+        },
       ],
     },
   ];
@@ -267,7 +273,7 @@ export default function WhyChoose() {
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                  className="w-full h-[90px] px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
                 >
                   <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
                     {item.title}
