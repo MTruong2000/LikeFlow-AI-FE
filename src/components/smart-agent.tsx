@@ -147,43 +147,6 @@ export default function SmartAgent() {
                       </div>
                     </div>
                   </div>
-                  // <div
-                  //   key={feature.id}
-                  //   className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg overflow-hidden transition-all duration-300 hover:bg-white/15"
-                  // >
-                  //   <button
-                  //     onClick={() => toggleExpand(feature.id)}
-                  //     className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-400/50"
-                  //   >
-                  //     <h3 className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold pr-4 text-black">
-                  //       {feature.title}
-                  //     </h3>
-                  //     {expandedItems.has(feature.id) ? (
-                  //       <span className="text-blue-400 text-2xl font-bold">
-                  //         −
-                  //       </span>
-                  //     ) : (
-                  //       <span className="text-blue-400 text-2xl font-bold">
-                  //         +
-                  //       </span>
-                  //     )}
-                  //   </button>
-
-                  //   <div
-                  //     className={`overflow-hidden transition-all duration-300 ${
-                  //       expandedItems.has(feature.id)
-                  //         ? "max-h-96 opacity-100"
-                  //         : "max-h-0 opacity-0"
-                  //     }`}
-                  //   >
-                  //     <div className="px-6 pb-4">
-                  //       <div className="h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent mb-4"></div>
-                  //       <p className="text-gray-800 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-                  //         {feature.description}
-                  //       </p>
-                  //     </div>
-                  //   </div>
-                  // </div>
                 ))}
               </div>
 

@@ -284,7 +284,7 @@ export default function WhyChoose() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     expandedItems.has(item.id)
-                      ? "max-h-96 opacity-100"
+                      ? "opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
