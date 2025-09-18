@@ -14,7 +14,7 @@ export default function Banner() {
     <div className="relative w-full min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-[1148px] mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
       {/* Background image */}
       <Image
-        src="/images/banner.png"
+        src="/images/banner.webp"
         alt="Background"
         fill
         priority
@@ -23,7 +23,7 @@ export default function Banner() {
       />
 
       <Image
-        src="/images/banner-sp.png"
+        src="/images/banner-sp.webp"
         alt="Background"
         fill
         priority

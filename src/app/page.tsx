@@ -4,7 +4,6 @@ import WhoIsUser from "@/components/who-is-using";
 import WhyChoose from "@/components/why-choose";
 import SmartAgent from "@/components/smart-agent";
 import ToolOverview from "@/components/tools-overview";
-// import Trusted from "@/components/trusted";
 import MultipleAdvanced from "@/components/multiple-advanced";
 import TestimonialsSection from "@/components/testimonials-section";
 import Pricing from "@/components/pricing";
@@ -28,7 +27,6 @@ export default async function Home() {
       <div id="tools">
         <ToolOverview />
       </div>
-      {/* <Trusted /> */}
       <MultipleAdvanced />
       <TestimonialsSection />
       <div id="pricing">

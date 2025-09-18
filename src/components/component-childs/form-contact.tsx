@@ -99,7 +99,7 @@ export default function FormContact() {
         <div className="hidden lg:block flex-1">
           <div className="relative">
             <Image
-              src="/images/image-form-contact.png"
+              src="/images/image-form-contact.webp"
               alt="Colorful AI chameleons"
               layout="responsive"
               width={900}

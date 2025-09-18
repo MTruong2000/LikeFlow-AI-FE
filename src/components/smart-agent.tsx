@@ -98,7 +98,7 @@ export default function SmartAgent() {
               <div className="hidden md:flex flex-col items-center bg-gradient-primary rounded-[25px]">
                 <div className="p-[25px]">
                   <ImageNext
-                    src="/images/smart-ai-agent.png"
+                    src="/images/smart-ai-agent.webp"
                     alt="AI Technology"
                     width={300}
                     height={300}

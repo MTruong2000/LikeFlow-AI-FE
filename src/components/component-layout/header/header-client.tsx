@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X, Home, User, Phone, Star } from "lucide-react";
+import { Menu, Home, User, Phone, Star } from "lucide-react";
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import HeaderProfile from "@/components/component-layout/header/header-profile";

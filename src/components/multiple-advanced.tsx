@@ -18,7 +18,7 @@ export default function MultipleAdvanced() {
         </div>
         <div className="relative w-full h-[250px] md:h-[500px] mt-8">
           <Image
-            src="/images/advanced-ai.png"
+            src="/images/advanced-ai.webp"
             alt="Built with multiple advanced AI models"
             fill
             className="object-contain p-2"
