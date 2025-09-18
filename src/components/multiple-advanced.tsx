@@ -22,6 +22,7 @@ export default function MultipleAdvanced() {
             alt="Built with multiple advanced AI models"
             fill
             className="object-contain p-2"
+            priority
           />
         </div>
       </div>

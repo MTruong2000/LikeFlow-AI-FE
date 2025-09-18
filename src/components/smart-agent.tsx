@@ -100,6 +100,7 @@ export default function SmartAgent() {
                   <ImageNext
                     src="/images/smart-ai-agent.webp"
                     alt="AI Technology"
+                    priority
                     width={300}
                     height={300}
                   />
@@ -150,7 +151,6 @@ export default function SmartAgent() {
                 ))}
               </div>
 
-              {/* Right Image */}
               <div className="flex flex-col-reverse items-center space-y-6">
                 <div className="relative">
                   <video

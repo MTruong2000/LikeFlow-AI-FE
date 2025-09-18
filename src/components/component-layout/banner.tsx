@@ -16,8 +16,8 @@ export default function Banner() {
       <Image
         src="/images/banner.webp"
         alt="Background"
-        fill
         priority
+        fill
         sizes="100vw"
         className="absolute inset-0 -z-10 object-cover hidden md:block"
       />
@@ -25,8 +25,8 @@ export default function Banner() {
       <Image
         src="/images/banner-sp.webp"
         alt="Background"
-        fill
         priority
+        fill
         sizes="100vw"
         className="absolute inset-0 -z-10 object-cover block md:hidden"
       />

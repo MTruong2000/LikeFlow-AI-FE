@@ -316,6 +316,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                     <Image
                       src={model.image}
                       alt={model.name}
+                      priority
                       fill
                       className="object-contain rounded"
                     />
@@ -502,6 +503,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                     <Image
                       src={model.image}
                       alt={model.name}
+                      priority
                       fill
                       className="object-contain rounded"
                     />
@@ -712,6 +714,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                     <Image
                       src={model.image}
                       alt={model.name}
+                      priority
                       fill
                       className="object-contain rounded"
                     />

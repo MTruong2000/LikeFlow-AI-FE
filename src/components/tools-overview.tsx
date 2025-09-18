@@ -104,6 +104,7 @@ export default function ToolOverview() {
                 <ImageNext
                   src={tool.bgImage}
                   alt={tool.title}
+                  priority
                   width={400}
                   height={400}
                   className="w-full rounded-xl"
@@ -114,6 +115,7 @@ export default function ToolOverview() {
                       <ImageNext
                         src={tool.icon}
                         alt="icon"
+                        priority
                         width={56}
                         height={56}
                         className="w-14 h-14"
@@ -143,6 +145,7 @@ export default function ToolOverview() {
                 <ImageNext
                   src={tool.bgImage}
                   alt={tool.title}
+                  priority
                   width={400}
                   height={400}
                   className="w-full rounded-xl"
@@ -153,6 +156,7 @@ export default function ToolOverview() {
                       <ImageNext
                         src={tool.icon}
                         alt="icon"
+                        priority
                         width={56}
                         height={56}
                         className="w-14 h-14"
