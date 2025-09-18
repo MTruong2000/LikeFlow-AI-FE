@@ -1,5 +1,4 @@
 "use client";
-import scrollToSection from "@/funcs/scrolltosection";
 
 interface ButtonAnimationPrimaryProps {
   children?: React.ReactNode;
@@ -28,12 +27,12 @@ export default function ButtonAnimationPrimary({
         }}
       >
         <span className="relative z-10">{children}</span>
-        <div
+        {/* <div
           className="absolute inset-0 rounded-full bg-gradient-primary opacity-75 blur-sm"
           style={{
             animation: "glow-pulse 2s ease-in-out infinite",
           }}
-        />
+        /> */}
       </button>
 
       <style jsx>{`

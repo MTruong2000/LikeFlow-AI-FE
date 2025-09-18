@@ -71,7 +71,7 @@ export default function SmartAgent() {
               Smart AI Agents – Built to Match Your Unique Workflow
             </h2>
           </div>
-          <div className="flex-1 hidden md:flex flex-col justify-center items-end gap-4">
+          <div className="flex-1 hidden md:flex flex-col justify-start items-end gap-4">
             <h3 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] bg-gradient-primary bg-clip-text text-transparent">
               What&apos;s Your Next Idea?
             </h3>
@@ -106,7 +106,7 @@ export default function SmartAgent() {
                   />
                 </div>
 
-                <h2 className="text-center text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-white pb-[25px]">
+                <h2 className="text-center text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-semibold text-white pb-[25px]">
                   Automate <br /> manual tasks
                 </h2>
               </div>

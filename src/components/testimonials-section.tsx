@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
       avatar: "/images/avatar-2.webp",
       quote:
         "The platform runs seamlessly, delivering high-quality content in multiple languages. We rate it 10/10 — reduced costs, improved results.",
-      rating: 4,
+      rating: 5,
     },
     {
       id: 3,
@@ -65,41 +65,45 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 relative border border-gray-100 min-w-[80%] sm:min-w-[60%] md:min-w-0 snap-center"
+              className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300 relative border border-gray-100 min-w-[80%] sm:min-w-[60%] md:min-w-0 snap-center flex flex-col justify-between"
             >
               {/* Avatar */}
-              <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 rounded-full overflow-hidden">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    width={80}
-                    height={80}
-                    className="object-cover"
-                  />
+              <div>
+                <div className="flex justify-center mb-6">
+                  <div className="w-20 h-20 rounded-full overflow-hidden">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      width={80}
+                      height={80}
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <div className="text-center mb-8">
+                  <p className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] leading-relaxed font-medium">
+                    {testimonial.quote}
+                  </p>
                 </div>
               </div>
 
-              {/* Quote */}
-              <div className="text-center mb-8">
-                <p className="text-gray-700 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] leading-relaxed font-medium">
-                  {testimonial.quote}
-                </p>
-              </div>
-
               {/* Customer Info */}
-              <div className="text-center mb-4">
-                <h3 className="font-bold text-gray-900 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] tracking-wide mb-1">
-                  {testimonial.name}
-                </h3>
-                <p className="text-gray-500 text-xs font-medium">
-                  {testimonial.title}
-                </p>
-              </div>
+              <div>
+                <div className="text-center mb-4">
+                  <h3 className="font-bold text-gray-900 text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] tracking-wide mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-500 text-xs font-medium">
+                    {testimonial.title}
+                  </p>
+                </div>
 
-              {/* Stars */}
-              <div className="flex justify-center space-x-1">
-                {renderStars(testimonial.rating)}
+                {/* Stars */}
+                <div className="flex justify-center space-x-1">
+                  {renderStars(testimonial.rating)}
+                </div>
               </div>
             </div>
           ))}

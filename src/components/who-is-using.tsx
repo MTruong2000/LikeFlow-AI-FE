@@ -18,7 +18,7 @@ export default function WhoIsUsing() {
               className="absolute object-cover rounded-2xl z-[-2]"
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
-              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">
+              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-semibold text-center">
                 Online Entrepreneurs
               </h2>
               <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">
@@ -37,12 +37,12 @@ export default function WhoIsUsing() {
               className="absolute object-cover rounded-2xl z-[-2]"
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
-              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">
+              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-semibold text-center">
                 Business Owners
               </h2>
               <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">
                 Accelerate with AI assistants to streamline marketing,
-                operations, customer care, and smarter decisions.
+                operations, customer care and smarter decisions.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function WhoIsUsing() {
               className="absolute object-cover rounded-2xl z-[-2]"
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
-              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-center">
+              <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-semibold text-center">
                 AI Beginners
               </h2>
               <p className="text-[16px] md:text-[length:var(--text-body-text-pc)]">

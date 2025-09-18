@@ -29,7 +29,7 @@ export default function Banner() {
       <div className="w-full xl:w-[1200px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:px-0 sm:px-12 px-4 mt-12">
         <div className="w-full md:w-[728px] sm:w-[90%] xs:w-full text-center md:text-left">
           <div className="">
-            <h1 className="text-white text-[42px] md:text-[56px] lg:text-[69px] font-extrabold">
+            <h1 className="text-white text-[42px] md:text-[56px] lg:text-[69px] font-bold leading-none">
               {textBanner.title}
             </h1>
             <p className="text-white text-[18px] md:text-[21px] font-medium mt-6">
