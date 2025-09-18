@@ -38,7 +38,7 @@ export default function FormContact() {
   };
 
   return (
-    <div className="w-full lg:w-[1200px] flex gap-8 flex-col mx-auto mb-[54px]">
+    <div className="w-full lg:w-[1200px] flex gap-8 flex-col mx-auto mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
       <div className="text-center">
         <h1 className="text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-bold text-gray-900 mb-2">
           START YOUR AI JOURNEY
@@ -111,11 +111,6 @@ export default function FormContact() {
           </div>
         </div>
       </div>
-
-      {/* Background decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-purple-500/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-pink-500/10 rounded-full blur-xl"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"></div>
     </div>
   );
 }

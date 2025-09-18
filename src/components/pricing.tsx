@@ -207,8 +207,8 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
   };
 
   return (
-    <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-      <div className="text-center mb-12">
+    <div className="xl:w-[1200] m-auto mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] xl:px-0 sm:px-12 px-4">
+      <div className="text-center mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
         <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4">
           START SMALL, SCALE BIG
         </h2>
@@ -220,7 +220,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
       <div className="mx-auto rounded-2xl">
         {/* Plan Selection Tabs */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
           <div
             ref={tabListRef}
             className="flex flex-nowrap bg-white rounded-lg p-1 shadow-sm overflow-x-auto 
@@ -243,7 +243,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
         </div>
 
         {/* Pricing Cards */}
-        <div className="flex items-stretch md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 py-4 md:items-stretch">
+        <div className="flex items-stretch md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 pb-4 md:pb-0 md:items-stretch">
           {/* Free Plan */}
           <div className="bg-white rounded-2xl border-2 border-[var(--color-sub-primary)] p-6 relative w-[320px] shrink-0 md:w-auto flex flex-col h-full min-h-[850px] md:min-h-0">
             <div className="text-center mb-0">

@@ -64,8 +64,8 @@ export default function SmartAgent() {
 
   return (
     <>
-      <div className="w-full mb-12 bg-primary text-white pt-8">
-        <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
+      <div className="w-full mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] bg-primary text-white">
+        <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
           <div className="flex-1">
             <h2 className="text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent">
               Smart AI Agents – Built to Match Your Unique Workflow
@@ -92,7 +92,7 @@ export default function SmartAgent() {
         </div>
 
         <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto">
-          <div className="container mx-auto py-8">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Left Image */}
               <div className="hidden md:flex flex-col items-center bg-gradient-primary rounded-[25px]">

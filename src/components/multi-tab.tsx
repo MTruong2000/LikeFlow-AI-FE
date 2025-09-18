@@ -113,7 +113,7 @@ export default function MultiTab() {
 
         <div className="flex flex-col-reverse md:flex-col">
           {/* Main Content Area */}
-          <div className="mb-0 md:mb-[54px]">
+          <div className="mb-0 md:mb-[var(--inline-pc)]">
             <div className="rounded-2xl p-5 border border-[var(--color-border)]">
               {currentTab && (
                 <div className="flex flex-col lg:flex-row gap-8 items-center">

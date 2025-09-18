@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 
 export default function MultipleAdvanced() {
   return (
     <>
-      <div className="mb-12">
+      <div className="mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
         <div className="w-full md:w-[768] m-auto text-center px-8 md:px-0">
           <h2 className="text-[length:var(--text-header-sp)]  md:text-[length:var(--text-header-pc)] font-bold mb-4">
             ADVANCED AI, ALL IN ONE PLATFORM
@@ -16,7 +15,7 @@ export default function MultipleAdvanced() {
             deploy your own private AI.
           </p>
         </div>
-        <div className="relative w-full h-[250px] md:h-[500px] mt-8">
+        <div className="relative w-full h-[250px] md:h-[500px]">
           <Image
             src="/images/advanced-ai.webp"
             alt="Built with multiple advanced AI models"
