@@ -121,13 +121,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Copyright */}
-        {/* <div className="border-t border-gray-800 mt-8 pt-6">
-          <p className="text-white text-sm text-center">
-            © 2025 Kaching Capital. All rights reserved.
-          </p>
-        </div> */}
       </div>
     </footer>
   );
