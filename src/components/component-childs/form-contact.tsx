@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Phone, MessageCircle } from "lucide-react";
-import Image from "next/image"; // Using Next.js Image component
+import Image from "next/image";
 
 interface FormData {
   phone: string;
@@ -101,6 +101,7 @@ export default function FormContact() {
             <Image
               src="/images/image-form-contact.webp"
               alt="Colorful AI chameleons"
+              priority
               layout="responsive"
               width={900}
               height={550}
