@@ -5,30 +5,30 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "MR. ALEX TRAN",
+      name: "MR. ETHAN",
       title: "CEO Ecomstone",
       avatar:
-        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+        "/images/avatar-1.png",
       quote:
         "We’ve tried multiple AI tools, but Likeflow’s capabilities for local language content are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
       rating: 5,
     },
     {
       id: 2,
-      name: "MS. HA ANH",
+      name: "MR. AARAV",
       title: "Entrepreneur",
       avatar:
-        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+        "/images/avatar-2.png",
       quote:
         "The platform runs seamlessly, delivering high-quality content in multiple languages. We rate it 10/10 — reduced costs, improved results.",
       rating: 4,
     },
     {
       id: 3,
-      name: "MR. TUAN KAYO",
+      name: "MR. LIAM",
       title: "Amazon Seller",
       avatar:
-        "https://w.ladicdn.com/s450x450/66e18ea9521baa00137153a3/screenshot_1-20250114085752-fqq5q.jpg",
+        "/images/avatar-3.png",
       quote:
         "Likeflow empowers content creators to focus on quality without deep marketing expertise. It’s fast, intuitive, and professional.",
       rating: 5,
