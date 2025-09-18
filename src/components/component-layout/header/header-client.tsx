@@ -51,7 +51,7 @@ export default function HeaderClient({
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex xl:gap-15 gap-12 justify-between items-center uppercase font-bold">
+        <div className="hidden lg:flex xl:gap-15 gap-12 justify-between items-center uppercase font-semibold">
           <Navigation />
         </div>
 
