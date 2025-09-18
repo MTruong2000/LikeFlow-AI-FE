@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import Image from "next/image";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -6,8 +7,7 @@ const TestimonialsSection = () => {
       id: 1,
       name: "MR. Paul",
       title: "CEO",
-      avatar:
-        "/images/avatar-1.webp",
+      avatar: "/images/avatar-1.webp",
       quote:
         "We’ve tried multiple AI tools, but Likeflow’s capabilities for local language content are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
       rating: 5,
@@ -16,8 +16,7 @@ const TestimonialsSection = () => {
       id: 2,
       name: "MR. Ravi",
       title: "Entrepreneur",
-      avatar:
-        "/images/avatar-2.webp",
+      avatar: "/images/avatar-2.webp",
       quote:
         "The platform runs seamlessly, delivering high-quality content in multiple languages. We rate it 10/10 — reduced costs, improved results.",
       rating: 4,
@@ -26,8 +25,7 @@ const TestimonialsSection = () => {
       id: 3,
       name: "Ms. Sarah",
       title: "Amazon Seller",
-      avatar:
-        "/images/avatar-3.webp",
+      avatar: "/images/avatar-3.webp",
       quote:
         "Likeflow empowers content creators to focus on quality without deep marketing expertise. It’s fast, intuitive, and professional.",
       rating: 5,
@@ -46,8 +44,8 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="xl:w-[1200] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-      <div className="text-center mb-12">
+    <div className="xl:w-[1200] m-auto mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] xl:px-0 sm:px-12 px-4">
+      <div className="text-center mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
         <h2 className="text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold pb-4">
           HOW{" "}
           <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -72,10 +70,12 @@ const TestimonialsSection = () => {
               {/* Avatar */}
               <div className="flex justify-center mb-6">
                 <div className="w-20 h-20 rounded-full overflow-hidden">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-full h-full object-cover"
+                    width={80}
+                    height={80}
+                    className="object-cover"
                   />
                 </div>
               </div>

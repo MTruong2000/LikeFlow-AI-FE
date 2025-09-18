@@ -66,8 +66,8 @@ export default function ToolOverview() {
 
   return (
     <>
-      <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-        <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between">
+      <div className="xl:w-[1200px] m-auto mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] xl:px-0 sm:px-12 px-4">
+        <div className="w-full xl:w-[1200px] xl:px-0 sm:px-12 px-4 m-auto flex justify-between mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
           <div className="flex-1">
             <h2 className="text-center md:text-left text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold bg-gradient-primary bg-clip-text text-transparent uppercase">
               50+ Supported Customer App x10 Performance
@@ -93,7 +93,7 @@ export default function ToolOverview() {
           </div>
         </div>
 
-        <div className="mt-12 space-y-6">
+        <div className="space-y-6">
           {/* Hàng 1 */}
           <div className="lg:grid lg:grid-cols-4 lg:gap-12 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
             {tools.slice(0, 4).map((tool) => (

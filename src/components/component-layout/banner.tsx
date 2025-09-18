@@ -18,7 +18,7 @@ export default function Banner() {
           alt="Background"
           fetchPriority="high" // ưu tiên mạng cho LCP
           className="absolute inset-0 object-cover w-full h-full -z-10"
-          
+          loading="lazy"
         />
       </picture>
 

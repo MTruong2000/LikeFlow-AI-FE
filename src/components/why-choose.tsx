@@ -246,8 +246,8 @@ export default function WhyChoose() {
   };
 
   return (
-    <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
-      <div className="flex justify-between">
+    <div className="xl:w-[1200px] m-auto mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] xl:px-0 sm:px-12 px-4">
+      <div className="flex justify-between mb-[var(--inline-sp)] md:mb-[var(--inline-pc)]">
         <div className="uppercase flex-1">
           <h2 className="bg-gradient-primary bg-clip-text text-transparent text-[length:var(--text-header-sp)] md:text-[length:var(--text-header-pc)] font-bold">
             Why
@@ -279,9 +279,9 @@ export default function WhyChoose() {
           </div>
         </div>
       </div>
-      <div className="md:flex mt-12 gap-12 min-h-[450px]">
+      <div className="md:flex gap-12 min-h-[450px]">
         {/* Left: Image với fade/scale & min-h để ổn định khung */}
-        <div className="flex justify-center mb-12 md:mb-0">
+        <div className="flex justify-center mb-[var(--inline-sp)] md:mb-0">
           <div className="w-[384px] min-h-[220px]">
             <img
               key={currentSlide}
@@ -341,7 +341,7 @@ export default function WhyChoose() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-8">
+          <div className="flex items-center justify-between">
             <button
               onClick={nextSlide}
               className="bg-gradient-primary text-white px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl"
