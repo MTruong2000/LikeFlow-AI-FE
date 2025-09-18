@@ -5,8 +5,8 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "MR. ETHAN",
-      title: "CEO Ecomstone",
+      name: "MR. Paul",
+      title: "CEO",
       avatar:
         "/images/avatar-1.png",
       quote:
@@ -15,7 +15,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 2,
-      name: "MR. AARAV",
+      name: "MR. Ravi",
       title: "Entrepreneur",
       avatar:
         "/images/avatar-2.png",
@@ -25,7 +25,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 3,
-      name: "MR. LIAM",
+      name: "Ms. Sarah",
       title: "Amazon Seller",
       avatar:
         "/images/avatar-3.png",
