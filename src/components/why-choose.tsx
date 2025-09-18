@@ -279,7 +279,7 @@ export default function WhyChoose() {
           </div>
         </div>
       </div>
-      <div className="md:flex mt-12 gap-12">
+      <div className="md:flex mt-12 gap-12 min-h-[450px]">
         {/* Left: Image với fade/scale & min-h để ổn định khung */}
         <div className="flex justify-center mb-12 md:mb-0">
           <div className="w-[384px] min-h-[220px]">
@@ -301,7 +301,7 @@ export default function WhyChoose() {
             height: rightColHeight,
             transition: "height 300ms ease",
           }}
-          className={`flex-1`}
+          className={`flex-1 min-h-[450px]`}
         >
           <div
             className={`space-y-0 transition-all duration-300 transform ${
