@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Play } from "lucide-react";
 import ButtonBaner from "@/components/component-childs/button-banner";
 
@@ -12,24 +11,16 @@ const textBanner = {
 export default function Banner() {
   return (
     <div className="relative w-full min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-[1148px] mb-[var(--outline-sp)] md:mb-[var(--outline-pc)]">
-      {/* Background image */}
-      <Image
-        src="/images/banner.webp"
-        alt="Background"
-        priority
-        fill
-        sizes="100vw"
-        className="absolute inset-0 -z-10 object-cover hidden md:block"
-      />
-
-      <Image
-        src="/images/banner-sp.webp"
-        alt="Background"
-        priority
-        fill
-        sizes="100vw"
-        className="absolute inset-0 -z-10 object-cover block md:hidden"
-      />
+      <picture>
+        <source media="(max-width: 767px)" srcSet="/images/banner-sp.webp" />
+        <img
+          src="/images/banner.webp"
+          alt="Background"
+          fetchPriority="high" // ưu tiên mạng cho LCP
+          className="absolute inset-0 object-cover w-full h-full -z-10"
+          
+        />
+      </picture>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 -z-0 bg-gradient-to-b from-[#0F535D] via-transparent to-transparent" />

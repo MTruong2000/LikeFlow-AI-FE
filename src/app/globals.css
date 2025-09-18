@@ -21,10 +21,16 @@
 }
 
 body {
-  font-family: "Be Vietnam Pro";
+  font-family: var(--font-bev-body);
   background: #ffffff;
   color: var(--color-text);
   line-height: 1.2;
+}
+
+h1,
+h2,
+.hero-title {
+  font-family: var(--font-bev-heading), var(--font-bev-body);
 }
 
 .bg-gradient-primary {
@@ -32,16 +38,16 @@ body {
 }
 
 .bg-gradient-header {
-  background-image: linear-gradient(to right, #FEF8FF36, #FEF8FF00);
+  background-image: linear-gradient(to right, #fef8ff36, #fef8ff00);
   border-radius: 107px;
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);  
+  backdrop-filter: blur(40px);
 }
 
 .bg-gradient-menu {
-  background-image: linear-gradient(to right, #FEF8FF36, #FEF8FF00);
+  background-image: linear-gradient(to right, #fef8ff36, #fef8ff00);
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);  
+  backdrop-filter: blur(40px);
 }
 
 @media screen and (min-width: 300px) and (max-width: 574px) {
