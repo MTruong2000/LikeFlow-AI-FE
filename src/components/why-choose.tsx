@@ -17,7 +17,7 @@ interface SlideData {
 export default function WhyChoose() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [isChanging, setIsChanging] = useState(false); // thêm state để điều khiển fade
+  const [isChanging, setIsChanging] = useState(false);
 
   const slidesData: SlideData[] = [
     {
@@ -156,31 +156,72 @@ export default function WhyChoose() {
   useLayoutEffect(() => {
     const el = rightColRef.current;
     if (!el) return;
-
-    // Nếu đang trong quá trình đổi height, bỏ qua để tránh chồng animation
+  
+    // Đang animate => bỏ qua để tránh chồng animation
     if (animatingHeightRef.current) return;
-
-    // 1) set current height (fixed)
+  
+    // Mobile: tránh jump bằng cách không animate height
+    const isMobile =
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 767px)").matches;
+    if (isMobile) {
+      setRightColHeight("auto");
+      return;
+    }
+  
     const fromH = el.getBoundingClientRect().height;
     setRightColHeight(fromH);
-
-    // 2) ở frame tiếp theo đo chiều cao mới và animate tới đó
-    requestAnimationFrame(() => {
-      const toH = measureContentHeight();
-      animatingHeightRef.current = true;
-      setRightColHeight(toH);
-
-      const onEnd = () => {
-        animatingHeightRef.current = false;
-        setRightColHeight("auto"); // trả về auto sau khi animate xong
-        el.removeEventListener("transitionend", onEnd);
-      };
-      el.addEventListener("transitionend", onEnd);
+  
+    let raf1 = 0;
+    let raf2 = 0;
+    let fallbackTimer: number | undefined;
+  
+    // Double-RAF để đảm bảo DOM của slide/accordion đã paint xong trước khi đo
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        const toH = measureContentHeight();
+  
+        // Nếu không đổi chiều cao đáng kể => bỏ animate để tránh giật
+        if (Math.abs(toH - fromH) < 1) {
+          setRightColHeight("auto");
+          return;
+        }
+  
+        animatingHeightRef.current = true;
+  
+        const onEnd = () => {
+          animatingHeightRef.current = false;
+          setRightColHeight("auto"); // trả về auto sau khi animate xong
+          el.removeEventListener("transitionend", onEnd);
+          if (fallbackTimer) window.clearTimeout(fallbackTimer);
+        };
+  
+        el.addEventListener("transitionend", onEnd);
+  
+        // Fallback khi transitionend không bắn (một số thiết bị/mobile)
+        // Lấy duration hiện tại (ms) nếu có, rồi cộng biên độ an toàn
+        const durStr = getComputedStyle(el).transitionDuration || "0s";
+        const durMs =
+          durStr.split(",")[0]?.trim().endsWith("ms")
+            ? parseFloat(durStr)
+            : parseFloat(durStr) * 1000;
+        fallbackTimer = window.setTimeout(onEnd, (isNaN(durMs) ? 300 : durMs) + 80);
+  
+        // Force reflow rồi set height đích để chắc chắn trigger transition
+        void el.offsetHeight;
+        setRightColHeight(toH);
+      });
     });
+  
+    // Cleanup nếu deps đổi nhanh hoặc unmount
+    return () => {
+      if (raf1) cancelAnimationFrame(raf1);
+      if (raf2) cancelAnimationFrame(raf2);
+    };
   }, [currentSlide, expandedItems]);
+  
 
   const handleSlideChange = (newSlide: number) => {
-    // Fade/scale out ảnh & nội dung
     setIsChanging(true);
 
     // Đồng thời animate height dựa trên nội dung mới:
@@ -192,16 +233,17 @@ export default function WhyChoose() {
       setCurrentSlide(newSlide);
       setExpandedItems(new Set()); // đóng hết khi sang slide mới
       setIsChanging(false);
-      // useLayoutEffect phía trên sẽ lo animate height sang chiều cao mới
     }, 300);
   };
 
-  const nextSlide = () =>
+  const nextSlide = () => {
     handleSlideChange((currentSlide + 1) % slidesData.length);
-  const prevSlide = () =>
+  };
+  const prevSlide = () => {
     handleSlideChange(
       currentSlide === 0 ? slidesData.length - 1 : currentSlide - 1
     );
+  };
 
   return (
     <div className="xl:w-[1200px] m-auto mb-12 xl:px-0 sm:px-12 px-4">
@@ -245,7 +287,7 @@ export default function WhyChoose() {
               key={currentSlide}
               src={currentSlideData.videoUrl}
               alt="Slide Image"
-              className={`w-full rounded-xl shadow-2xl transition-all duration-300 transform ${
+              className={`w-full min-h-[450px] rounded-xl shadow-2xl transition-all duration-300 transform ${
                 isChanging ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             />
