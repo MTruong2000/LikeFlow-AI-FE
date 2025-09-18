@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
       name: "MR. Paul",
       title: "CEO",
       avatar:
-        "/images/avatar-1.png",
+        "/images/avatar-1.webp",
       quote:
         "We’ve tried multiple AI tools, but Likeflow’s capabilities for local language content are unmatched. It cut our costs by 50% and automated 80% of repetitive tasks.",
       rating: 5,
@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
       name: "MR. Ravi",
       title: "Entrepreneur",
       avatar:
-        "/images/avatar-2.png",
+        "/images/avatar-2.webp",
       quote:
         "The platform runs seamlessly, delivering high-quality content in multiple languages. We rate it 10/10 — reduced costs, improved results.",
       rating: 4,
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       name: "Ms. Sarah",
       title: "Amazon Seller",
       avatar:
-        "/images/avatar-3.png",
+        "/images/avatar-3.webp",
       quote:
         "Likeflow empowers content creators to focus on quality without deep marketing expertise. It’s fast, intuitive, and professional.",
       rating: 5,

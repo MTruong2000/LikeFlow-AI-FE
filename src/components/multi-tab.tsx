@@ -17,7 +17,7 @@ export default function MultiTab() {
         "Enjoy seamless access to multiple AIs without juggling separate subscriptions",
         "Experience a sleek interface designed for speed, simplicity, and efficiency",
       ],
-      image: "/images/chat-pro.png",
+      image: "/images/chat-pro.webp",
     },
     {
       id: "ai-agents",
@@ -30,7 +30,7 @@ export default function MultiTab() {
         "Continuously improve through past conversations for sharper accuracy",
         "Streamline repetitive tasks with intelligent, automated workflows",
       ],
-      image: "/images/ai-agents.png",
+      image: "/images/ai-agents.webp",
     },
     {
       id: "ai-search",
@@ -44,7 +44,7 @@ export default function MultiTab() {
         "Stay ahead of trends and breaking news",
         "Save time with precise, relevant results—without the clutter",
       ],
-      image: "/images/ai-search.png",
+      image: "/images/ai-search.webp",
     },
     {
       id: "ai-photos",
@@ -56,7 +56,7 @@ export default function MultiTab() {
         "Multi-AI Image & Video Creation. Bring your imagination to life with simple prompts.",
         "Advanced AI Editing & Retouching Tools. Streamline your workflow and eliminate the need for complicated design or editing software.",
       ],
-      image: "/images/ai-photos.png",
+      image: "/images/ai-photos.webp",
     },
     {
       id: "ai-voice",
@@ -70,7 +70,7 @@ export default function MultiTab() {
         "Reduce production expenses with advanced AI voice tools",
         "Customize every project with a wide range of voice styles",
       ],
-      image: "/images/ai-voice.png",
+      image: "/images/ai-voice.webp",
     },
     {
       id: "ai-automation",
@@ -84,7 +84,7 @@ export default function MultiTab() {
         "Fully customizable to fit any business process.",
         "An all-in-one solution designed to cut development costs and boost efficiency.",
       ],
-      image: "/images/ai-automation.png",
+      image: "/images/ai-automation.webp",
     },
     {
       id: "ai-chatbot",
@@ -98,7 +98,7 @@ export default function MultiTab() {
         "Easily upload and manage your professional documents",
         "Train the AI with your unique knowledge base for smarter results",
       ],
-      image: "/images/ai-chatbot.png",
+      image: "/images/ai-chatbot.webp",
     },
   ];
 

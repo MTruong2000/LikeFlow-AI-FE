@@ -21,7 +21,7 @@ export default function WhyChoose() {
 
   const slidesData: SlideData[] = [
     {
-      videoUrl: "/images/should-businesses.png",
+      videoUrl: "/images/should-businesses.webp",
       accordionData: [
         {
           id: "cut-marketing-costs",
@@ -56,7 +56,7 @@ export default function WhyChoose() {
       ],
     },
     {
-      videoUrl: "/images/should-online-entrepreneurs.png",
+      videoUrl: "/images/should-online-entrepreneurs.webp",
       accordionData: [
         {
           id: "one-unified-platform",
@@ -91,7 +91,7 @@ export default function WhyChoose() {
       ],
     },
     {
-      videoUrl: "/images/should-AI-beginners.png",
+      videoUrl: "/images/should-AI-beginners.webp",
       accordionData: [
         {
           id: "guided-simplicity",

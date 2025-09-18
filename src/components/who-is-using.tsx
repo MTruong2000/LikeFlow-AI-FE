@@ -11,7 +11,7 @@ export default function WhoIsUsing() {
         <div className="grid grid-cols-3 gap-6 lg:overflow-visible overflow-x-auto snap-x snap-mandatory">
           <div className="relative w-full h-[452px] self-end min-w-[300px] snap-center">
             <Image
-              src="/images/online-entrepreneurs.png"
+              src="/images/online-entrepreneurs.webp"
               alt="Bothive Logo"
               fill
               className="absolute object-cover rounded-2xl z-[-2]"
@@ -29,7 +29,7 @@ export default function WhoIsUsing() {
 
           <div className="relative w-full h-[452px] min-w-[300px] snap-center ml-50 sm:ml-40 md:ml-20 lg:m-0">
             <Image
-              src="/images/business-owners.png"
+              src="/images/business-owners.webp"
               alt="Bothive Logo"
               fill
               className="absolute object-cover rounded-2xl z-[-2]"
@@ -47,7 +47,7 @@ export default function WhoIsUsing() {
 
           <div className="relative w-full h-[452px] self-end min-w-[300px] snap-center ml-100 sm:ml-80 md:ml-40 lg:m-0">
             <Image
-              src="/images/AI-beginners.png"
+              src="/images/AI-beginners.webp"
               alt="Bothive Logo"
               fill
               className="absolute object-cover rounded-2xl z-[-2]"
