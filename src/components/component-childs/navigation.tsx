@@ -21,6 +21,10 @@ const navigations: Navigation[] = [
     name: "Tools",
   },
   {
+    id: "blog",
+    name: "Blog",
+  },
+  {
     id: "pricing",
     name: "Pricing",
   },

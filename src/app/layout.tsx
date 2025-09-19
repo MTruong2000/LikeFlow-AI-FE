@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   title: "LikeFlow",
   description:
     "LikeFlow empowers businesses with AI assistants to automate tasks, improve productivity, and boost growth.",
+    icons: {
+      icon: "/images/logo-likeflow.webp",
+      shortcut: "logo-likeflow",
+      apple: "logo-likeflow",
+    }
 };
 
 export default function RootLayout({

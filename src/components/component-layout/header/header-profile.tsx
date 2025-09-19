@@ -118,7 +118,7 @@ const HeaderProfile = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center space-x-3 p-2 rounded-xl hover:bg-slate-800/60 transition-all duration-200 group"
+        className="flex items-center space-x-3 p-2 rounded-xl hover:cursor-pointer transition-all duration-200 group"
       >
         {/* Avatar */}
         <div
@@ -129,7 +129,7 @@ const HeaderProfile = () => {
         </div>
 
         {/* Tên người dùng */}
-        <span className="text-slate-200 font-medium hidden sm:block group-hover:text-white transition-colors duration-200">
+        <span className="text-white font-medium hidden sm:block transition-colors duration-200">
           {userProfile.name}
         </span>
 
@@ -143,12 +143,12 @@ const HeaderProfile = () => {
 
       {/* Dropdown Menu */}
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-slate-800/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl py-2 z-50 animate-in slide-in-from-top-2 duration-200">
+        <div className="absolute right-0 mt-4 w-60 bg-gradient-profile rounded-xl shadow-2xl py-2 z-50 animate-in slide-in-from-top-2 duration-200">
           {/* User info header */}
-          <div className="px-4 py-3 border-b border-slate-700/50">
+          <div className="px-4 py-3 border-b border-white">
             <div className="flex items-center space-x-3">
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold text-xs"
+                className="w-8 h-8 rounded-full flex p-4 items-center justify-center text-white font-semibold text-xs"
                 style={{ backgroundColor: avatarColor }}
               >
                 {initials}
@@ -157,7 +157,7 @@ const HeaderProfile = () => {
                 <p className="text-sm font-medium text-white">
                   {userProfile.name}
                 </p>
-                <p className="text-xs text-slate-400">{userProfile.email}</p>
+                <p className="text-xs text-white">{userProfile.email}</p>
               </div>
             </div>
           </div>
@@ -171,9 +171,9 @@ const HeaderProfile = () => {
                   item.action();
                   setIsDropdownOpen(false);
                 }}
-                className="w-full flex items-center space-x-3 px-4 py-3 text-slate-200 hover:text-white hover:bg-slate-700/50 transition-all duration-150 group"
+                className="w-full flex items-center space-x-3 px-4 py-3 text-white cursor-pointer hover:bg-slate-700/50 transition-all duration-150 group"
               >
-                <item.icon className="w-4 h-4 text-slate-400 group-hover:text-slate-300" />
+                <item.icon className="w-4 h-4 text-white0" />
                 <span className="text-sm font-medium">{item.label}</span>
               </button>
             ))}
