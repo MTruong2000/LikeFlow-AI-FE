@@ -135,7 +135,7 @@ export default function AILoginPopup({
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl w-full max-w-md p-8 relative overflow-hidden">
             {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-primary rounded-3xl"></div>
 
             {/* Close button */}
             <button
@@ -158,7 +158,7 @@ export default function AILoginPopup({
                 >
                   {/* Header */}
                   <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
                       <div className="w-8 h-8 bg-white/20 rounded-full"></div>
                     </div>
                     <h2 className="text-2xl font-bold text-white mb-2">
@@ -257,7 +257,7 @@ export default function AILoginPopup({
                     <button
                       type="button"
                       onClick={handleSubmit}
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+                      className="w-full bg-gradient-primary border border-white text-white font-semibold py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
                     >
                       {isLogin ? "Sign In" : "Create Account"}
                     </button>
@@ -271,7 +271,7 @@ export default function AILoginPopup({
                         : "Already have an account? "}
                       <button
                         onClick={toggleMode}
-                        className="text-blue-400 hover:text-blue-300 font-semibold"
+                        className="text-[var(--color-primary)] font-semibold"
                       >
                         {isLogin ? "Sign up" : "Sign in"}
                       </button>
@@ -325,7 +325,7 @@ export default function AILoginPopup({
                     <button
                       type="button"
                       onClick={handleVerifySubmit}
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
+                      className="w-full bg-gradient-primary border border-white text-white font-semibold py-3 rounded-xl shadow-lg hover:scale-105 transition-all"
                     >
                       Verify Email
                     </button>
