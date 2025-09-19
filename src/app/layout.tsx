@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import HeaderServer from "@/components/component-layout/header/header-server";
-import Footer from "@/components/component-layout/footer";
 
 import "./globals.css";
 
@@ -42,7 +41,6 @@ export default function RootLayout({
       <body>
         <HeaderServer />
         {children}
-        <Footer />
       </body>
     </html>
   );
