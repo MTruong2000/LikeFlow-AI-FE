@@ -88,9 +88,9 @@ const OrdersPage = () => {
 
       const json: IApiResponse = await res.json();
       setOrders(Array.isArray(json?.data) ? json.data : []);
-    } catch (err: any) {
-      if (err?.name !== "AbortError") {
-        setError(err?.message || "Failed to load orders.");
+    } catch (err) {
+      if (err instanceof Error && err.name !== "AbortError") {
+        setError(err.message || "Failed to load orders.");
       }
     } finally {
       setLoading(false);
@@ -171,7 +171,9 @@ const OrdersPage = () => {
     }
 
     if (statusFilter !== "all") {
-      filtered = filtered.filter((order) => order.paymentStatus === statusFilter);
+      filtered = filtered.filter(
+        (order) => order.paymentStatus === statusFilter
+      );
     }
 
     if (planFilter !== "all") {
@@ -192,7 +194,10 @@ const OrdersPage = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-cyan-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div
           className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: "linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%)" }}
+          style={{
+            backgroundImage:
+              "linear-gradient(-150deg, #1cf8c8 -40%, #117892 100%)",
+          }}
         />
       </div>
 
@@ -208,7 +213,9 @@ const OrdersPage = () => {
             </h1>
             <Sparkles className="w-5 h-5 text-teal-400 animate-pulse" />
           </div>
-          <p className="text-gray-400 text-lg">Manage your AI-powered subscription plans and track order history</p>
+          <p className="text-gray-400 text-lg">
+            Manage your AI-powered subscription plans and track order history
+          </p>
         </div>
 
         {/* Controls */}
@@ -234,7 +241,9 @@ const OrdersPage = () => {
                 className="flex items-center gap-2 px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-xl text-gray-300 hover:bg-slate-700/50 hover:border-teal-500/30 transition-all backdrop-blur-sm"
                 aria-label="Refresh"
               >
-                <RotateCcw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+                <RotateCcw
+                  className={`w-4 h-4 ${loading ? "animate-spin" : ""}`}
+                />
                 Refresh
               </button>
 
@@ -244,7 +253,11 @@ const OrdersPage = () => {
               >
                 <Filter className="w-4 h-4" />
                 Filters
-                <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    showFilters ? "rotate-180" : ""
+                  }`}
+                />
               </button>
             </div>
           </div>
@@ -252,7 +265,9 @@ const OrdersPage = () => {
           {showFilters && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-slate-800/30 border border-slate-700/30 rounded-xl backdrop-blur-sm">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Payment Status</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Payment Status
+                </label>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
@@ -265,7 +280,9 @@ const OrdersPage = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Plan Type</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Plan Type
+                </label>
                 <select
                   value={planFilter}
                   onChange={(e) => setPlanFilter(e.target.value)}
@@ -317,8 +334,12 @@ const OrdersPage = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-slate-800/50 rounded-full flex items-center justify-center">
                   <Package className="w-8 h-8 text-gray-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-300 mb-2">No orders found</h3>
-                <p className="text-gray-400">Try adjusting your search or filters</p>
+                <h3 className="text-xl font-semibold text-gray-300 mb-2">
+                  No orders found
+                </h3>
+                <p className="text-gray-400">
+                  Try adjusting your search or filters
+                </p>
               </div>
             ) : (
               filteredOrders.map((order) => (
@@ -333,8 +354,14 @@ const OrdersPage = () => {
                         <div className="p-2 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-lg border border-teal-500/20">
                           <Zap className="w-4 h-4 text-teal-400" />
                         </div>
-                        <h3 className="text-lg font-semibold text-white">{order.orderCode}</h3>
-                        <div className={`px-3 py-1 rounded-full text-xs font-medium border ${getPlanBadge(order.plan.plan)}`}>
+                        <h3 className="text-lg font-semibold text-white">
+                          {order.orderCode}
+                        </h3>
+                        <div
+                          className={`px-3 py-1 rounded-full text-xs font-medium border ${getPlanBadge(
+                            order.plan.plan
+                          )}`}
+                        >
                           {order.plan.name}
                         </div>
                       </div>
@@ -342,24 +369,40 @@ const OrdersPage = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
                         <div>
                           <p className="text-gray-400 mb-1">Created</p>
-                          <p className="text-white font-medium">{order.createdAt}</p>
+                          <p className="text-white font-medium">
+                            {order.createdAt}
+                          </p>
                         </div>
                         <div>
                           <p className="text-gray-400 mb-1">Amount</p>
                           <div>
-                            <p className="text-white font-medium">${order.amountUsd}</p>
-                            <p className="text-gray-400 text-xs">{formatCurrency(order.amountVnd)}</p>
+                            <p className="text-white font-medium">
+                              ${order.amountUsd}
+                            </p>
+                            <p className="text-gray-400 text-xs">
+                              {formatCurrency(order.amountVnd)}
+                            </p>
                           </div>
                         </div>
                         <div>
                           <p className="text-gray-400 mb-1">Payment Status</p>
-                          <div className={`inline-flex px-2 py-1 rounded-full text-xs font-medium border ${getStatusBadge(order.paymentStatus, "payment")}`}>
+                          <div
+                            className={`inline-flex px-2 py-1 rounded-full text-xs font-medium border ${getStatusBadge(
+                              order.paymentStatus,
+                              "payment"
+                            )}`}
+                          >
                             {order.paymentStatusDisplay}
                           </div>
                         </div>
                         <div>
                           <p className="text-gray-400 mb-1">Order Status</p>
-                          <div className={`inline-flex px-2 py-1 rounded-full text-xs font-medium border ${getStatusBadge(order.orderStatus, "order")}`}>
+                          <div
+                            className={`inline-flex px-2 py-1 rounded-full text-xs font-medium border ${getStatusBadge(
+                              order.orderStatus,
+                              "order"
+                            )}`}
+                          >
                             {order.orderStatusDisplay}
                           </div>
                         </div>
@@ -371,7 +414,10 @@ const OrdersPage = () => {
                             <Sparkles className="w-4 h-4 text-teal-400" />
                             <span className="text-teal-400 font-medium text-sm">
                               {order.plan.discount}% Discount Applied - Saved $
-                              {(order.plan.amountUsd - order.plan.discountedAmountUSD).toFixed(2)}
+                              {(
+                                order.plan.amountUsd -
+                                order.plan.discountedAmountUSD
+                              ).toFixed(2)}
                             </span>
                           </div>
                         </div>
@@ -391,7 +437,9 @@ const OrdersPage = () => {
               <Package className="w-5 h-5 text-teal-400" />
               <div>
                 <p className="text-gray-400 text-sm">Total Orders</p>
-                <p className="text-white font-semibold">{filteredOrders.length}</p>
+                <p className="text-white font-semibold">
+                  {filteredOrders.length}
+                </p>
               </div>
             </div>
           </div>
@@ -401,7 +449,10 @@ const OrdersPage = () => {
               <div>
                 <p className="text-gray-400 text-sm">Active Subscriptions</p>
                 <p className="text-white font-semibold">
-                  {filteredOrders.filter((o) => o.orderStatus === "active").length}
+                  {
+                    filteredOrders.filter((o) => o.orderStatus === "active")
+                      .length
+                  }
                 </p>
               </div>
             </div>
@@ -412,7 +463,10 @@ const OrdersPage = () => {
               <div>
                 <p className="text-gray-400 text-sm">Total Spent</p>
                 <p className="text-white font-semibold">
-                  ${filteredOrders.reduce((sum, order) => sum + (order.amountUsd || 0), 0).toFixed(2)}
+                  $
+                  {filteredOrders
+                    .reduce((sum, order) => sum + (order.amountUsd || 0), 0)
+                    .toFixed(2)}
                 </p>
               </div>
             </div>
