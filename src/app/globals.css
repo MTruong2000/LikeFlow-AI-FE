@@ -51,7 +51,7 @@ h2,
 }
 
 .bg-gradient-profile {
-  background-color: rgba(17, 120, 146, 0.2);
+  background-color: rgba(17, 120, 146, 0.8);
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);
   border-radius: 25px;

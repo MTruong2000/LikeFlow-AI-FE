@@ -15,8 +15,8 @@ export default function Banner() {
         <source media="(max-width: 767px)" srcSet="/images/banner-sp.webp" />
         <img
           src="/images/banner.webp"
-          alt="Background"
-          fetchPriority="high" // ưu tiên mạng cho LCP
+          alt="img-bg-likeflow"
+          fetchPriority="high"
           className="absolute inset-0 object-cover w-full h-full -z-10"
           loading="lazy"
         />

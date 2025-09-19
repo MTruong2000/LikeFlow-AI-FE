@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import Pricing from "@/components/pricing";
 import FormContact from "@/components/component-childs/form-contact";
 import isLoggedIn from "@/funcs/isLonggedIn";
+import ScrollToTop from "@/components/component-childs/scroll-top";
 
 export default async function Home() {
   const checkLogin = await isLoggedIn();
@@ -33,6 +34,7 @@ export default async function Home() {
         <Pricing checkLogin={checkLogin} />
       </div>
       <FormContact />
+      <ScrollToTop />
     </div>
   );
 }
