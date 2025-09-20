@@ -7,12 +7,14 @@ import Navigation from "@/components/component-childs/navigation";
 import LogoLikeFlow from "@/components/component-childs/logo-likeflow";
 import scrollToSection from "@/funcs/scrolltosection";
 import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
+import Loading from "@/components/component-childs/loading";
 
 export default function HeaderClient({
   isLonggedIn,
 }: {
   isLonggedIn: boolean;
 }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -58,7 +60,7 @@ export default function HeaderClient({
         {/* Right-side (Profile or Menu) */}
         <div className="flex gap-4 justify-center items-center my-auto">
           {isLonggedIn ? (
-            <HeaderProfile />
+            <HeaderProfile setIsLoading={setIsLoading}/>
           ) : (
             <ButtonAnimationPrimary onClick={() => scrollToSection("pricing")}>
               Get Started
@@ -129,6 +131,7 @@ export default function HeaderClient({
           </nav>
         </div>
       </div>
+      <Loading open={isLoading}/>
     </div>
   );
 }

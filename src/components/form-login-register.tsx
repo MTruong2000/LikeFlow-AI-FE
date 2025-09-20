@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { X, Mail, Lock, User, Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Loading from "@/components/component-childs/loading";
 
 interface FormLoginRegisterProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export default function AILoginPopup({
   isOpen,
   onClose,
 }: FormLoginRegisterProps) {
+  const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -50,7 +52,7 @@ export default function AILoginPopup({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setIsLoading(true);
     if (isLogin) {
       const res = await fetch("/api/login", {
         method: "POST",
@@ -64,6 +66,7 @@ export default function AILoginPopup({
         router.refresh();
       } else {
         setErrorMessage(data.message || "Login failed");
+        setIsLoading(false);
       }
     } else {
       // Register
@@ -77,8 +80,10 @@ export default function AILoginPopup({
       if (data.code === 200 && data.status === "success") {
         // Chuyển sang step verify
         setStep("verify");
+        setIsLoading(false);
       } else {
         setErrorMessage(data.message || "Register failed");
+        setIsLoading(false);
       }
     }
   };
@@ -96,6 +101,7 @@ export default function AILoginPopup({
   };
 
   const handleVerifySubmit = async () => {
+    setIsLoading(true);
     const res = await fetch("/api/verify-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -104,35 +110,36 @@ export default function AILoginPopup({
         email: formData.email,
       }),
     });
-  
+
     const data = await res.json();
-  
+
     if (data.status === "success") {
       setStep("form");
       setIsLogin(true);
-  
+
       setFormData((prev) => ({
         ...prev,
         email: formData.email,
         password: "",
         confirm_password: "",
       }));
-  
+
       // ✅ Clear verify code
       setVerifyCode("");
-  
+
       // ✅ Thông báo cho user
       setErrorMessage("Email verified successfully. Please log in.");
+      setIsLoading(false);
     } else {
       setErrorMessage(data.message || "Verification failed");
+      setIsLoading(false);
     }
   };
-  
 
   return (
     <div>
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-5">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl w-full max-w-md p-8 relative overflow-hidden">
             {/* Gradient background */}
             <div className="absolute inset-0 bg-gradient-primary rounded-3xl"></div>
@@ -336,6 +343,7 @@ export default function AILoginPopup({
           </div>
         </div>
       )}
+      <Loading open={isLoading} message="Processing..." />
     </div>
   );
 }

@@ -3,7 +3,11 @@ import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { User, Settings, LogOut, ChevronDown } from "lucide-react";
 
-const HeaderProfile = () => {
+interface HeaderProfileProps {
+  setIsLoading: (value: boolean) => void;
+}
+
+const HeaderProfile = ({ setIsLoading }: HeaderProfileProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
@@ -61,6 +65,7 @@ const HeaderProfile = () => {
   };
 
   const handleLogout = async () => {
+    setIsLoading(true);
     try {
       const res = await fetch("/api/logout", {
         method: "POST",
@@ -69,14 +74,17 @@ const HeaderProfile = () => {
 
       if (data.success) {
         router.refresh();
+        setIsLoading(false);
       }
     } catch (err) {
       console.error("Logout error:", err);
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     const handleProfile = async () => {
+      setIsLoading(true);
       try {
         const res = await fetch("/api/profile", {
           method: "GET",
@@ -88,8 +96,10 @@ const HeaderProfile = () => {
             email: data.data.email,
           });
         }
+        setIsLoading(false);
       } catch (err) {
         console.error("Profile fetch error:", err);
+        setIsLoading(false);
       }
     };
 
@@ -143,7 +153,7 @@ const HeaderProfile = () => {
 
       {/* Dropdown Menu */}
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-4 w-60 bg-gradient-profile rounded-xl shadow-2xl py-2 z-50 animate-in slide-in-from-top-2 duration-200">
+        <div className="absolute right-0 mt-4 w-60 rounded-xl shadow-2xl py-2 z-50 animate-in duration-200 bg-gradient-profile ">
           {/* User info header */}
           <div className="px-4 py-3 border-b border-white">
             <div className="flex items-center space-x-3">
