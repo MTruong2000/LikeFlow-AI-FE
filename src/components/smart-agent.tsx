@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
 import { Play } from "lucide-react";
 import ImageNext from "next/image";
 import ButtonAnimationPrimary from "@/components/component-childs/button-animation-primary";
+import ListDownUp from "@/components/component-childs/list-down-up";
 
 interface FeatureItem {
   id: string;
@@ -10,58 +10,46 @@ interface FeatureItem {
   description: string;
 }
 
+const features: FeatureItem[] = [
+  {
+    id: "specialized-agents",
+    title: "50+ Ready-to-Use Specialized AI Agents",
+    description:
+      "Supercharge your AI Agents with vector embeddings. Effortlessly pull data from Google Drive or upload widely used file types such as PDF, DOCX, and more for smarter, context-aware performance.",
+  },
+  {
+    id: "external-data",
+    title: "Train with External Data Sources",
+    description:
+      "Integrate external data sources to give your AI Agents deeper context. Upload files or link cloud storage for seamless training.",
+  },
+  {
+    id: "real-time-api",
+    title: "Real-Time Access Through Dynamic APIs",
+    description:
+      "Give your Agents instant access to live business data via dynamic APIs — enabling real-time analysis, faster answers, and smarter decision-making.",
+  },
+  {
+    id: "plugin-integration",
+    title: "Seamless Plugin Integration for Connectivity",
+    description:
+      "Expand your Agents capabilities with intelligent plugins — from syncing schedules on Google Calendar to integrating directly with your internal systems.",
+  },
+  {
+    id: "assign-model",
+    title: "Assign Any AI Model to Any Agent",
+    description:
+      "Choose the most suitable AI model for each Agent and fine-tune it with custom prompts and instructions — ensuring specialized accuracy for every task.",
+  },
+  {
+    id: "prompt-chaining",
+    title: "Multi-Step Automation with Prompt Chaining",
+    description:
+      "Orchestrate complex workflows by linking multiple Agents with prompt chaining. Each Agent can operate with its own model, parameters, dynamic context, and system prompts — automating even the most complicated processes.",
+  },
+];
+
 export default function SmartAgent() {
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-
-  const features: FeatureItem[] = [
-    {
-      id: "specialized-agents",
-      title: "50+ Ready-to-Use Specialized AI Agents",
-      description:
-        "Supercharge your AI Agents with vector embeddings. Effortlessly pull data from Google Drive or upload widely used file types such as PDF, DOCX, and more for smarter, context-aware performance.",
-    },
-    {
-      id: "external-data",
-      title: "Train with External Data Sources",
-      description:
-        "Integrate external data sources to give your AI Agents deeper context. Upload files or link cloud storage for seamless training.",
-    },
-    {
-      id: "real-time-api",
-      title: "Real-Time Access Through Dynamic APIs",
-      description:
-        "Give your Agents instant access to live business data via dynamic APIs — enabling real-time analysis, faster answers, and smarter decision-making.",
-    },
-    {
-      id: "plugin-integration",
-      title: "Seamless Plugin Integration for Connectivity",
-      description:
-        "Expand your Agents capabilities with intelligent plugins — from syncing schedules on Google Calendar to integrating directly with your internal systems.",
-    },
-    {
-      id: "assign-model",
-      title: "Assign Any AI Model to Any Agent",
-      description:
-        "Choose the most suitable AI model for each Agent and fine-tune it with custom prompts and instructions — ensuring specialized accuracy for every task.",
-    },
-    {
-      id: "prompt-chaining",
-      title: "Multi-Step Automation with Prompt Chaining",
-      description:
-        "Orchestrate complex workflows by linking multiple Agents with prompt chaining. Each Agent can operate with its own model, parameters, dynamic context, and system prompts — automating even the most complicated processes.",
-    },
-  ];
-
-  const toggleExpand = (id: string) => {
-    const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedItems(newExpanded);
-  };
-
   return (
     <>
       <div className="w-full mb-[var(--outline-sp)] md:mb-[var(--outline-pc)] bg-primary text-white">
@@ -112,44 +100,7 @@ export default function SmartAgent() {
               </div>
 
               {/* Center - Expandable List */}
-              <div className="space-y-4">
-                {features.map((feature) => (
-                  <div
-                    key={feature.id}
-                    className="bg-white shadow-lg overflow-hidden rounded-xl mb-4"
-                  >
-                    {/* Header Button */}
-                    <button
-                      onClick={() => toggleExpand(feature.id)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 focus:outline-none transition-all duration-200 border-b border-gray-100 last:border-b-0"
-                    >
-                      <span className="text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)] font-semibold text-gray-800">
-                        {feature.title}
-                      </span>
-                      {expandedItems.has(feature.id) ? (
-                        <p className="text-black">-</p>
-                      ) : (
-                        <p className="text-black">+</p>
-                      )}
-                    </button>
-
-                    {/* Expandable Content */}
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        expandedItems.has(feature.id)
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="px-6 pb-6 pt-2 bg-gray-50 border-b border-gray-100 last:border-b-0">
-                        <p className="text-gray-700 leading-relaxed text-[length:var(--text-body-text-sp)] md:text-[length:var(--text-body-text-pc)]">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ListDownUp items={features} />
 
               <div className="flex flex-col-reverse items-center space-y-6">
                 <div className="relative">

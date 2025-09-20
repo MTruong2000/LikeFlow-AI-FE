@@ -9,13 +9,14 @@ export default function WhoIsUsing() {
           WHO’S USING LIKEFLOW
         </h1>
         <div className="grid grid-cols-3 gap-6 lg:overflow-visible overflow-x-auto snap-x snap-mandatory">
-          <div className="relative w-full h-[452px] self-end min-w-[300px] snap-center">
+          <div className="relative w-full h-[452px] min-w-[300px] self-end snap-center">
             <Image
               src="/images/online-entrepreneurs.webp"
               alt="LikeFlow Logo"
               priority
               fill
-              className="absolute object-cover rounded-2xl z-[-2]"
+              className="absolute object-cover rounded-2xl"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 0vw, 900px"
             />
             <div className="absolute text-white w-full bottom-0 text-left p-6">
               <h2 className="mb-4 text-[length:var(--text-title-sp)] md:text-[length:var(--text-title-pc)] font-semibold text-center">

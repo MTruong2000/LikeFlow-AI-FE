@@ -102,7 +102,6 @@ export default function FormContact() {
               src="/images/image-form-contact.webp"
               alt="Colorful AI chameleons"
               priority
-              layout="responsive"
               width={900}
               height={550}
               className="rounded-2xl shadow-2xl"
