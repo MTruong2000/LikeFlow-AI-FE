@@ -65,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/about"
+                  href="https://blog.likeflow.ai/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   Blog
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="https://blog.likeflow.ai/about/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   About Likeflow
@@ -96,7 +96,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/contact"
+                  href="https://blog.likeflow.ai/contact-likeflow-now/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   Contact Us
@@ -104,7 +104,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="https://blog.likeflow.ai/likeflow-privacy-policy/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   Privacy Policy
@@ -112,7 +112,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="https://blog.likeflow.ai/likeflow-terms-of-service/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   Terms of Service
