@@ -24,20 +24,54 @@ export const metadata: Metadata = {
   title: "LikeFlow",
   description:
     "LikeFlow empowers businesses with AI assistants to automate tasks, improve productivity, and boost growth.",
-    icons: {
-      icon: "/images/logo-likeflow.webp",
-      shortcut: "logo-likeflow",
-      apple: "logo-likeflow",
-    }
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "LikeFlow",
+    description:
+      "LikeFlow empowers businesses with AI assistants to automate tasks, improve productivity, and boost growth.",
+    url: "https://likeflow.ai",
+    siteName: "LikeFlow",
+    images: [
+      {
+        url: "/logo-likeflow.png",
+        width: 1200,
+        height: 630,
+        alt: "LikeFlow Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${beVietnamHeading.variable} ${beVietnamBody.variable}`}>
+    <html
+      lang="en"
+      className={`${beVietnamHeading.variable} ${beVietnamBody.variable}`}
+    >
+      <head>
+        {/* Schema Logo cho Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              url: "https://likeflow.ai",
+              logo: "https://likeflow.ai/logo-likeflow.png",
+            }),
+          }}
+        />
+      </head>
       <body>
         <HeaderServer />
         {children}
