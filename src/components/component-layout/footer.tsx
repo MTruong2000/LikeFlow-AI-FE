@@ -81,7 +81,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/affiliate"
+                  href="https://blog.likeflow.ai/affiliate-with-likeflow-ai/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm"
                 >
                   Affiliate with Us — Get Your Rewards Today!
