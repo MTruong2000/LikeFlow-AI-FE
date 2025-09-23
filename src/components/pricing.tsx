@@ -273,8 +273,16 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
             <hr className="my-3 border-gray-200" />
 
-            <div className="">
-              {checkLogin ? (
+            <div className="mb-6">
+              <button
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                onClick={() => {
+                  window.location.href = `${process.env.NEXT_PUBLIC_OVERVIEW_URL_AI}`;
+                }}
+              >
+                Buy Now
+              </button>
+              {/* {checkLogin ? (
                 <button
                   className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
                   onClick={() => {
@@ -285,7 +293,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 </button>
               ) : (
                 <ButtonShowForm />
-              )}
+              )} */}
             </div>
 
             {/* Nội dung features */}
@@ -459,7 +467,15 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
             {/* Nút */}
             <div className="mb-6">
-              {checkLogin ? (
+              <button
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                onClick={() => {
+                  window.location.href = `${process.env.NEXT_PUBLIC_OVERVIEW_URL_AI}`;
+                }}
+              >
+                Buy Now
+              </button>
+              {/* {checkLogin ? (
                 <button
                   className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
                   onClick={() => {
@@ -470,7 +486,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 </button>
               ) : (
                 <ButtonShowForm />
-              )}
+              )} */}
             </div>
 
             {/* Features (chiếm phần còn lại) */}
@@ -672,7 +688,15 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
 
             {/* Nút */}
             <div className="mb-6">
-              {checkLogin ? (
+              <button
+                className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
+                onClick={() => {
+                  window.location.href = `${process.env.NEXT_PUBLIC_OVERVIEW_URL_AI}`;
+                }}
+              >
+                Buy Now
+              </button>
+              {/* {checkLogin ? (
                 <button
                   className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
                   onClick={() => handleCheckout(currentData.grow.planId)}
@@ -681,7 +705,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 </button>
               ) : (
                 <ButtonShowForm />
-              )}
+              )} */}
             </div>
 
             {/* Features */}
