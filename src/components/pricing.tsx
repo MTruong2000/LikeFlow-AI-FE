@@ -278,8 +278,7 @@ export default function Pricing({ checkLogin }: { checkLogin: boolean }) {
                 <button
                   className="w-full bg-gradient-primary text-white font-semibold py-3 rounded-full transition-colors"
                   onClick={() => {
-                    window.location.href =
-                      "https://affitfy.lovinbot.ai/overview";
+                    window.location.href = `${process.env.NEXT_PUBLIC_OVERVIEW_URL_AI}`;
                   }}
                 >
                   Buy Now
