@@ -62,7 +62,7 @@ export default function HeaderClient({
           {isLonggedIn ? (
             <HeaderProfile setIsLoading={setIsLoading}/>
           ) : (
-            <ButtonAnimationPrimary onClick={() => scrollToSection("pricing")}>
+            <ButtonAnimationPrimary onClick={() => window.location.href = "https://affitfy.lovinbot.ai/overview"}>
               Get Started
             </ButtonAnimationPrimary>
           )}
