@@ -60,9 +60,13 @@ export default function HeaderClient({
         {/* Right-side (Profile or Menu) */}
         <div className="flex gap-4 justify-center items-center my-auto">
           {isLonggedIn ? (
-            <HeaderProfile setIsLoading={setIsLoading}/>
+            <HeaderProfile setIsLoading={setIsLoading} />
           ) : (
-            <ButtonAnimationPrimary onClick={() => window.location.href = "https://affitfy.lovinbot.ai/overview"}>
+            <ButtonAnimationPrimary
+              onClick={() => {
+                window.location.href = `${process.env.NEXT_PUBLIC_OVERVIEW_URL_AI}`;
+              }}
+            >
               Get Started
             </ButtonAnimationPrimary>
           )}
@@ -131,7 +135,7 @@ export default function HeaderClient({
           </nav>
         </div>
       </div>
-      <Loading open={isLoading}/>
+      <Loading open={isLoading} />
     </div>
   );
 }
