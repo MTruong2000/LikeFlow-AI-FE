@@ -26,7 +26,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/like.flowai/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm flex items-center space-x-2"
                 >
                   <Instagram size={20} />
@@ -34,7 +34,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://twitter.com"
+                  href="https://x.com/LikeF58045"
                   className="text-white hover:text-white transition-colors duration-200 text-sm flex items-center space-x-2"
                 >
                   <Twitter size={20} />
@@ -42,7 +42,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/like-flow-b56902386/"
                   className="text-white hover:text-white transition-colors duration-200 text-sm flex items-center space-x-2"
                 >
                   <Linkedin size={20} />
@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@LikeFlowAI"
                   className="text-white hover:text-white transition-colors duration-200 text-sm flex items-center space-x-2"
                 >
                   <Youtube size={20} />
