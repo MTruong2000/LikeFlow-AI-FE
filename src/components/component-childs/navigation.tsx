@@ -35,7 +35,9 @@ const Navigation = () => {
   const pathname = usePathname();
 
   const handleDirection = async (section: string) => {
-    if (pathname === "/") {
+    if (section == "blog") {
+      window.location.href = "https://blog.likeflow.ai/";
+    } else if (pathname === "/") {
       scrollToSection(section);
     } else {
       router.push(`/#${section}`);

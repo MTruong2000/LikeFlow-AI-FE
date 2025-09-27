@@ -23,6 +23,7 @@ export default function HeaderClient({
     { id: "home", name: "Home", icon: Home },
     { id: "features", name: "Features", icon: User },
     { id: "tools", name: "Tools", icon: Star },
+    { id: "blog", name: "Blog", icon: Home },
     { id: "pricing", name: "Pricing", icon: Phone },
   ];
 
@@ -31,7 +32,9 @@ export default function HeaderClient({
   };
 
   const handleNavigationClick = (section: string) => {
-    if (pathname === "/") {
+    if (section == "blog") {
+      window.location.href = "https://blog.likeflow.ai/";
+    } else if (pathname === "/") {
       scrollToSection(section);
     } else {
       router.push(`/#${section}`);

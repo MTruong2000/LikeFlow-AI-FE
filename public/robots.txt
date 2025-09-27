@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-
-# Chặn Google crawl thư mục build của Next.js
-Disallow: /_next/
-Disallow: /static/
-
-# Sitemap
-Sitemap: https://likeflow.ai/sitemap.xml
