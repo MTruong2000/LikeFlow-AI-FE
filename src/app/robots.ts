@@ -5,10 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: [
-        "/api/",
-        "/_next/",
-      ],
+      disallow: ["/api/", "/_next/", "/favicon.ico", "/favicon*", "/static/"]
     },
     sitemap: "https://likeflow.ai/sitemap.xml",
   };
