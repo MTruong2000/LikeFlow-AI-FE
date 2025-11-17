@@ -8,26 +8,12 @@ interface Navigation {
 }
 
 const navigations: Navigation[] = [
-  {
-    id: "home",
-    name: "Home",
-  },
-  {
-    id: "features",
-    name: "Features",
-  },
-  {
-    id: "tools",
-    name: "Tools",
-  },
-  {
-    id: "blog",
-    name: "Blog",
-  },
-  {
-    id: "pricing",
-    name: "Pricing",
-  },
+  { id: "home", name: "Home" },
+  { id: "workflow", name: "Workflow" },
+  { id: "features", name: "Features" },
+  { id: "tools", name: "Tools" },
+  { id: "blog", name: "Blog" },
+  { id: "pricing", name: "Pricing" },
 ];
 
 const Navigation = () => {
@@ -35,8 +21,10 @@ const Navigation = () => {
   const pathname = usePathname();
 
   const handleDirection = async (section: string) => {
-    if (section == "blog") {
+    if (section === "blog") {
       window.location.href = "https://blog.likeflow.ai/";
+    } else if (section === "workflow") {
+      window.location.href = "https://workflow.likeflow.ai/";
     } else if (pathname === "/") {
       scrollToSection(section);
     } else {

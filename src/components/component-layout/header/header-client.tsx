@@ -21,6 +21,7 @@ export default function HeaderClient({
 
   const navigationData = [
     { id: "home", name: "Home", icon: Home },
+    { id: "workflow", name: "Workflow", icon: Star },
     { id: "features", name: "Features", icon: User },
     { id: "tools", name: "Tools", icon: Star },
     { id: "blog", name: "Blog", icon: Home },
@@ -34,6 +35,8 @@ export default function HeaderClient({
   const handleNavigationClick = (section: string) => {
     if (section == "blog") {
       window.location.href = "https://blog.likeflow.ai/";
+    } else if (section === "workflow") {
+      window.location.href = "https://workflow.likeflow.ai/";
     } else if (pathname === "/") {
       scrollToSection(section);
     } else {
