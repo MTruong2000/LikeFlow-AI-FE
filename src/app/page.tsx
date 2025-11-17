@@ -32,7 +32,7 @@ export default async function Home() {
       <MultipleAdvanced />
       <TestimonialsSection />
       <div id="pricing">
-        <Pricing checkLogin={checkLogin} />
+        {/* <Pricing checkLogin={checkLogin} /> */}
       </div>
       <FormContact />
       <Footer />
